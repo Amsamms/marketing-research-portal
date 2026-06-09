@@ -152,6 +152,29 @@
   header .meta { color: var(--muted); font-size: .9rem; }
   .mnemonic { font-family: system-ui, sans-serif; background: var(--mnemonic-bg); border:1px solid var(--mnemonic-bd); border-radius:6px; padding:.5rem .8rem; margin:.8rem 0; color: var(--fg); }
   hr.chap { border:none; border-top:1px solid var(--rule); margin:3rem 0 0; }
+
+  /* Wide tables scroll inside their own box instead of stretching the page */
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0; border-radius: 6px; }
+  .table-wrap > table { margin: 0; min-width: 540px; }
+  .table-wrap > table.wide { min-width: 760px; }
+
+  /* ===== Mobile ===== */
+  @media (max-width: 600px) {
+    body { padding: 1rem .9rem 5rem; line-height: 1.6; }
+    h1 { font-size: 1.55rem; margin-top: 2.4rem; }
+    h2 { font-size: 1.22rem; }
+    h3 { font-size: 1.08rem; }
+    p, li { font-size: 1.02rem; }           /* a touch larger for phone reading */
+    header h1 { font-size: 1.5rem; padding-right: 84px; } /* clear the fixed toggle */
+    #themeToggle { top: 8px; right: 8px; font-size: .76rem; padding: .35rem .6rem; }
+    nav.toc { padding: .8rem 1rem; }
+    .plain-english { padding: 14px 15px 6px; }
+    .branch > div { flex: 1 1 100%; }       /* stack branch cards vertically */
+    .flow-step { max-width: 100%; font-size: .9rem; }
+    table { font-size: .9rem; }
+    th, td { padding: .45rem .55rem; }
+    .citation { white-space: normal; }      /* let citations wrap, never push width */
+  }
 </style>
 <script>
 // Set theme before first paint to avoid a flash. Order: saved choice > OS preference > light.
@@ -1086,6 +1109,19 @@
 <!-- CH3-PLACEHOLDER -->
 
 <script>
+// Wrap every table in a horizontal-scroll container so wide tables never
+// stretch the page on a phone. Tables with 5+ columns get the .wide hint.
+document.querySelectorAll('table').forEach(function(t){
+  if (t.parentElement && t.parentElement.classList.contains('table-wrap')) return;
+  var cols = 0, hr = t.querySelector('tr');
+  if (hr) cols = hr.children.length;
+  if (cols >= 5) t.classList.add('wide');
+  var w = document.createElement('div');
+  w.className = 'table-wrap';
+  t.parentNode.insertBefore(w, t);
+  w.appendChild(t);
+});
+
 // Collapse every .plain-english box into a <details> on load, collapsed by default.
 document.querySelectorAll('.plain-english').forEach(function(box){
   var h = box.querySelector('h3');
