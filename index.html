@@ -6,89 +6,139 @@
 <title>Essentials of Marketing Research — Study Portal (Ch. 1–3)</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
+  /* ===== LIGHT THEME (default) ===== */
   :root {
     --bg: #faf9f7;
     --fg: #1c1c1c;
+    --heading: #2b2b2b;
     --muted: #6b7280;
+    --cite: #5f6670;
     --accent: #b8430f;
     --accent2: #1f6f8b;
     --rule: #e6e3df;
     --code-bg: #f1ede7;
     --card: #ffffff;
+    --shadow: rgba(0,0,0,0.04);
+    /* tinted boxes */
+    --verbatim-bg: #fff8e1;
+    --callout-bg: #eef6ff;
+    --lecture-bg: #f0fff4; --lecture-bd: #2e8b57;
+    --pe-bg: #fff8e8; --pe-border: #f5b84a; --pe-head: #8a5a00; --pe-sub: #6b4500; --pe-code: #fff2d4;
+    --mnemonic-bg: #fff3d4; --mnemonic-bd: #f0d089;
+    --flow-bg: #ffffff; --flow-bd: #cfcabf;
+    --branch-green: #eafbe7; --branch-blue: #e7f1fb; --branch-pink: #fde7f1; --branch-orange: #fdefe0; --branch-grey: #f0f0ee;
+    --branch-ink: #1c1c1c;
+    --deckq-ink: #555;
+  }
+  /* ===== DARK THEME ===== */
+  html[data-theme="dark"] {
+    --bg: #15171c;
+    --fg: #e7e4dd;            /* off-white, not pure white, to cut glare */
+    --heading: #f1eee7;
+    --muted: #a7adb6;
+    --cite: #9aa1ab;
+    --accent: #f0865a;        /* lightened rust for AA contrast on dark */
+    --accent2: #6cc0e0;       /* lightened teal */
+    --rule: #343842;
+    --code-bg: #262a31;
+    --card: #1d2026;
+    --shadow: rgba(0,0,0,0.45);
+    --verbatim-bg: #2c2718;
+    --callout-bg: #18242c;
+    --lecture-bg: #16271d; --lecture-bd: #4cae7a;
+    --pe-bg: #2a2415; --pe-border: #d99b3a; --pe-head: #f0c879; --pe-sub: #e8be78; --pe-code: #3a3016;
+    --mnemonic-bg: #2c2515; --mnemonic-bd: #6a5524;
+    --flow-bg: #232730; --flow-bd: #3c424d;
+    --branch-green: #1b2a1c; --branch-blue: #16242e; --branch-pink: #2c1a23; --branch-orange: #2d2316; --branch-grey: #24262b;
+    --branch-ink: #e7e4dd;
+    --deckq-ink: #b9bec6;
   }
   * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
   body {
     font-family: ui-serif, Georgia, "Times New Roman", serif;
     max-width: 920px; margin: 0 auto; padding: 1.5rem 1.2rem 6rem;
     background: var(--bg); color: var(--fg); line-height: 1.62;
+    transition: background .2s ease, color .2s ease;
   }
-  h1 { font-size: 2rem; margin-top: 3.2rem; border-bottom: 3px solid var(--accent); padding-bottom: .35rem; line-height: 1.2; }
-  h2 { font-size: 1.42rem; margin-top: 2.4rem; color: #2b2b2b; }
-  h3 { font-size: 1.16rem; margin-top: 2rem; color: #333; }
-  h4 { font-size: 1.02rem; margin-top: 1.3rem; }
+  h1 { font-size: 2rem; margin-top: 3.2rem; border-bottom: 3px solid var(--accent); padding-bottom: .35rem; line-height: 1.2; color: var(--heading); }
+  h2 { font-size: 1.42rem; margin-top: 2.4rem; color: var(--heading); }
+  h3 { font-size: 1.16rem; margin-top: 2rem; color: var(--heading); }
+  h4 { font-size: 1.02rem; margin-top: 1.3rem; color: var(--fg); }
   p, li { font-size: 1rem; }
+  strong { color: inherit; }
   a { color: var(--accent2); }
   table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .93rem; background: var(--card); }
   th, td { border: 1px solid var(--rule); padding: .55rem .75rem; text-align: left; vertical-align: top; }
-  th { background: var(--code-bg); font-family: system-ui, sans-serif; font-size: .86rem; }
-  code { background: var(--code-bg); padding: 0 .25rem; border-radius: 3px; font-size: .9em; }
+  th { background: var(--code-bg); font-family: system-ui, sans-serif; font-size: .86rem; color: var(--fg); }
+  code { background: var(--code-bg); padding: 0 .25rem; border-radius: 3px; font-size: .9em; color: var(--fg); }
+
+  /* Theme toggle button */
+  #themeToggle {
+    position: fixed; top: 12px; right: 14px; z-index: 999;
+    font-family: system-ui, sans-serif; font-size: .82rem; font-weight: 600;
+    background: var(--card); color: var(--fg); border: 1px solid var(--rule);
+    border-radius: 20px; padding: .4rem .8rem; cursor: pointer;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  #themeToggle:hover { border-color: var(--accent); }
 
   /* Citation = quiet sidenote, never a shouting badge */
-  .citation { color: #9aa3ad; font-size: 0.68rem; font-family: inherit; font-style: italic; opacity: 0.78; white-space: nowrap; }
+  .citation { color: var(--cite); font-size: 0.7rem; font-family: inherit; font-style: italic; opacity: 1; white-space: nowrap; }
 
-  .verbatim { background: #fff8e1; border-left: 3px solid var(--accent); padding: .5rem .9rem; margin: .8rem 0; font-style: italic; }
-  .callout { background: #eef6ff; border-left: 3px solid var(--accent2); padding: .6rem .9rem; margin: .85rem 0; }
+  .verbatim { background: var(--verbatim-bg); border-left: 3px solid var(--accent); padding: .5rem .9rem; margin: .8rem 0; font-style: italic; }
+  .callout { background: var(--callout-bg); border-left: 3px solid var(--accent2); padding: .6rem .9rem; margin: .85rem 0; }
   .callout strong { color: var(--accent2); }
-  .lecture { background: #f0fff4; border-left: 3px solid #2e8b57; padding: .6rem .9rem; margin: .85rem 0; }
+  .lecture { background: var(--lecture-bg); border-left: 3px solid var(--lecture-bd); padding: .6rem .9rem; margin: .85rem 0; }
 
   /* Plain-English chapter explainer box */
   .plain-english {
     margin: 18px 0 30px; padding: 18px 22px 8px;
-    border-left: 5px solid #f5b84a; background: #fff8e8;
-    border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    border-left: 5px solid var(--pe-border); background: var(--pe-bg);
+    border-radius: 6px; box-shadow: 0 2px 6px var(--shadow);
   }
-  .plain-english > h3:first-child { margin-top: 0; color: #8a5a00; font-size: 1.08rem; letter-spacing: .2px; }
-  .plain-english h4 { color: #6b4500; margin-top: 18px; margin-bottom: 4px; }
-  .plain-english p, .plain-english li { font-size: 0.98rem; line-height: 1.56; }
-  .plain-english table { background: #fffdf6; }
-  .plain-english code { background: #fff2d4; }
-  .plain-english em { color: #6b4500; font-style: italic; }
+  .plain-english > h3:first-child { margin-top: 0; color: var(--pe-head); font-size: 1.08rem; letter-spacing: .2px; }
+  .plain-english h4 { color: var(--pe-sub); margin-top: 18px; margin-bottom: 4px; }
+  .plain-english p, .plain-english li { font-size: 0.98rem; line-height: 1.56; color: var(--fg); }
+  .plain-english table { background: var(--card); }
+  .plain-english code { background: var(--pe-code); }
+  .plain-english em { color: var(--pe-sub); font-style: italic; }
 
-  /* Flow diagrams recreated in CSS */
+  /* Flow diagrams recreated in CSS. The bright .sN chips keep dark ink in both modes. */
   .flow { margin: 1.2rem 0; }
   .flow-step {
-    border: 2px solid #cfcabf; border-radius: 6px; padding: .55rem .8rem; margin: 0 auto;
+    border: 2px solid var(--flow-bd); border-radius: 6px; padding: .55rem .8rem; margin: 0 auto;
     text-align: center; font-family: system-ui, sans-serif; font-size: .92rem; font-weight: 600;
-    max-width: 560px; background: #fff;
+    max-width: 560px; background: var(--flow-bg); color: var(--fg);
   }
   .flow-arrow { text-align: center; color: var(--accent); font-size: 1.1rem; line-height: 1; margin: 2px 0; }
-  .flow-step.s1 { background:#f6a96b; } .flow-step.s2 { background:#e9e36b; }
-  .flow-step.s3 { background:#f06ba0; } .flow-step.s4 { background:#5fc96b; }
-  .flow-step.s5 { background:#5fc9b0; color:#0a3; } .flow-step.s6 { background:#5aa9d6; }
-  .flow-step.s5 { color:#063; }
+  .flow-step.s1 { background:#f6a96b; color:#22150a; } .flow-step.s2 { background:#e9e36b; color:#22210a; }
+  .flow-step.s3 { background:#f06ba0; color:#2a0c1b; } .flow-step.s4 { background:#5fc96b; color:#0a2410; }
+  .flow-step.s5 { background:#5fc9b0; color:#063524; } .flow-step.s6 { background:#5aa9d6; color:#08222e; }
 
   /* simple 2-up / 3-up card rows for branch diagrams */
   .branch { display: flex; flex-wrap: wrap; gap: 12px; margin: 1rem 0; }
-  .branch > div { flex: 1 1 220px; border: 2px solid #cfcabf; border-radius: 8px; padding: .7rem .9rem; background: #fff; }
+  .branch > div { flex: 1 1 220px; border: 2px solid var(--flow-bd); border-radius: 8px; padding: .7rem .9rem; background: var(--card); color: var(--branch-ink); }
   .branch h5 { margin: 0 0 .4rem; font-family: system-ui, sans-serif; font-size: .98rem; }
   .branch ul { margin: .3rem 0 0; padding-left: 1.1rem; }
   .branch li { font-size: .9rem; }
-  .b-green { background: #eafbe7 !important; } .b-blue { background: #e7f1fb !important; }
-  .b-pink { background: #fde7f1 !important; } .b-orange { background: #fdefe0 !important; }
-  .b-grey { background: #f0f0ee !important; }
+  .branch .b-green, .b-green { background: var(--branch-green) !important; } .b-blue { background: var(--branch-blue) !important; }
+  .b-pink { background: var(--branch-pink) !important; } .b-orange { background: var(--branch-orange) !important; }
+  .b-grey { background: var(--branch-grey) !important; }
 
   figure { margin: 1.1rem 0; }
   figure img { width: 100%; max-width: 760px; display: block; border: 1px solid var(--rule); border-radius: 6px; }
+  html[data-theme="dark"] figure img { filter: brightness(.92); }
   figcaption { font-family: system-ui, sans-serif; font-size: .85rem; color: var(--muted); margin-top: .35rem; }
 
   details.deck-quotes { margin: 4px 0 14px; font-size: 0.9rem; }
   details.deck-quotes > summary { cursor: pointer; color: var(--muted); font-size: 0.82rem; padding: 2px 0; list-style: none; font-family: system-ui, sans-serif; }
   details.deck-quotes > summary::before { content: "▸ "; color: var(--muted); }
   details.deck-quotes[open] > summary::before { content: "▾ "; }
-  details.deck-quotes ul, details.deck-quotes p { color: #555; margin: 6px 0; }
+  details.deck-quotes ul, details.deck-quotes p { color: var(--deckq-ink); margin: 6px 0; }
 
-  details.exam { margin: .55rem 0; border: 1px solid var(--rule); border-radius: 6px; padding: .15rem .7rem; background: #fff; }
-  details.exam > summary { cursor: pointer; font-weight: 600; font-family: system-ui, sans-serif; font-size: .95rem; padding: .45rem 0; }
+  details.exam { margin: .55rem 0; border: 1px solid var(--rule); border-radius: 6px; padding: .15rem .7rem; background: var(--card); }
+  details.exam > summary { cursor: pointer; font-weight: 600; font-family: system-ui, sans-serif; font-size: .95rem; padding: .45rem 0; color: var(--fg); }
   details.exam[open] > summary { color: var(--accent); }
   .ans { border-top: 1px dashed var(--rule); padding-top: .5rem; margin-top: .3rem; }
 
@@ -100,11 +150,24 @@
   nav.toc a:hover { text-decoration: underline; }
   .chip { display:inline-block; font-family: system-ui, sans-serif; font-size: .7rem; background: var(--code-bg); color: var(--muted); padding: .05rem .4rem; border-radius: 10px; margin-left: .3rem; }
   header .meta { color: var(--muted); font-size: .9rem; }
-  .mnemonic { font-family: system-ui, sans-serif; background:#fff3d4; border:1px solid #f0d089; border-radius:6px; padding:.5rem .8rem; margin:.8rem 0; }
+  .mnemonic { font-family: system-ui, sans-serif; background: var(--mnemonic-bg); border:1px solid var(--mnemonic-bd); border-radius:6px; padding:.5rem .8rem; margin:.8rem 0; color: var(--fg); }
   hr.chap { border:none; border-top:1px solid var(--rule); margin:3rem 0 0; }
 </style>
+<script>
+// Set theme before first paint to avoid a flash. Order: saved choice > OS preference > light.
+(function(){
+  try {
+    var saved = localStorage.getItem('mr-theme');
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = saved || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch(e) { document.documentElement.setAttribute('data-theme','light'); }
+})();
+</script>
 </head>
 <body>
+
+<button id="themeToggle" type="button" aria-label="Toggle light or dark mode">🌙 Dark</button>
 
 <header>
   <h1 style="border:none; margin-top:0;">Essentials of Marketing Research — Study Portal</h1>
@@ -1049,11 +1112,47 @@ window.addEventListener('afterprint', function(){
   document.querySelectorAll('details').forEach(function(d){ if(d.dataset.prevOpen==='0') d.open=false; });
 });
 
+// Theme toggle button + persistence, and re-theme the chart on switch.
+var mrChart = null;
+function isDark(){ return document.documentElement.getAttribute('data-theme') === 'dark'; }
+function paintToggle(){
+  var b = document.getElementById('themeToggle');
+  if (b) b.textContent = isDark() ? '☀️ Light' : '🌙 Dark';
+}
+function applyChartTheme(){
+  if (!mrChart) return;
+  var ink = isDark() ? '#cfd3da' : '#3a3a3a';
+  var grid = isDark() ? 'rgba(255,255,255,0.10)' : 'rgba(0,0,0,0.08)';
+  var bar = isDark() ? '#6cc0e0' : '#1f6f8b';
+  mrChart.data.datasets[0].backgroundColor = bar;
+  ['x','y'].forEach(function(ax){
+    if (mrChart.options.scales[ax]) {
+      mrChart.options.scales[ax].ticks = Object.assign({}, mrChart.options.scales[ax].ticks, { color: ink });
+      mrChart.options.scales[ax].grid  = Object.assign({}, mrChart.options.scales[ax].grid,  { color: grid });
+      if (mrChart.options.scales[ax].title) mrChart.options.scales[ax].title.color = ink;
+    }
+  });
+  if (mrChart.options.plugins && mrChart.options.plugins.legend)
+    mrChart.options.plugins.legend.labels = { color: ink };
+  mrChart.update();
+}
+(function(){
+  var b = document.getElementById('themeToggle');
+  paintToggle();
+  if (b) b.addEventListener('click', function(){
+    var next = isDark() ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('mr-theme', next); } catch(e) {}
+    paintToggle();
+    applyChartTheme();
+  });
+})();
+
 // Chart 1: top-10 org revenue
 (function(){
   var el = document.getElementById('ch1TopOrgs');
   if(!el || !window.Chart) return;
-  new Chart(el, {
+  mrChart = new Chart(el, {
     type: 'bar',
     data: {
       labels: ['Nielsen','Kantar','Ipsos','GfK','IMS Health','Info Resources','INTAGE','Westat','Arbitron','NPD Group'],
@@ -1064,6 +1163,7 @@ window.addEventListener('afterprint', function(){
     options: { responsive: true, plugins: { legend: { display: true } },
       scales: { y: { beginAtZero: true, title: { display: true, text: 'USD millions' } } } }
   });
+  applyChartTheme();
 })();
 </script>
 </body>
