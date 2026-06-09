@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Essentials of Marketing Research — Study Portal (Ch. 1–3)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  :root {
+    --bg: #faf9f7;
+    --fg: #1c1c1c;
+    --muted: #6b7280;
+    --accent: #b8430f;
+    --accent2: #1f6f8b;
+    --rule: #e6e3df;
+    --code-bg: #f1ede7;
+    --card: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: ui-serif, Georgia, "Times New Roman", serif;
+    max-width: 920px; margin: 0 auto; padding: 1.5rem 1.2rem 6rem;
+    background: var(--bg); color: var(--fg); line-height: 1.62;
+  }
+  h1 { font-size: 2rem; margin-top: 3.2rem; border-bottom: 3px solid var(--accent); padding-bottom: .35rem; line-height: 1.2; }
+  h2 { font-size: 1.42rem; margin-top: 2.4rem; color: #2b2b2b; }
+  h3 { font-size: 1.16rem; margin-top: 2rem; color: #333; }
+  h4 { font-size: 1.02rem; margin-top: 1.3rem; }
+  p, li { font-size: 1rem; }
+  a { color: var(--accent2); }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .93rem; background: var(--card); }
+  th, td { border: 1px solid var(--rule); padding: .55rem .75rem; text-align: left; vertical-align: top; }
+  th { background: var(--code-bg); font-family: system-ui, sans-serif; font-size: .86rem; }
+  code { background: var(--code-bg); padding: 0 .25rem; border-radius: 3px; font-size: .9em; }
+
+  /* Citation = quiet sidenote, never a shouting badge */
+  .citation { color: #9aa3ad; font-size: 0.68rem; font-family: inherit; font-style: italic; opacity: 0.78; white-space: nowrap; }
+
+  .verbatim { background: #fff8e1; border-left: 3px solid var(--accent); padding: .5rem .9rem; margin: .8rem 0; font-style: italic; }
+  .callout { background: #eef6ff; border-left: 3px solid var(--accent2); padding: .6rem .9rem; margin: .85rem 0; }
+  .callout strong { color: var(--accent2); }
+  .lecture { background: #f0fff4; border-left: 3px solid #2e8b57; padding: .6rem .9rem; margin: .85rem 0; }
+
+  /* Plain-English chapter explainer box */
+  .plain-english {
+    margin: 18px 0 30px; padding: 18px 22px 8px;
+    border-left: 5px solid #f5b84a; background: #fff8e8;
+    border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+  .plain-english > h3:first-child { margin-top: 0; color: #8a5a00; font-size: 1.08rem; letter-spacing: .2px; }
+  .plain-english h4 { color: #6b4500; margin-top: 18px; margin-bottom: 4px; }
+  .plain-english p, .plain-english li { font-size: 0.98rem; line-height: 1.56; }
+  .plain-english table { background: #fffdf6; }
+  .plain-english code { background: #fff2d4; }
+  .plain-english em { color: #6b4500; font-style: italic; }
+
+  /* Flow diagrams recreated in CSS */
+  .flow { margin: 1.2rem 0; }
+  .flow-step {
+    border: 2px solid #cfcabf; border-radius: 6px; padding: .55rem .8rem; margin: 0 auto;
+    text-align: center; font-family: system-ui, sans-serif; font-size: .92rem; font-weight: 600;
+    max-width: 560px; background: #fff;
+  }
+  .flow-arrow { text-align: center; color: var(--accent); font-size: 1.1rem; line-height: 1; margin: 2px 0; }
+  .flow-step.s1 { background:#f6a96b; } .flow-step.s2 { background:#e9e36b; }
+  .flow-step.s3 { background:#f06ba0; } .flow-step.s4 { background:#5fc96b; }
+  .flow-step.s5 { background:#5fc9b0; color:#0a3; } .flow-step.s6 { background:#5aa9d6; }
+  .flow-step.s5 { color:#063; }
+
+  /* simple 2-up / 3-up card rows for branch diagrams */
+  .branch { display: flex; flex-wrap: wrap; gap: 12px; margin: 1rem 0; }
+  .branch > div { flex: 1 1 220px; border: 2px solid #cfcabf; border-radius: 8px; padding: .7rem .9rem; background: #fff; }
+  .branch h5 { margin: 0 0 .4rem; font-family: system-ui, sans-serif; font-size: .98rem; }
+  .branch ul { margin: .3rem 0 0; padding-left: 1.1rem; }
+  .branch li { font-size: .9rem; }
+  .b-green { background: #eafbe7 !important; } .b-blue { background: #e7f1fb !important; }
+  .b-pink { background: #fde7f1 !important; } .b-orange { background: #fdefe0 !important; }
+  .b-grey { background: #f0f0ee !important; }
+
+  figure { margin: 1.1rem 0; }
+  figure img { width: 100%; max-width: 760px; display: block; border: 1px solid var(--rule); border-radius: 6px; }
+  figcaption { font-family: system-ui, sans-serif; font-size: .85rem; color: var(--muted); margin-top: .35rem; }
+
+  details.deck-quotes { margin: 4px 0 14px; font-size: 0.9rem; }
+  details.deck-quotes > summary { cursor: pointer; color: var(--muted); font-size: 0.82rem; padding: 2px 0; list-style: none; font-family: system-ui, sans-serif; }
+  details.deck-quotes > summary::before { content: "▸ "; color: var(--muted); }
+  details.deck-quotes[open] > summary::before { content: "▾ "; }
+  details.deck-quotes ul, details.deck-quotes p { color: #555; margin: 6px 0; }
+
+  details.exam { margin: .55rem 0; border: 1px solid var(--rule); border-radius: 6px; padding: .15rem .7rem; background: #fff; }
+  details.exam > summary { cursor: pointer; font-weight: 600; font-family: system-ui, sans-serif; font-size: .95rem; padding: .45rem 0; }
+  details.exam[open] > summary { color: var(--accent); }
+  .ans { border-top: 1px dashed var(--rule); padding-top: .5rem; margin-top: .3rem; }
+
+  nav.toc { background: var(--card); border: 1px solid var(--rule); padding: 1rem 1.4rem; margin: 1.6rem 0; border-radius: 8px; font-family: system-ui, sans-serif; font-size: .92rem; }
+  nav.toc strong { font-size: 1.05rem; }
+  nav.toc ul { list-style: none; padding-left: .6rem; margin: .5rem 0; }
+  nav.toc li { margin: .2rem 0; }
+  nav.toc a { text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+  .chip { display:inline-block; font-family: system-ui, sans-serif; font-size: .7rem; background: var(--code-bg); color: var(--muted); padding: .05rem .4rem; border-radius: 10px; margin-left: .3rem; }
+  header .meta { color: var(--muted); font-size: .9rem; }
+  .mnemonic { font-family: system-ui, sans-serif; background:#fff3d4; border:1px solid #f0d089; border-radius:6px; padding:.5rem .8rem; margin:.8rem 0; }
+  hr.chap { border:none; border-top:1px solid var(--rule); margin:3rem 0 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1 style="border:none; margin-top:0;">Essentials of Marketing Research — Study Portal</h1>
+  <p class="meta">Naresh K. Malhotra, <em>Essentials of Marketing Research: A Hands-On Orientation</em> (Global Edition, Pearson 2015). Chapters 1–3. More chapters to be added later.</p>
+  <p class="citation" style="white-space:normal;">Every factual claim is traced to a slide I read visually, cited as [Slide: chN s.NN]. No lecture audio was provided, so there are no [Lec] citations. The amber boxes are a plain-English tutor layer and carry no citations on purpose.</p>
+</header>
+
+<nav class="toc">
+  <strong>Contents</strong>
+  <ul>
+    <li><a href="#chapter-1">Chapter 1 — Introduction to Marketing Research</a> <span class="chip">16 slides</span>
+      <ul>
+        <li><a href="#c1-pe">Plain-English story</a></li>
+        <li><a href="#c1-1">1. What marketing research is</a></li>
+        <li><a href="#c1-2">2. Two big jobs: problem-identification vs problem-solving</a></li>
+        <li><a href="#c1-3">3. Problem-solving research, broken into the 4 Ps</a></li>
+        <li><a href="#c1-4">4. The six-step marketing research process</a></li>
+        <li><a href="#c1-5">5. The role of research inside marketing</a></li>
+        <li><a href="#c1-6">6. The marketing research industry: who supplies it</a></li>
+        <li><a href="#c1-exam">Common confusions · Exam practice · Slide audit</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-2">Chapter 2 — Defining the Problem &amp; Developing an Approach</a> <span class="chip">31 slides</span>
+      <ul>
+        <li><a href="#c2-pe">Plain-English story</a></li>
+        <li><a href="#c2-1">1. Where this chapter sits in the process</a></li>
+        <li><a href="#c2-2">2. The tasks that define a problem</a></li>
+        <li><a href="#c2-3">3. The problem audit &amp; the seven Cs</a></li>
+        <li><a href="#c2-4">4. Environmental context (the PROBLEM acronym)</a></li>
+        <li><a href="#c2-5">5. Management decision problem vs marketing research problem</a></li>
+        <li><a href="#c2-6">6. Defining the problem: broad statement + specific components</a></li>
+        <li><a href="#c2-7">7. Developing an approach: framework, models, RQs, hypotheses</a></li>
+        <li><a href="#c2-exam">Common confusions · Exam practice · Slide audit</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-3">Chapter 3 — Research Design, Secondary &amp; Syndicated Data</a> <span class="chip">51 slides</span>
+      <ul>
+        <li><a href="#c3-pe">Plain-English story</a></li>
+        <li><a href="#c3-1">1. What a research design is</a></li>
+        <li><a href="#c3-2">2. The big family tree of research designs</a></li>
+        <li><a href="#c3-3">3. Exploratory vs conclusive research</a></li>
+        <li><a href="#c3-4">4. Descriptive research (cross-sectional vs longitudinal)</a></li>
+        <li><a href="#c3-5">5. Causal research</a></li>
+        <li><a href="#c3-6">6. Primary vs secondary data</a></li>
+        <li><a href="#c3-7">7. Evaluating &amp; classifying secondary data</a></li>
+        <li><a href="#c3-8">8. Syndicated services &amp; single-source data</a></li>
+        <li><a href="#c3-exam">Common confusions · Exam practice · Slide audit</a></li>
+      </ul>
+    </li>
+  </ul>
+  <p style="font-size:.82rem;color:var(--muted);margin:.6rem 0 0;">Tip: the amber "In Plain English" box at the top of each chapter is collapsed by default. Click it to open the tutor walkthrough.</p>
+</nav>
+
+<!-- ===================================================================== -->
+<!-- ============================ CHAPTER 1 ============================== -->
+<!-- ===================================================================== -->
+<section id="chapter-1">
+<h1>Chapter 1 — Introduction to Marketing Research</h1>
+<p class="citation" style="white-space:normal;">Built from deck "malhotra 01_essentials 1E.pptx", 16 slides, read visually. <span class="citation">[Slide: ch1 s.1]</span></p>
+
+<div class="plain-english" id="c1-pe">
+<h3>💡 In Plain English — Chapter 1, told as one story</h3>
+<p><strong>Running example (used across all three chapters):</strong> <em>Layla owns "Mango Fresh," a small smoothie shop. Lately her sales have slipped and she doesn't know why. Should she change prices? Open a second branch? Run ads? She is about to discover that guessing is expensive, and that there is a disciplined way to get answers. That disciplined way is marketing research.</em></p>
+
+<h4>1. What is marketing research, really?</h4>
+<p>Marketing research is just a <em>careful, honest way of collecting and using information to make better business decisions</em>. Instead of Layla trusting her gut ("I <em>feel</em> like prices are too high"), she gathers real facts, studies them, and lets the facts guide her. The textbook lists five verbs for what research does: it <em>identifies</em> what information is needed, <em>collects</em> it, <em>analyses</em> it, <em>disseminates</em> (shares) the findings, and then those findings get <em>used</em> to make a decision. Memorize the chain: <strong>Identify → Collect → Analyse → Share → Use.</strong></p>
+
+<h4>2. Two reasons a business ever does research (building on #1)</h4>
+<p>Once Layla accepts that research helps, there are exactly two situations she might be in. Either something is wrong and she doesn't even know what ("sales are down, but <em>why</em>?") — that is <strong>problem-identification research</strong>, the detective work that finds hidden problems. Or she already knows the problem and needs to fix it ("I know I must re-price the mango smoothie, how should I?") — that is <strong>problem-solving research</strong>, the repair work. Identification finds the problem; solving fixes it.</p>
+
+<h4>3. Problem-solving research lives inside the "4 Ps" (building on #2)</h4>
+<p>When Layla moves to <em>fixing</em> things, her choices fall into four buckets that marketers call the 4 Ps: <strong>Product, Price, Promotion, and Place (distribution)</strong>, and you add <strong>Segmentation</strong> (which customers to target) on top. So "solving research" might mean studying her menu (product), her prices, her advertising (promotion), or where/how she sells (place). Every fix she could make is really a question about one of these.</p>
+
+<h4>4. There is a fixed six-step recipe for any research project (building on #3)</h4>
+<p>Whatever the question, professionals follow the same six steps in order, like a recipe: <strong>(1) define the problem, (2) develop an approach, (3) design the research, (4) collect the data, (5) analyse it, (6) write the report.</strong> Notice step 1 is "define the problem" — that is so important it gets all of Chapter 2. And step 3, "design the research," gets all of Chapter 3. So Chapters 1, 2 and 3 are really just zooming in on the front half of this one recipe.</p>
+
+<h4>5. Research sits in the middle of everything marketing does (building on #4)</h4>
+<p>Why does any of this matter? Because research is the bridge between Layla's <em>customers</em> (and the messy outside world she can't control: the economy, competitors, the law) and the <em>decisions she can</em> control (her 4 Ps). Research feeds her decision-making with facts so her controllable choices actually fit the uncontrollable world. It assesses what she needs to know, and then provides it.</p>
+
+<h4>6. Layla doesn't have to do it all herself — there is an industry (building on #5)</h4>
+<p>Finally, research can be done <em>internally</em> (Layla and her staff) or bought from <em>external</em> firms. Big external firms come in two flavours: <strong>full-service</strong> (they do the whole project) and <strong>limited-service</strong> (they do one piece, like running the field interviews). There is a whole global industry of these companies — Nielsen, Kantar, Ipsos and so on — earning billions. Layla is a tiny customer of a giant ecosystem.</p>
+
+<h4>How Chapter 1 connects together:</h4>
+<p>Layla learns that <em>research</em> (Identify→Collect→Analyse→Share→Use) is done either to <em>find</em> a hidden problem or to <em>solve</em> a known one; that solving lives inside the 4 Ps; that every project follows the same six-step recipe; that research is the bridge between her uncontrollable world and her controllable decisions; and that she can do it herself or hire one of many specialist firms. Chapter 2 now zooms into step 1 (defining the problem) and Chapter 3 into step 3 (designing the research).</p>
+</div>
+
+<h2>In one sentence</h2>
+<p>Marketing research is the systematic, objective process of identifying, collecting, analysing, disseminating, and using information to make better marketing decisions — done either to identify hidden problems or to solve known ones, following a fixed six-step process, and supplied by an internal team or an external industry. <span class="citation">[Slide: ch1 s.2]</span> <span class="citation">[Slide: ch1 s.10]</span></p>
+
+<h2>In plain language</h2>
+<p>This chapter answers four beginner questions: <em>What is marketing research? What kinds are there? How is a project actually run, step by step? And who in the world does this work?</em> It does not yet teach you how to <em>do</em> any single step — that is what later chapters are for. Think of Chapter 1 as the map you look at before the journey: it shows the whole territory so the detailed chapters make sense.</p>
+
+<h2>Core concepts</h2>
+
+<h3 id="c1-1">1. What marketing research is</h3>
+<p>The deck gives a formal, deliberately precise definition. It is worth knowing the exact wording because the five verbs in the middle are frequently tested.</p>
+<p class="verbatim"><strong>Marketing Research</strong> is the systematic and objective <strong>identification, collection, analysis, dissemination,</strong> and <strong>use of information</strong>, for the purpose of improving decision making related to the <strong>identification</strong> and <strong>solution of problems and opportunities</strong> in marketing. <span class="citation">[Slide: ch1 s.2]</span></p>
+<p>Two words in that definition do a lot of work. <em>Systematic</em> means the research is planned and orderly, not random poking around. <em>Objective</em> means it is unbiased — you collect the data honestly even if the answer is not the one you were hoping for. The five activities form a pipeline, and the slide draws them as a downward staircase: information needed → collection of data → analysis of data → dissemination of information → use of information. <span class="citation">[Slide: ch1 s.3]</span></p>
+
+<div class="flow">
+  <div class="flow-step">Identification of Information Needed</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step">Collection of Data</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step">Analysis of Data</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step">Dissemination of Information</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step">Use of Information</div>
+</div>
+<p class="citation" style="white-space:normal;">Recreation of Figure 1.1, "Defining Marketing Research." The slide pairs this staircase with a side caption, "Identifying and Solving Marketing Problems," signalling that the whole pipeline exists to do those two things. <span class="citation">[Slide: ch1 s.3]</span></p>
+
+<p>A closely related slide, simply titled "Market Research," restates the same idea as the researcher's four duties: marketing research <strong>specifies the information</strong> needed to address the issues, <strong>manages and implements the data-collection process</strong>, <strong>analyses the results</strong>, and <strong>communicates the findings and their implications</strong>. <span class="citation">[Slide: ch1 s.4]</span> Notice this is the same pipeline seen from the researcher's chair rather than the activity's.</p>
+
+<h3 id="c1-2">2. Two big jobs: problem-identification vs problem-solving research</h3>
+<p>The single most testable distinction in the chapter. All marketing research splits into two classes depending on <em>why</em> you are doing it.</p>
+<p class="verbatim"><strong>Problem-Identification Research:</strong> research undertaken to help identify problems which are not necessarily apparent on the surface and yet exist or are likely to arise in the future. Examples: market potential, market share, image, market characteristics, sales analysis, forecasting, and trends research. <span class="citation">[Slide: ch1 s.5]</span></p>
+<p class="verbatim"><strong>Problem-Solving Research:</strong> research undertaken to help solve specific marketing problems. Examples: segmentation, product, pricing, promotion, and distribution research. <span class="citation">[Slide: ch1 s.5]</span></p>
+<p>In plain terms: identification research is the smoke detector — it tells you there <em>is</em> a fire (or soon will be) even when you can't see flames. Solving research is the firefighter — once you know what is burning, it tells you how to put it out. Layla's "my sales are down but I don't know why" is identification; her later "I've decided to re-price, now how exactly?" is solving.</p>
+
+<figure>
+  <img src="extracted/ch01/slide-06.png" alt="Figure 1.2: a tree with Marketing Research at the top splitting into Problem-Identification Research and Problem-Solving Research, each listing its example sub-types.">
+  <figcaption>Figure 1.2, "A Classification of Marketing Research." Recreated structure below in words so it is readable without the image. <span class="citation">[Slide: ch1 s.6]</span></figcaption>
+</figure>
+<div class="branch">
+  <div class="b-green">
+    <h5>Problem-Identification Research<br><span style="font-weight:400;font-size:.85rem;">(Identify Underlying Problems)</span></h5>
+    <ul>
+      <li>Market Potential Research</li>
+      <li>Market Share Research</li>
+      <li>Image Research</li>
+      <li>Market Characteristics Research</li>
+      <li>Forecasting Research</li>
+      <li>Business Trends Research</li>
+    </ul>
+  </div>
+  <div class="b-blue">
+    <h5>Problem-Solving Research<br><span style="font-weight:400;font-size:.85rem;">(Address Identified Problems)</span></h5>
+    <ul>
+      <li>Segmentation Research</li>
+      <li>Product Research</li>
+      <li>Pricing Research</li>
+      <li>Promotion Research</li>
+      <li>Distribution Research</li>
+    </ul>
+  </div>
+</div>
+<p class="citation" style="white-space:normal;">Both branches descend from a single "Marketing Research" node at the top, and an arrow runs from the identification branch to the solving branch — you usually identify first, then solve. <span class="citation">[Slide: ch1 s.6]</span></p>
+
+<h3 id="c1-3">3. Problem-solving research, broken into the 4 Ps</h3>
+<p>The deck spends three slides drilling into the five sub-types of problem-solving research. These map onto the marketing mix (the "4 Ps": Product, Price, Promotion, Place/Distribution) plus Segmentation.</p>
+
+<table>
+  <thead><tr><th>Sub-type</th><th>What it studies (from the slides)</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Segmentation Research</strong></td><td>Determine the basis of segmentation; establish market potential and responsiveness for various segments; select target markets; create lifestyle profiles (demography, media, and product-image characteristics). <span class="citation">[Slide: ch1 s.7]</span></td></tr>
+    <tr><td><strong>Product Research</strong></td><td>Test concept; determine optimal product design; package tests; product modification; brand positioning and repositioning; test marketing; control score tests. <span class="citation">[Slide: ch1 s.7]</span></td></tr>
+    <tr><td><strong>Pricing Research</strong></td><td>Pricing policies; importance of price in brand selection; product-line pricing; price elasticity of demand; initiating and responding to price changes. <span class="citation">[Slide: ch1 s.8]</span></td></tr>
+    <tr><td><strong>Promotional Research</strong></td><td>Optimal promotional budget; sales-promotion relationship; optimal promotional mix; copy decisions; media decisions; creative advertising testing; evaluation of advertising effectiveness; claim substantiation. <span class="citation">[Slide: ch1 s.8]</span></td></tr>
+    <tr><td><strong>Distribution Research</strong></td><td>Determines types of distribution, attitudes of channel members, intensity of wholesale &amp; resale coverage, channel margins, and location of retail and wholesale outlets. <span class="citation">[Slide: ch1 s.9]</span></td></tr>
+  </tbody>
+</table>
+
+<p>Each slide carries a real-world callout box, and these are gold for remembering the concept:</p>
+<div class="callout">Pricing slide: "Firms such as <strong>Unilever</strong> combine everyday low prices with selective promotions to appeal to cost-conscious consumers." <span class="citation">[Slide: ch1 s.8]</span></div>
+<div class="callout">Distribution slide: "<strong>Wal-Mart</strong> does substantial distribution research and as a result has significantly lower distribution costs as compared to its competitors." <span class="citation">[Slide: ch1 s.9]</span></div>
+<p>So when Layla finally decides to act on her smoothie problem, whatever she does is one of these five: re-targeting customers (segmentation), reworking the menu (product), changing prices (pricing), advertising differently (promotion), or changing where/how she sells (distribution).</p>
+
+<h3 id="c1-4">4. The six-step marketing research process</h3>
+<p>This is the backbone of the entire course. Every later chapter is "here is how to do step <em>N</em> well." Memorise the six steps in order.</p>
+<div class="flow">
+  <div class="flow-step s1">Step 1: Defining the Problem</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s2">Step 2: Developing an Approach to the Problem</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s3">Step 3: Formulating a Research Design</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s4">Step 4: Doing Field Work / Collecting Data</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s5">Step 5: Preparing &amp; Analyzing Data</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s6">Step 6: Preparing &amp; Presenting the Report</div>
+</div>
+<p class="citation" style="white-space:normal;">Recreation of Figure 1.3, "The Marketing Research Process." <span class="citation">[Slide: ch1 s.10]</span></p>
+
+<p>Step 3 (Formulating a Research Design) is itself a bundle of eight tasks, which the slide "enlarges" on the next page. These eight reappear as the table of contents for the rest of the book:</p>
+<table>
+  <thead><tr><th>#</th><th>Step-3 sub-task</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Secondary &amp; Syndicated Data Analysis</td></tr>
+    <tr><td>2</td><td>Qualitative Research</td></tr>
+    <tr><td>3</td><td>Survey &amp; Observation Research</td></tr>
+    <tr><td>4</td><td>Experimental Research</td></tr>
+    <tr><td>5</td><td>Measurement &amp; Scaling</td></tr>
+    <tr><td>6</td><td>Questionnaire &amp; Form Design</td></tr>
+    <tr><td>7</td><td>Sampling Process &amp; Sample Size</td></tr>
+    <tr><td>8</td><td>Preliminary Plan of Data Analysis</td></tr>
+  </tbody>
+</table>
+<p class="citation" style="white-space:normal;">The "Step 3 enlarged" slide lists all eight sub-tasks inside a single box. <span class="citation">[Slide: ch1 s.11]</span></p>
+<p>A separate concept-map slide (Figure 1.9) redraws the whole six-step process as a flowchart and adds that after the report and follow-up, the project may "begin a new cycle" or "lead to another project" — research is a loop, not a one-shot. <span class="citation">[Slide: ch1 s.16]</span></p>
+
+<h3 id="c1-5">5. The role of research inside marketing</h3>
+<p>Figure 1.4 places marketing research at the centre of a wheel. On the outside sit things the manager <em>cannot</em> control and things she <em>can</em>; research is the hub that connects them by feeding the decision.</p>
+<figure>
+  <img src="extracted/ch01/slide-12.png" alt="Figure 1.4: Marketing Research in the centre, surrounded by Customer Groups, Uncontrollable Environmental Factors, Controllable Marketing Variables, and feeding Marketing Decision Making via Assessing Information Needs and Providing Information.">
+  <figcaption>Figure 1.4, "The Role of Marketing Research in Marketing." <span class="citation">[Slide: ch1 s.12]</span></figcaption>
+</figure>
+<p>Reading the figure in words: <strong>Marketing Research</strong> sits in the middle and links three outer groups to <strong>Marketing Decision Making</strong>:</p>
+<ul>
+  <li><strong>Customer Groups</strong> — consumers, employees, channel members, suppliers. <span class="citation">[Slide: ch1 s.12]</span></li>
+  <li><strong>Uncontrollable Environmental Factors</strong> — economy, technology, competition, laws and regulations, social and cultural factors, political factors. (These are the world Layla cannot change.) <span class="citation">[Slide: ch1 s.12]</span></li>
+  <li><strong>Controllable Marketing Variables</strong> — segmentation, product, pricing, promotion, distribution. (These are Layla's levers — the same 4 Ps + segmentation from section 3.) <span class="citation">[Slide: ch1 s.12]</span></li>
+</ul>
+<p>Research plays two roles in the loop: <strong>assessing information needs</strong> and <strong>providing information</strong>, and the marketing managers then use it for market segmentation, target-market selection, marketing programs, and performance &amp; control. <span class="citation">[Slide: ch1 s.12]</span> The takeaway: research is not a side activity, it is the information engine in the middle of every marketing decision.</p>
+
+<h3 id="c1-6">6. The marketing research industry: who supplies it</h3>
+<p>Research is either produced <strong>internally</strong> (by a department inside the company) or bought from <strong>external</strong> suppliers, and the external world divides into full-service and limited-service firms.</p>
+<figure>
+  <img src="extracted/ch01/slide-13.png" alt="Figure 1.5: Research Suppliers split into Internal and External; External splits into Full Service (Customized, Syndicated, Internet/Social Media Services) and Limited Service (Field, Qualitative, Analytical, Other Services).">
+  <figcaption>Figure 1.5, "Marketing Research Industry: Suppliers &amp; Services." <span class="citation">[Slide: ch1 s.13]</span></figcaption>
+</figure>
+<div class="branch">
+  <div class="b-blue"><h5>Internal suppliers</h5><p style="font-size:.9rem;margin:.2rem 0 0;">A research function inside the company itself.</p></div>
+  <div class="b-green"><h5>External · Full-service</h5><ul><li>Syndicated services</li><li>Standardized services</li><li>Customized services</li><li>Internet services</li></ul></div>
+  <div class="b-orange"><h5>External · Limited-service</h5><ul><li>Field services</li><li>Focus groups &amp; qualitative services</li><li>Technical &amp; analytical services</li><li>Other services</li></ul></div>
+</div>
+<p class="citation" style="white-space:normal;">The supplier list is given on Figure 1.5 (the tree) and restated on the "Marketing Research Suppliers &amp; Services" slide, which adds a callout: "<strong>Burke</strong> is well known for its customized services." <span class="citation">[Slide: ch1 s.13]</span> <span class="citation">[Slide: ch1 s.14]</span></p>
+
+<p>Finally, Table 1.1 lists the ten largest research organisations in the world. The revenue column is worth seeing as a chart, because the drop-off from Nielsen to the rest is dramatic.</p>
+<figure style="max-width:760px;">
+  <canvas id="ch1TopOrgs" height="230"></canvas>
+  <figcaption>Global revenue (USD millions, 2012) of the top 10 research organisations, recreated from Table 1.1. <span class="citation">[Slide: ch1 s.15]</span></figcaption>
+</figure>
+<details class="deck-quotes"><summary>Full Table 1.1 — Top 10 Global Research Organizations (all cells)</summary>
+<table>
+  <thead><tr><th>Rank 2012</th><th>Rank 2011</th><th>Organization</th><th>Headquarters</th><th>Parent country</th><th>Website</th><th>No. of countries with subsidiaries / branch offices</th><th>Global revenue (USD m)</th><th>% of global revenue from outside home country</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>1</td><td>Nielsen Holdings</td><td>New York</td><td>U.S.</td><td>Nielsen.com</td><td>100</td><td>5,429.0</td><td>51.2</td></tr>
+    <tr><td>2</td><td>2</td><td>Kantar</td><td>London &amp; Fairfield, Conn.</td><td>U.K.</td><td>Kantar.com</td><td>80</td><td>3,338.6</td><td>72.2</td></tr>
+    <tr><td>3</td><td>3</td><td>Ipsos Group SA</td><td>Paris</td><td>France</td><td>Ipsos.com</td><td>85</td><td>2,301.1</td><td>93.2</td></tr>
+    <tr><td>4</td><td>4</td><td>GfK SE</td><td>Nuremberg</td><td>Germany</td><td>Gfk.com</td><td>68</td><td>1,947.8</td><td>70.0</td></tr>
+    <tr><td>5</td><td>6</td><td>IMS Health Inc.</td><td>Parsippany, N.J.</td><td>U.S.</td><td>Imshealth.com</td><td>74</td><td>775.0</td><td>65.0</td></tr>
+    <tr><td>6</td><td>5</td><td>Information Resources</td><td>Chicago</td><td>U.S.</td><td>IRIworldwide.com</td><td>8</td><td>763.8</td><td>37.3</td></tr>
+    <tr><td>7</td><td>8</td><td>INTAGE Inc.</td><td>Tokyo</td><td>Japan</td><td>Intage.co.jp</td><td>7</td><td>500.3</td><td>2.6</td></tr>
+    <tr><td>8</td><td>7</td><td>Westat Inc.</td><td>Rockville, Md.</td><td>U.S.</td><td>Westat.com</td><td>8</td><td>495.9</td><td>1.0</td></tr>
+    <tr><td>9</td><td>9</td><td>Arbitron Inc.</td><td>Columbia, VA</td><td>U.S.</td><td>Arbitron.com</td><td>3</td><td>449.9</td><td>1.3</td></tr>
+    <tr><td>10</td><td>10</td><td>The NPD Group</td><td>Port Washington, N.Y.</td><td>U.S.</td><td>NPD.com</td><td>13</td><td>272.0</td><td>29.5</td></tr>
+  </tbody>
+</table>
+<p class="citation" style="white-space:normal;">Every cell reproduced verbatim from Table 1.1. <span class="citation">[Slide: ch1 s.15]</span></p>
+</details>
+
+<h2 id="c1-exam">Common confusions</h2>
+<table>
+  <thead><tr><th>Concept A</th><th>Concept B</th><th>Key difference</th></tr></thead>
+  <tbody>
+    <tr><td>Problem-<strong>identification</strong> research</td><td>Problem-<strong>solving</strong> research</td><td>Identification <em>finds</em> a problem that is not obvious (market potential, share, forecasting, trends); solving <em>fixes</em> a known problem (segmentation, product, price, promotion, distribution). <span class="citation">[Slide: ch1 s.5]</span></td></tr>
+    <tr><td>Uncontrollable environmental factors</td><td>Controllable marketing variables</td><td>Uncontrollable = economy, technology, competition, laws, social/cultural, political. Controllable = the marketing mix (segmentation, product, price, promotion, distribution). Research links the two. <span class="citation">[Slide: ch1 s.12]</span></td></tr>
+    <tr><td>Full-service supplier</td><td>Limited-service supplier</td><td>Full-service firms can run the whole project (syndicated, standardized, customized, internet). Limited-service firms do one slice (field, qualitative, analytical, other). <span class="citation">[Slide: ch1 s.14]</span></td></tr>
+    <tr><td>"Marketing research"</td><td>"Market research"</td><td>The slides use them almost interchangeably, but "marketing research" is the broad discipline (all marketing decisions) while "market research" colloquially leans toward studying a specific market. The formal definition is for <em>marketing</em> research. <span class="citation">[Slide: ch1 s.2]</span> <span class="citation">[Slide: ch1 s.4]</span></td></tr>
+  </tbody>
+</table>
+
+<h2>Exam practice</h2>
+<details class="exam"><summary>Q1 (definition recall). List, in order, the five activities in the formal definition of marketing research.</summary><div class="ans">Identification, collection, analysis, dissemination, and use of information. (Mnemonic: <strong>I-C-A-D-U</strong>.) <span class="citation">[Slide: ch1 s.2]</span></div></details>
+<details class="exam"><summary>Q2 (classification). A firm wants to know whether its brand image is quietly eroding before it shows up in sales. Is this problem-identification or problem-solving research?</summary><div class="ans"><strong>Problem-identification research</strong> — image research is explicitly listed as an example, and the goal is to surface a problem that is "not necessarily apparent on the surface." <span class="citation">[Slide: ch1 s.5]</span></div></details>
+<details class="exam"><summary>Q3 (matching). Which sub-type of problem-solving research covers "price elasticity of demand" and "initiating and responding to price changes"?</summary><div class="ans">Pricing research. <span class="citation">[Slide: ch1 s.8]</span></div></details>
+<details class="exam"><summary>Q4 (process). Name the six steps of the marketing research process in order.</summary><div class="ans">(1) Defining the problem, (2) developing an approach to the problem, (3) formulating a research design, (4) doing field work / collecting data, (5) preparing &amp; analyzing data, (6) preparing &amp; presenting the report. <span class="citation">[Slide: ch1 s.10]</span></div></details>
+<details class="exam"><summary>Q5 (industry). Nielsen is the world's largest research organisation by revenue. Roughly how much larger was its 2012 global revenue than the #2 firm, Kantar?</summary><div class="ans">Nielsen $5,429.0m vs Kantar $3,338.6m — about 1.6× larger, and more than the #3 through #10 firms in many comparisons. The point of the chart is the steep drop-off after the top four. <span class="citation">[Slide: ch1 s.15]</span></div></details>
+<details class="exam"><summary>Q6 (true/false). "Marketing research is only used to solve problems that already exist." True or false?</summary><div class="ans"><strong>False.</strong> It is also used to <em>identify</em> problems (and opportunities) that are not yet apparent — that is the whole point of problem-identification research. <span class="citation">[Slide: ch1 s.5]</span> <span class="citation">[Slide: ch1 s.2]</span></div></details>
+
+<h2>Slide coverage audit — Chapter 1</h2>
+<table>
+  <thead><tr><th>Slide</th><th>Banner / title</th><th>Portal section</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Chapter 1 title — Introduction to Marketing Research</td><td>Chapter header</td></tr>
+    <tr><td>2</td><td>Definition of Marketing Research</td><td>§1 (verbatim definition)</td></tr>
+    <tr><td>3</td><td>Figure 1.1 Defining Marketing Research</td><td>§1 (staircase flow)</td></tr>
+    <tr><td>4</td><td>Market Research (researcher's four duties)</td><td>§1</td></tr>
+    <tr><td>5</td><td>Classification of Marketing Research</td><td>§2 (both verbatim definitions)</td></tr>
+    <tr><td>6</td><td>Figure 1.2 A Classification of Marketing Research</td><td>§2 (branch diagram)</td></tr>
+    <tr><td>7</td><td>Problem-Solving Research (Segmentation, Product)</td><td>§3 (table rows)</td></tr>
+    <tr><td>8</td><td>Problem-Solving Research Cont. (Pricing, Promotional)</td><td>§3 (table rows + Unilever callout)</td></tr>
+    <tr><td>9</td><td>Problem-Solving Research Cont. (Distribution)</td><td>§3 (table row + Wal-Mart callout)</td></tr>
+    <tr><td>10</td><td>Figure 1.3 The Marketing Research Process</td><td>§4 (six-step flow)</td></tr>
+    <tr><td>11</td><td>Step 3 enlarged (8 sub-tasks)</td><td>§4 (eight-task table)</td></tr>
+    <tr><td>12</td><td>Figure 1.4 The Role of Marketing Research</td><td>§5 (figure + word breakdown)</td></tr>
+    <tr><td>13</td><td>Figure 1.5 Industry: Suppliers &amp; Services</td><td>§6 (figure + branch cards)</td></tr>
+    <tr><td>14</td><td>Marketing Research Suppliers &amp; Services</td><td>§6 (Burke callout)</td></tr>
+    <tr><td>15</td><td>Table 1.1 Top 10 Global Research Organizations</td><td>§6 (chart + full table)</td></tr>
+    <tr><td>16</td><td>Figure 1.9 Concept Map for the MR Process</td><td>§4 (loop / new-cycle note)</td></tr>
+  </tbody>
+</table>
+</section>
+
+<hr class="chap">
+<!-- ===================================================================== -->
+<!-- ============================ CHAPTER 2 ============================== -->
+<!-- ===================================================================== -->
+<section id="chapter-2">
+<h1>Chapter 2 — Defining the Marketing Research Problem &amp; Developing an Approach</h1>
+<p class="citation" style="white-space:normal;">Built from deck "malhotra 02_essentials 1E.pptx", 31 slides, read visually. <span class="citation">[Slide: ch2 s.1]</span></p>
+
+<div class="plain-english" id="c2-pe">
+<h3>💡 In Plain English — Chapter 2, told as one story</h3>
+<p><strong>Running example (continued):</strong> <em>Layla's sales at Mango Fresh are down. In Chapter 1 she learned there is a six-step recipe. This chapter is all about step 1 — and it turns out "defining the problem" is the hardest and most important step of the whole project. Get it wrong and every later step, however well executed, answers the wrong question.</em></p>
+
+<h4>1. Symptom is not the same as cause</h4>
+<p>Layla's first instinct is "my problem is that sales are down." But falling sales is a <em>symptom</em>, like a fever. The real <em>cause</em> could be anything: a new competitor, a tired menu, bad weather, a price that feels too high. If she researches the symptom ("how do I boost this month's sales?") she'll get a band-aid. The whole chapter exists to push her from the symptom to the underlying cause.</p>
+
+<h4>2. How do you dig from symptom to cause? Four tasks (building on #1)</h4>
+<p>To define the problem properly, you do four things: <strong>talk to the decision-makers</strong> (here, Layla herself and her manager), <strong>interview industry experts</strong> (a smoothie-industry veteran, a supplier), <strong>analyse secondary data</strong> (existing reports, her own past sales records), and run a little <strong>qualitative research</strong> (chat with a few customers). Together these reveal the <em>environmental context</em> — everything going on around the problem.</p>
+
+<h4>3. A structured way to interrogate the problem: the problem audit and the seven Cs (building on #2)</h4>
+<p>A <strong>problem audit</strong> is a thorough interview with the decision-maker that walks through the history of the problem, the options available, how each will be judged, and how the answer will actually be used. And because all of this depends on the researcher and the manager getting along, the book lists <strong>seven Cs</strong> of a healthy researcher–manager relationship (Communication, Cooperation, Confidence, Candor, Closeness, Continuity, Creativity). If Layla hires a researcher who never really listens to her, the project is doomed before it starts.</p>
+
+<h4>4. Don't forget the world around the problem: PROBLEM (building on #3)</h4>
+<p>Before defining anything, the researcher scans the <em>environmental context</em>, summarised by the acronym <strong>PROBLEM</strong>: Past information, Resources/constraints, Objectives of the decision-maker, Buyer behaviour, Legal environment, Economic environment, Marketing &amp; technological skills. For Layla: what do past sales show? what's her budget? what does she actually want? how do smoothie buyers behave? any regulations? the local economy? her own marketing know-how?</p>
+
+<h4>5. The single most important distinction in the chapter: two kinds of "problem" (building on #4)</h4>
+<p>Now the key idea. There are <strong>two</strong> problems hiding inside every project. The <strong>Management Decision Problem (MDP)</strong> asks <em>what the decision-maker needs to do</em> — it is action-oriented ("Should Layla lower her prices?"). The <strong>Marketing Research Problem (MRP)</strong> asks <em>what information is needed and how to get it</em> — it is information-oriented ("Determine the price elasticity of demand for Mango Fresh smoothies"). The MDP focuses on symptoms; the MRP focuses on underlying causes. Translating the MDP into a good MRP is the core skill of this chapter.</p>
+
+<h4>6. Define the MRP at two levels: broad then specific (building on #5)</h4>
+<p>A good marketing research problem is stated <em>twice</em>: once as a <strong>broad statement</strong> (general, gives perspective) and then broken into <strong>specific components</strong> (the exact sub-questions to research). Too broad and you have no guidance; too narrow and you miss things. It's like Goldilocks — you want it just right.</p>
+
+<h4>7. Once defined, you "develop an approach" (building on #6)</h4>
+<p>Step 2 of the recipe. Having defined <em>what</em> to research, Layla's researcher now decides <em>how to think about it</em>: build an <strong>analytical framework and models</strong> (a theory of what drives smoothie sales), turn the components into <strong>research questions</strong> (refined sub-questions) and <strong>hypotheses</strong> (educated guesses at the answers, to be tested), and finally write down the <strong>specification of information needed</strong> for each component. Now, and only now, is she ready for Chapter 3, where she designs the actual study.</p>
+
+<h4>How Chapter 2 connects together:</h4>
+<p>Layla moves from a <em>symptom</em> (sales down) to a properly defined problem by doing four tasks, auditing the problem, and scanning the PROBLEM context; she separates the action-oriented <em>Management Decision Problem</em> from the information-oriented <em>Marketing Research Problem</em>; she states that research problem broadly and then in specific components; and finally she develops an approach (framework → models → research questions → hypotheses → information needed). That hand-off — a defined problem plus an approach — is exactly the input Chapter 3 needs to design the study.</p>
+</div>
+
+<h2>In one sentence</h2>
+<p>Before any data is collected you must convert a vague management symptom into a precisely defined, information-oriented marketing research problem — stated broadly and then in specific components — and wrap it in an "approach" of frameworks, models, research questions, and hypotheses. <span class="citation">[Slide: ch2 s.13]</span> <span class="citation">[Slide: ch2 s.17]</span></p>
+
+<h2>In plain language</h2>
+<p>Chapter 1 said step 1 of the process is "define the problem." This chapter is the entire how-to for that step (plus step 2, "develop an approach"). Its big warning is that beginners define the <em>symptom</em> instead of the <em>cause</em>, and its big tool is the split between the <em>management decision problem</em> (what to do) and the <em>marketing research problem</em> (what to find out). Almost everything else hangs off that one distinction.</p>
+
+<h2>Core concepts</h2>
+
+<h3 id="c2-1">1. Where this chapter sits in the process</h3>
+<p>The deck opens by replaying the six-step process from Chapter 1 and putting an arrow next to <strong>Step 1 (Defining the Problem)</strong> and <strong>Step 2 (Developing an Approach)</strong> — the two steps this chapter owns. <span class="citation">[Slide: ch2 s.2]</span> Step 3 and beyond stay greyed out for later chapters. <span class="citation">[Slide: ch2 s.3]</span></p>
+<p>Figure 2.2 then gives the master map for the chapter, which is worth holding in your head as you read:</p>
+<figure>
+  <img src="extracted/ch02/slide-04.png" alt="Figure 2.2: Tasks Involved feed Environmental Context, which feeds Step 1 Problem Definition (Management Decision Problem to Marketing Research Problem), which feeds Step 2 Approach to the Problem (Analytical Framework, Research Questions and Hypotheses, Specification of Information Needed), which feeds Step 3 Research Design.">
+  <figcaption>Figure 2.2, "The Problem Definition &amp; Approach Development Process." <span class="citation">[Slide: ch2 s.4]</span></figcaption>
+</figure>
+<p>In words, the figure stacks five layers, each feeding the one below:</p>
+<div class="flow">
+  <div class="flow-step s1">Tasks Involved: discussions with decision makers · interviews with experts · secondary data analysis · qualitative research</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s4">Environmental Context of the Problem</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s2">Step 1: Problem Definition — Management Decision Problem → Marketing Research Problem</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s3">Step 2: Approach to the Problem — analytical framework &amp; models · research questions &amp; hypotheses · specification of information needed</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s6">Step 3: Research Design</div>
+</div>
+<p class="citation" style="white-space:normal;">Every box and arrow above is reproduced from Figure 2.2. <span class="citation">[Slide: ch2 s.4]</span></p>
+
+<h3 id="c2-2">2. The tasks that define a problem</h3>
+<p>Four tasks turn a vague worry into a defined problem. The deck bolds the source of each.</p>
+<table>
+  <thead><tr><th>Task</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td>Discussions with <strong>Decision Makers</strong></td><td>The problem definition <em>begins</em> here. You sit with the people who will act on the research. <span class="citation">[Slide: ch2 s.5]</span></td></tr>
+    <tr><td>Interviews with <strong>Industry Experts</strong></td><td>People who know the industry but are outside the immediate decision. <span class="citation">[Slide: ch2 s.5]</span></td></tr>
+    <tr><td><strong>Secondary Data</strong> Analysis</td><td>Information that already exists (covered in depth in Chapter 3). <span class="citation">[Slide: ch2 s.5]</span></td></tr>
+    <tr><td><strong>Qualitative Research</strong></td><td>Small-scale, open-ended exploration like focus groups (covered in Chapter 4). <span class="citation">[Slide: ch2 s.5]</span></td></tr>
+  </tbody>
+</table>
+<div class="callout"><strong>Callout on the slide:</strong> "Problem definition begins with discussions with the key decision maker(s)." <span class="citation">[Slide: ch2 s.5]</span></div>
+
+<h3 id="c2-3">3. The problem audit and the seven Cs</h3>
+<p>The <strong>problem audit</strong> is a structured, comprehensive interview with the decision-maker, defined on the slide:</p>
+<p class="verbatim">The <strong>problem audit</strong> is a comprehensive examination of a marketing problem with the purpose of understanding its origin and nature. <span class="citation">[Slide: ch2 s.6]</span></p>
+<p>It works through seven issues. Reproduced exactly, the audit asks about:</p>
+<ol>
+  <li>The events that led to the decision that action is needed; the history of the problem. <span class="citation">[Slide: ch2 s.6]</span></li>
+  <li>The alternative courses of action available to the decision-maker (DM). <span class="citation">[Slide: ch2 s.6]</span></li>
+  <li>The criteria that will be used to evaluate the alternative courses of action. <span class="citation">[Slide: ch2 s.6]</span></li>
+  <li>The potential actions that are likely to be suggested based on the research findings. <span class="citation">[Slide: ch2 s.6]</span></li>
+  <li>The information that is needed to answer the DM's questions. <span class="citation">[Slide: ch2 s.7]</span></li>
+  <li>The manner in which the DM will use each item of information in making the decision. <span class="citation">[Slide: ch2 s.7]</span></li>
+  <li>The corporate culture as it relates to decision making. <span class="citation">[Slide: ch2 s.7]</span></li>
+</ol>
+<p>The same seven appear redrawn as a vertical flow on the "Conducting a Problem Audit" slide (History of the Problem → Alternative Courses of Action → Criteria for Evaluating → Nature of Potential Actions → Information Needed → How Each Item Will Be Used → Corporate Decision-Making Culture). <span class="citation">[Slide: ch2 s.9]</span></p>
+
+<p>Because the audit depends on a good working relationship, the deck lists the <strong>Seven Cs of Interaction</strong> between the decision-maker and researcher:</p>
+<div class="mnemonic"><strong>The 7 Cs:</strong> Communication · Cooperation · Confidence · Candor · Closeness · Continuity · Creativity. <span class="citation">[Slide: ch2 s.8]</span></div>
+<div class="callout">"Emphasis on excellent client relationship has enabled the <strong>Nielsen</strong> company to become the number-one marketing research firm globally." <span class="citation">[Slide: ch2 s.8]</span></div>
+
+<h3 id="c2-4">4. Environmental context — the PROBLEM acronym</h3>
+<p>Before defining the problem you study the environment around it. Figure 2.4 lists seven factors, and a later slide packages them into the acronym <strong>PROBLEM</strong>.</p>
+<div class="flow">
+  <div class="flow-step s1">Past Information and Forecasts</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s2">Resources and Constraints</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step">Objectives of the Decision Maker</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s3">Buyer Behavior</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s4">Legal Environment</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s5">Economic Environment</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s6">Marketing and Technological Skills</div>
+</div>
+<p class="citation" style="white-space:normal;">Recreation of Figure 2.4, "Factors to be Considered in the Environment Context of the Problem." <span class="citation">[Slide: ch2 s.12]</span></p>
+<div class="mnemonic"><strong>PROBLEM</strong> = <strong>P</strong>ast information and forecasts · <strong>R</strong>esources and constraints · <strong>O</strong>bjectives of the decision maker · <strong>B</strong>uyer behavior · <strong>L</strong>egal environment · <strong>E</strong>conomic environment · <strong>M</strong>arketing and technological skills. <span class="citation">[Slide: ch2 s.31]</span></div>
+
+<h3 id="c2-5">5. Management decision problem vs marketing research problem ⭐</h3>
+<p>This is the heart of the chapter and the most exam-heavy idea in it. Read it twice.</p>
+<table>
+  <thead><tr><th>Management Decision Problem (MDP)</th><th>Marketing Research Problem (MRP)</th></tr></thead>
+  <tbody>
+    <tr><td>Asks what the decision maker needs to <strong>do</strong></td><td>Asks what <strong>information</strong> is needed and how it should be obtained</td></tr>
+    <tr><td><strong>Action</strong> oriented</td><td><strong>Information</strong> oriented</td></tr>
+    <tr><td>Focuses on <strong>symptoms</strong></td><td>Focuses on the underlying <strong>causes</strong></td></tr>
+  </tbody>
+</table>
+<p class="citation" style="white-space:normal;">Reproduced verbatim from Table 2.2. <span class="citation">[Slide: ch2 s.13]</span></p>
+
+<p>Worked examples from Table 2.3 — notice how each "should we…?" (action) becomes a "determine…" (information):</p>
+<table>
+  <thead><tr><th>Management Decision Problem</th><th>Corresponding Marketing Research Problem</th></tr></thead>
+  <tbody>
+    <tr><td>Should a new product be introduced?</td><td>To determine consumer preferences and purchase intentions for the proposed new product. <span class="citation">[Slide: ch2 s.14]</span></td></tr>
+    <tr><td>Should the advertising campaign be changed?</td><td>To determine the effectiveness of the current advertising campaign. <span class="citation">[Slide: ch2 s.14]</span></td></tr>
+    <tr><td>Should the price of the brand be increased?</td><td>To determine the price elasticity of demand and the impact on sales and profits of various levels of price changes. <span class="citation">[Slide: ch2 s.14]</span></td></tr>
+    <tr><td>Should Harley-Davidson invest to produce more motorcycles?</td><td>To determine if customers would be loyal buyers of Harley-Davidson in the long term. <span class="citation">[Slide: ch2 s.15]</span></td></tr>
+  </tbody>
+</table>
+
+<p>Why the distinction matters so much: defining by <em>symptoms</em> can be dangerously misleading. Table 2.1 gives two cautionary cases — what customers <em>say</em> is not the real cause.</p>
+<table>
+  <thead><tr><th>Firm</th><th>Symptom</th><th>Definition based on symptom (wrong focus)</th><th>Definition based on underlying cause (right focus)</th></tr></thead>
+  <tbody>
+    <tr><td>Manufacturer of orange soft drinks</td><td>Consumers say the sugar content is too high</td><td>Determine consumer preferences for alternative levels of sugar content</td><td><strong>Color.</strong> The color of the drink is a dark shade of orange, giving the perception that the product is too "sugary." <span class="citation">[Slide: ch2 s.11]</span></td></tr>
+    <tr><td>Manufacturer of machine tools</td><td>Customers complain prices are too high</td><td>Determine the price elasticity of demand</td><td><strong>Channel management.</strong> Distributors do not have adequate product knowledge to communicate product benefits to customers. <span class="citation">[Slide: ch2 s.11]</span></td></tr>
+  </tbody>
+</table>
+<p>The deck also retells this as a conversation: the decision-maker focuses on the <em>symptom</em> ("loss of market share") while the researcher probes <em>underlying causes</em> (superior promotion by competition, inadequate distribution, lower product quality, price undercutting). <span class="citation">[Slide: ch2 s.10]</span></p>
+<details class="deck-quotes"><summary>Source quotes for the symptom-vs-cause discussion (Figure 2.3)</summary>
+<ul>
+  <li>Focus of the DM — Symptoms: "Loss of Market Share." <span class="citation">[Slide: ch2 s.10]</span></li>
+  <li>Focus of the Researcher — Underlying Causes: "Superior Promotion by Competition · Inadequate Distribution of Company's Products · Lower Product Quality · Price Undercutting by a Major Competitor." <span class="citation">[Slide: ch2 s.10]</span></li>
+  <li>Slide note: "After the recession of 2008–2010, many consumers have become price and value conscious leading to a loss of market share for prestigious department stores." <span class="citation">[Slide: ch2 s.10]</span></li>
+</ul>
+</details>
+
+<p>Figure 2.7 ties the symptoms / causes / MDP / MRP relationships into one picture: <em>underlying causes</em> create <em>symptoms</em>, symptoms drive the <em>management decision problem</em>, which leads to the <em>marketing research problem</em>, which is expressed as a <em>broad statement</em> and <em>specific components</em>. <span class="citation">[Slide: ch2 s.18]</span></p>
+
+<h3 id="c2-6">6. Defining the problem: broad statement + specific components</h3>
+<p>A properly defined marketing research problem is stated at two levels. Figure 2.6 shows the marketing research problem flowing down into a broad statement and then into specific components (Component 1, 2, 3 …).</p>
+<div class="flow">
+  <div class="flow-step">Marketing Research Problem</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s3">Broad Statement</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s2">Specific Components (Component 1 · Component 2 · Component 3 …)</div>
+</div>
+<p class="citation" style="white-space:normal;">Recreation of Figure 2.6, "Proper Definition of the Marketing Research Problem." <span class="citation">[Slide: ch2 s.17]</span></p>
+
+<p>The danger is defining it at the <em>wrong</em> width. Figure 2.5 names the two errors:</p>
+<div class="branch">
+  <div class="b-orange"><h5>Problem Definition is Too Broad</h5><ul><li>Does not provide guidelines for subsequent steps</li><li>e.g., "Improving the company's image"</li></ul></div>
+  <div class="b-pink"><h5>Problem Definition is Too Narrow</h5><ul><li>May miss important components of the problem</li><li>e.g., changing prices in response to a competitor's price change (when the real issue may be wider)</li></ul></div>
+</div>
+<p class="citation" style="white-space:normal;">Reproduced from Figure 2.5, "Errors in Defining the Market Research Problem." <span class="citation">[Slide: ch2 s.16]</span></p>
+
+<p>The book's running case is <strong>Harley-Davidson</strong>:</p>
+<div class="callout">
+  <p style="margin:.2rem 0;"><strong>Management Decision Problem:</strong> Should Harley-Davidson invest to produce more motorcycles?</p>
+  <p style="margin:.2rem 0;"><strong>Marketing Research Problem (Broad Statement):</strong> To determine if customers would be loyal buyers of Harley-Davidson in the long term. <span class="citation">[Slide: ch2 s.19]</span></p>
+</div>
+<p>Broken into <strong>specific components</strong>: (1) Who are the customers — their demographic and psychographic (lifestyle) characteristics? (2) Can different types of customers be distinguished — is meaningful segmentation possible? (3) How do customers feel about their Harleys — are all motivated by the same appeal? (4) Are customers loyal to Harley-Davidson — what is the extent of brand loyalty? <span class="citation">[Slide: ch2 s.20]</span></p>
+
+<h3 id="c2-7">7. Developing an approach: framework, models, research questions, hypotheses</h3>
+<p>With the problem defined, Step 2 builds the "approach." The deck lists three components:</p>
+<ul>
+  <li><strong>Analytical Framework and Model</strong></li>
+  <li><strong>Research Questions and Hypotheses</strong></li>
+  <li><strong>Specification of the Information Needed</strong> <span class="citation">[Slide: ch2 s.21]</span></li>
+</ul>
+
+<p><strong>Models.</strong> An <em>analytical model</em> is a set of variables and their interrelationships designed to represent, in whole or in part, some real system or process. <span class="citation">[Slide: ch2 s.22]</span> Models come in different forms; the deck highlights <strong>graphical models</strong>, which are visual and used to isolate variables and suggest directions of relationships but are not designed to provide numerical results. <span class="citation">[Slide: ch2 s.23]</span> Its example is a consumer-response chain:</p>
+<div class="flow">
+  <div class="flow-step s1">Awareness</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s2">Understanding: Evaluation</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s3">Preference</div>
+  <div class="flow-arrow">↓</div>
+  <div class="flow-step s4">Patronage</div>
+</div>
+<p class="citation" style="white-space:normal;">Graphical-model example from the "Graphical Models" slide. <span class="citation">[Slide: ch2 s.23]</span></p>
+
+<p><strong>Research questions and hypotheses.</strong> The definitions to memorise:</p>
+<p class="verbatim"><strong>Research questions (RQs)</strong> are refined statements of the specific components of the problem. <span class="citation">[Slide: ch2 s.25]</span></p>
+<p class="verbatim">A <strong>hypothesis (H)</strong> is an unproven statement or proposition about a factor or phenomenon that is of interest to the researcher. Often, a hypothesis is a possible answer to the research question. <span class="citation">[Slide: ch2 s.25]</span></p>
+<p>Figure 2.8 shows the flow: the <em>components of the marketing research problem</em> become <em>research questions</em>, which become <em>hypotheses</em> — and the <em>analytical framework and models</em> feeds into both the research questions and the hypotheses. <span class="citation">[Slide: ch2 s.24]</span></p>
+<p>The Harley-Davidson example again makes it concrete:</p>
+<div class="callout">
+  <p style="margin:.2rem 0;"><strong>RQ:</strong> Can the motorcycle buyers be segmented based on psychographic characteristics?</p>
+  <p style="margin:.2rem 0;"><strong>H1:</strong> There are distinct segments of motorcycle buyers.</p>
+  <p style="margin:.2rem 0;"><strong>H2:</strong> Each segment is motivated to own a Harley for a different reason.</p>
+  <p style="margin:.2rem 0;"><strong>H3:</strong> Brand loyalty is high among Harley-Davidson customers in all segments. <span class="citation">[Slide: ch2 s.26]</span></p>
+</div>
+
+<p><strong>Specification of information needed.</strong> By focusing on each component of the problem and the framework, models, research questions, and hypotheses, the researcher can determine exactly what information should be obtained. <span class="citation">[Slide: ch2 s.27]</span> Figure 2.9 lays this out as four parallel columns — for each component of the problem you derive its RQs, then its hypotheses, then the info needed:</p>
+<div class="flow">
+  <div class="flow-step">Marketing Research Problem → Component 1 · Component 2 · … · Component n</div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step s2">Research Questions (RQs) for each component</div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step s3">Hypotheses for each component</div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step s4">Specification of Info Needed for each component</div>
+</div>
+<p class="citation" style="white-space:normal;">Recreation of Figure 2.9, "Specification of Information Needed" (the slide draws these as four side-by-side columns, each split per component 1…n). <span class="citation">[Slide: ch2 s.28]</span></p>
+
+<p>Two concept-map slides (Figures 2.11 and 2.12) summarise the whole chapter. They are visually dense, so they are embedded here with a word summary beneath each.</p>
+<figure>
+  <img src="extracted/ch02/slide-29.png" alt="Figure 2.11 concept map: Problem Definition consists of Management Decision Problem and Marketing Research Problem; MDP asks what the DM needs to do, is action-oriented, focuses on symptoms; MRP focuses on underlying causes, is information-oriented, asks what information is needed, and consists of a Broad Statement broken down into Specific Components (Component 1, 2, n).">
+  <figcaption>Figure 2.11, "A Concept Map for Problem Definition." In words: <em>Problem Definition</em> = MDP (action, symptoms, "what does the DM need to do") + MRP (information, underlying causes, "what information is needed"); the MRP is a <em>broad statement</em> broken into <em>specific components</em>. <span class="citation">[Slide: ch2 s.29]</span></figcaption>
+</figure>
+<figure>
+  <img src="extracted/ch02/slide-30.png" alt="Figure 2.12 concept map: Approach to the Problem consists of Analytical Framework and Models (which could be Graphical Models) and Research Questions and Hypotheses; the components of the MRP guide research questions, which have possible answers as hypotheses, which all guide the Specification of Information Needed for each component.">
+  <figcaption>Figure 2.12, "A Concept Map for Approach to the Problem." In words: the <em>approach</em> = analytical framework &amp; models (which can be graphical models) + research questions &amp; hypotheses; the MRP's components guide the research questions, hypotheses are possible answers to them, and everything guides the <em>specification of information needed</em> per component. <span class="citation">[Slide: ch2 s.30]</span></figcaption>
+</figure>
+
+<h2 id="c2-exam">Common confusions</h2>
+<table>
+  <thead><tr><th>Concept A</th><th>Concept B</th><th>Key difference</th></tr></thead>
+  <tbody>
+    <tr><td>Management Decision Problem</td><td>Marketing Research Problem</td><td>MDP = what to <em>do</em>, action-oriented, on symptoms ("Should we raise price?"). MRP = what to <em>find out</em>, information-oriented, on causes ("Determine price elasticity of demand"). <span class="citation">[Slide: ch2 s.13]</span></td></tr>
+    <tr><td>Symptom</td><td>Underlying cause</td><td>Falling market share is a symptom; the cause may be competitor promotion, poor distribution, quality, or price undercutting. Defining research on the symptom misleads. <span class="citation">[Slide: ch2 s.10]</span> <span class="citation">[Slide: ch2 s.11]</span></td></tr>
+    <tr><td>Definition too broad</td><td>Definition too narrow</td><td>Too broad = no guidance for next steps ("improve the image"). Too narrow = misses important components. Aim for a broad statement + specific components. <span class="citation">[Slide: ch2 s.16]</span></td></tr>
+    <tr><td>Research question (RQ)</td><td>Hypothesis (H)</td><td>An RQ is a refined statement of a component of the problem; a hypothesis is an <em>unproven proposition</em> and is often a possible <em>answer</em> to that RQ. <span class="citation">[Slide: ch2 s.25]</span></td></tr>
+    <tr><td>Analytical framework / model</td><td>Graphical model</td><td>A model is variables + their interrelationships representing a real system; a graphical model is the <em>visual</em> kind — shows direction of relationships but gives no numbers. <span class="citation">[Slide: ch2 s.22]</span> <span class="citation">[Slide: ch2 s.23]</span></td></tr>
+  </tbody>
+</table>
+
+<h2>Exam practice</h2>
+<details class="exam"><summary>Q1 (the core skill). A manager asks, "Should we lower the price of our brand?" State the corresponding marketing research problem.</summary><div class="ans">"To determine the price elasticity of demand and the impact on sales and profits of various levels of price changes." Notice the MDP (action: "should we…?") becomes an MRP (information: "to determine…"). <span class="citation">[Slide: ch2 s.14]</span></div></details>
+<details class="exam"><summary>Q2 (symptom vs cause). Customers of a soft-drink maker say the sugar content is too high. Research found the real driver was something else — what?</summary><div class="ans">The <strong>color</strong> — a dark shade of orange created the <em>perception</em> of being too "sugary." A symptom-based definition (study sugar preferences) would have missed it. <span class="citation">[Slide: ch2 s.11]</span></div></details>
+<details class="exam"><summary>Q3 (acronym). What does the PROBLEM acronym stand for, and what is it used for?</summary><div class="ans">It summarises the factors in the <em>environmental context</em> of the problem: <strong>P</strong>ast information and forecasts, <strong>R</strong>esources and constraints, <strong>O</strong>bjectives of the decision maker, <strong>B</strong>uyer behavior, <strong>L</strong>egal environment, <strong>E</strong>conomic environment, <strong>M</strong>arketing and technological skills. <span class="citation">[Slide: ch2 s.31]</span></div></details>
+<details class="exam"><summary>Q4 (definitions). Define a "hypothesis" and explain its relationship to a research question.</summary><div class="ans">A hypothesis is an unproven statement or proposition about a factor or phenomenon of interest to the researcher; it is often a <em>possible answer</em> to the research question. <span class="citation">[Slide: ch2 s.25]</span></div></details>
+<details class="exam"><summary>Q5 (seven Cs). The relationship between the decision maker and researcher should show the "seven Cs." Name them.</summary><div class="ans">Communication, Cooperation, Confidence, Candor, Closeness, Continuity, Creativity. <span class="citation">[Slide: ch2 s.8]</span></div></details>
+<details class="exam"><summary>Q6 (structure). Why must a marketing research problem be stated as both a broad statement and specific components?</summary><div class="ans">Stating it only broadly gives no guidance for later steps (too broad); stating it only narrowly risks missing components (too narrow). The broad statement gives perspective; the specific components give the exact sub-questions to research. <span class="citation">[Slide: ch2 s.16]</span> <span class="citation">[Slide: ch2 s.17]</span></div></details>
+
+<h2>Slide coverage audit — Chapter 2</h2>
+<table>
+  <thead><tr><th>Slide</th><th>Banner / title</th><th>Portal section</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Chapter 2 title</td><td>Chapter header</td></tr>
+    <tr><td>2</td><td>Figure 2.1 Relationship of this chapter to the MR process</td><td>§1</td></tr>
+    <tr><td>3</td><td>Step 3 enlarged (research-design sub-tasks)</td><td>§1 (context, full list in Ch.1 §4)</td></tr>
+    <tr><td>4</td><td>Figure 2.2 Problem Definition &amp; Approach Process</td><td>§1 (figure + flow recreation)</td></tr>
+    <tr><td>5</td><td>Tasks Involved in Problem Definition</td><td>§2 (table + callout)</td></tr>
+    <tr><td>6</td><td>The Problem Audit (issues 1–4)</td><td>§3</td></tr>
+    <tr><td>7</td><td>The Problem Audit Cont. (issues 5–7)</td><td>§3</td></tr>
+    <tr><td>8</td><td>The Seven Cs of Interaction</td><td>§3 (mnemonic + Nielsen callout)</td></tr>
+    <tr><td>9</td><td>Conducting a Problem Audit (vertical flow)</td><td>§3</td></tr>
+    <tr><td>10</td><td>Figure 2.3 Discussion Between Researcher and DM</td><td>§5 (symptom vs cause + deck-quotes)</td></tr>
+    <tr><td>11</td><td>Table 2.1 Problem Def. based on symptoms misleading</td><td>§5 (4-column table)</td></tr>
+    <tr><td>12</td><td>Figure 2.4 Environmental context factors</td><td>§4 (flow recreation)</td></tr>
+    <tr><td>13</td><td>Table 2.2 MDP vs MRP</td><td>§5 (verbatim table)</td></tr>
+    <tr><td>14</td><td>Table 2.3 MDP and corresponding MRP</td><td>§5 (examples table)</td></tr>
+    <tr><td>15</td><td>Table 2.3 Cont. (Harley-Davidson)</td><td>§5 (examples table row)</td></tr>
+    <tr><td>16</td><td>Figure 2.5 Errors in defining the problem</td><td>§6 (too broad / too narrow cards)</td></tr>
+    <tr><td>17</td><td>Figure 2.6 Proper definition of the MRP</td><td>§6 (flow recreation)</td></tr>
+    <tr><td>18</td><td>Figure 2.7 MDP and MRP</td><td>§5 (causes→symptoms→MDP→MRP)</td></tr>
+    <tr><td>19</td><td>Harley-Davidson Example (broad statement)</td><td>§6 (callout)</td></tr>
+    <tr><td>20</td><td>Harley-Davidson: Specific Components</td><td>§6</td></tr>
+    <tr><td>21</td><td>Components of an Approach</td><td>§7</td></tr>
+    <tr><td>22</td><td>Models (analytical model definition)</td><td>§7 (verbatim)</td></tr>
+    <tr><td>23</td><td>Graphical Models</td><td>§7 (Awareness→Patronage flow)</td></tr>
+    <tr><td>24</td><td>Figure 2.8 Development of RQs &amp; Hypothesis</td><td>§7</td></tr>
+    <tr><td>25</td><td>Research Questions and Hypotheses</td><td>§7 (verbatim definitions)</td></tr>
+    <tr><td>26</td><td>Harley-Davidson Example (RQ, H1–H3)</td><td>§7 (callout)</td></tr>
+    <tr><td>27</td><td>Specification of Information Needed</td><td>§7</td></tr>
+    <tr><td>28</td><td>Figure 2.9 Specification of Information Needed</td><td>§7 (four-column flow)</td></tr>
+    <tr><td>29</td><td>Figure 2.11 Concept Map for Problem Definition</td><td>§7 (embedded + word summary)</td></tr>
+    <tr><td>30</td><td>Figure 2.12 Concept Map for Approach to the Problem</td><td>§7 (embedded + word summary)</td></tr>
+    <tr><td>31</td><td>Acronym: PROBLEM</td><td>§4 (mnemonic)</td></tr>
+  </tbody>
+</table>
+</section>
+
+<!-- CH2-PLACEHOLDER -->
+
+<hr class="chap">
+<!-- ===================================================================== -->
+<!-- ============================ CHAPTER 3 ============================== -->
+<!-- ===================================================================== -->
+<section id="chapter-3">
+<h1>Chapter 3 — Research Design, Secondary &amp; Syndicated Data</h1>
+<p class="citation" style="white-space:normal;">Built from deck "malhotra 03_essentials 1E.pptx", 51 slides, read visually. <span class="citation">[Slide: ch3 s.1]</span></p>
+
+<div class="plain-english" id="c3-pe">
+<h3>💡 In Plain English — Chapter 3, told as one story</h3>
+<p><strong>Running example (continued):</strong> <em>Layla has now defined her problem properly (Chapter 2): she wants to know whether Mango Fresh's prices are driving customers away, and who her loyal customers really are. This chapter is step 3 of the recipe — designing the actual study — plus a deep dive into the cheapest place to start looking: data that already exists.</em></p>
+
+<h4>1. A research design is a blueprint</h4>
+<p>A <strong>research design</strong> is just a <em>plan</em> for the whole study, the way an architect's blueprint is a plan for a house. Before Layla collects a single survey, she needs a blueprint saying what kind of study, what data, what sample, how she'll analyse it. Build the house without a blueprint and you get an expensive mess.</p>
+
+<h4>2. There are two big families of design (building on #1)</h4>
+<p>Designs split into <strong>exploratory</strong> and <strong>conclusive</strong>. Exploratory is loose, flexible "let me just get a feel for this" research — used when Layla isn't even sure what's going on. Conclusive is formal, structured "let me test something specific" research — used when she has a clear question. Conclusive then splits again into <strong>descriptive</strong> (describe <em>what</em> is happening) and <strong>causal</strong> (find out <em>what causes what</em>). So the family tree is: Research Design → Exploratory or Conclusive; Conclusive → Descriptive or Causal.</p>
+
+<h4>3. Exploratory comes first, then you narrow down (building on #2)</h4>
+<p>Usually Layla starts exploratory ("why might sales be down?") to <em>generate</em> ideas and hypotheses, then moves to conclusive ("test whether price is the cause") to <em>confirm</em> them. Exploratory gives insights and understanding; conclusive tests hypotheses and examines relationships.</p>
+
+<h4>4. Descriptive research can be a snapshot or a movie (building on #3)</h4>
+<p>If Layla picks descriptive, she chooses between <strong>cross-sectional</strong> (survey a sample <em>once</em> — a snapshot) and <strong>longitudinal</strong> (survey the <em>same</em> sample <em>repeatedly over time</em> — a movie). A snapshot tells her what's true today; a movie tells her how things are changing.</p>
+
+<h4>5. Causal research means experiments (building on #4)</h4>
+<p>If Layla needs to <em>prove</em> that lowering the price actually <em>causes</em> more sales (not just that they happen together), she needs <strong>causal research</strong>, whose main method is the <strong>experiment</strong>: change one thing, hold everything else steady, see what happens. Descriptive shows <em>association</em> (X and Y move together); causal shows <em>cause and effect</em> (X causes Y).</p>
+
+<h4>6. Whatever the design, always start with data that already exists (building on #5)</h4>
+<p>Here's the money-saving lesson. <strong>Primary data</strong> is data Layla collects fresh for <em>her</em> problem (expensive, slow). <strong>Secondary data</strong> is data someone <em>already</em> collected for <em>some other</em> purpose (cheap, fast). Rule: <em>always exhaust secondary data first.</em> Her own past sales records, government statistics, industry reports — all might answer part of her question for almost nothing before she spends money on a survey.</p>
+
+<h4>7. But secondary data was made for someone else, so judge it carefully (building on #6)</h4>
+<p>Because secondary data wasn't made for Layla, she must check it. The book gives the acronym <strong>SECOND</strong>: Specifications (how was it collected?), Error (how accurate?), Currency (how old?), Objective (why was it collected?), Nature (what's actually in it?), Dependability (can you trust the source?). Secondary data is internal (inside her business) or external (government, business sources, or syndicated firms).</p>
+
+<h4>8. Syndicated services: data collected once and sold to many (building on #7)</h4>
+<p>A special, powerful kind of external secondary data is <strong>syndicated services</strong> — firms that collect a big pool of standard data and sell it to <em>many</em> clients at once (so each pays little). They track households/consumers (via surveys, panels, supermarket scanners) and institutions (via audits of retailers and wholesalers). When data from several syndicated sources is fused into one integrated picture of a household, it's called <strong>single-source data</strong>. Layla could never afford to put scanners in every supermarket — but she can buy a slice of scanner data from a syndicated firm.</p>
+
+<h4>How Chapter 3 connects together:</h4>
+<p>A <em>research design</em> is the blueprint; it's <em>exploratory</em> (loose, idea-generating) or <em>conclusive</em>; conclusive is <em>descriptive</em> (snapshot = cross-sectional, movie = longitudinal) or <em>causal</em> (experiments, proving cause-and-effect). Whatever the design, Layla starts with cheap <em>secondary data</em> before expensive <em>primary data</em>, judges it with SECOND, and taps <em>syndicated services</em> (households via surveys/panels/scanners, institutions via audits) — fusing them into <em>single-source data</em>. Designed and armed with existing data, she's ready for the data-collection chapters (qualitative, surveys, experiments) that follow.</p>
+</div>
+
+<h2>In one sentence</h2>
+<p>A research design is the blueprint for a study, classified into exploratory vs conclusive (and conclusive into descriptive vs causal), and the cheapest first move in any design is to mine existing <em>secondary</em> data — especially <em>syndicated</em> services — before collecting costly <em>primary</em> data. <span class="citation">[Slide: ch3 s.5]</span> <span class="citation">[Slide: ch3 s.8]</span> <span class="citation">[Slide: ch3 s.21]</span></p>
+
+<h2>In plain language</h2>
+<p>This chapter does two jobs. First half: it teaches step 3 of the research process — choosing the <em>type</em> of study (the design). Second half: it teaches the single most cost-effective habit in research — using data that already exists (secondary and syndicated) before spending money to collect your own. If you remember only two trees from this chapter, remember the <em>design</em> tree (exploratory/conclusive → descriptive/causal) and the <em>secondary-data</em> tree (internal/external → syndicated).</p>
+
+<h2>Core concepts</h2>
+
+<h3 id="c3-1">1. What a research design is</h3>
+<p>The deck again replays the six-step process and marks <strong>Step 3 (Formulating a Research Design)</strong> as this chapter's focus, specifically its first sub-task, <em>Secondary &amp; Syndicated Data Analysis</em>. <span class="citation">[Slide: ch3 s.2]</span> <span class="citation">[Slide: ch3 s.3]</span> Figure 3.2 reminds us that getting to a design is iterative — Steps 1, 2 and 3 loop back to one another. <span class="citation">[Slide: ch3 s.4]</span></p>
+<p class="verbatim">A <strong>research design</strong> is a framework or blueprint for conducting the marketing research project. It details the procedures necessary for obtaining the information needed to structure or solve marketing research problems. <span class="citation">[Slide: ch3 s.5]</span></p>
+<div class="callout">"Just as a builder can take a blueprint and construct a house according to specifications, so can a marketing research supplier take a research design and conduct the project as designed." <span class="citation">[Slide: ch3 s.5]</span></div>
+<p>A research design has the same eight components as Step 3 in Chapter 1 (secondary/syndicated data, qualitative research, survey &amp; observation, experimental research, measurement &amp; scaling, questionnaire &amp; form design, sampling process &amp; sample size, plan of data analysis). <span class="citation">[Slide: ch3 s.6]</span> <span class="citation">[Slide: ch3 s.7]</span> These are summarised by the acronym <strong>DESIGN</strong> at the end of the chapter.</p>
+<div class="mnemonic"><strong>DESIGN</strong> = <strong>D</strong>ata analysis plan · <strong>E</strong>xploratory, descriptive, causal design · <strong>S</strong>caling and measurement · <strong>I</strong>nterviewing forms: questionnaire design · <strong>G</strong>enerating the needed information · <strong>N</strong>umber: sample size and plan. <span class="citation">[Slide: ch3 s.49]</span></div>
+
+<h3 id="c3-2">2. The big family tree of research designs</h3>
+<p>The master classification. Memorise this tree — almost every exam question on the chapter references it.</p>
+<figure>
+  <img src="extracted/ch03/slide-08.png" alt="Figure 3.3: Research Design splits into Exploratory Research Design and Conclusive Research Design; Conclusive splits into Descriptive Research and Causal Research; Descriptive splits into Cross-Sectional Design and Longitudinal Design.">
+  <figcaption>Figure 3.3, "A Classification of Market Research Designs." <span class="citation">[Slide: ch3 s.8]</span></figcaption>
+</figure>
+<div class="branch">
+  <div class="b-blue"><h5>Exploratory Research Design</h5><p style="font-size:.9rem;margin:.2rem 0 0;">Loose, flexible, used to gain insight.</p></div>
+  <div class="b-pink"><h5>Conclusive Research Design</h5>
+    <ul><li><strong>Descriptive Research</strong><ul><li>Cross-Sectional Design</li><li>Longitudinal Design</li></ul></li><li><strong>Causal Research</strong></li></ul>
+  </div>
+</div>
+<p class="citation" style="white-space:normal;">Word recreation of the Figure 3.3 tree. <span class="citation">[Slide: ch3 s.8]</span></p>
+
+<h3 id="c3-3">3. Exploratory vs conclusive research</h3>
+<p>Table 3.1 contrasts the two families across six rows. Reproduced in full:</p>
+<table>
+  <thead><tr><th></th><th>Exploratory</th><th>Conclusive</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Objective</strong></td><td>To provide insights and understanding.</td><td>To test specific hypotheses and examine relationships.</td></tr>
+    <tr><td><strong>Characteristics</strong></td><td>Information needed is defined only loosely. Research process is flexible and unstructured. Sample is small and nonrepresentative. Data analysis is qualitative.</td><td>Information needed is clearly defined. Research process is formal and structured. Sample is large and representative. Data analysis is quantitative.</td></tr>
+    <tr><td><strong>Findings</strong></td><td>Tentative.</td><td>Conclusive.</td></tr>
+    <tr><td><strong>Outcome</strong></td><td>Generally followed by further exploratory or conclusive research.</td><td>Findings used as input into decision making.</td></tr>
+  </tbody>
+</table>
+<p class="citation" style="white-space:normal;">Reproduced from Table 3.1, "Differences Between Exploratory and Conclusive Research" (and its continuation slide). <span class="citation">[Slide: ch3 s.9]</span> <span class="citation">[Slide: ch3 s.10]</span></p>
+
+<p><strong>Uses of exploratory research:</strong> formulate a problem or define it more precisely; identify alternative courses of action; develop hypotheses; isolate key variables and relationships for further examination; gain insights for developing an approach to the problem; establish priorities for further research. <span class="citation">[Slide: ch3 s.11]</span></p>
+<p><strong>Methods of exploratory research:</strong> survey of experts (Ch.2), pilot surveys (Ch.2), secondary data analysis (Ch.3), and qualitative research (Ch.4). <span class="citation">[Slide: ch3 s.12]</span></p>
+<div class="callout">"Cellular handset manufacturers such as <strong>Nokia</strong> are routinely undertaking exploratory research to understand the different ways in which consumers use their mobile phones." <span class="citation">[Slide: ch3 s.12]</span></div>
+
+<h3 id="c3-4">4. Descriptive research (cross-sectional vs longitudinal)</h3>
+<p>Descriptive research describes things. Its uses: describe the characteristics of relevant groups (consumers, salespeople, organizations, market areas); estimate the percentage of units in a population exhibiting a certain behavior; determine perceptions of product characteristics; determine the degree to which marketing variables are associated; and make specific predictions. <span class="citation">[Slide: ch3 s.14]</span></p>
+<p>Major <strong>types</strong> of descriptive studies: <strong>sales studies</strong> (market potential, market share, sales analysis), <strong>consumer perception &amp; behavior studies</strong> (image, product usage, advertising, pricing), and <strong>market characteristic studies</strong> (distribution, competitive analysis). <span class="citation">[Slide: ch3 s.13]</span> Its <strong>methods</strong>: surveys (Ch.5), panels (Ch.3 and 5), and observational &amp; other data (Ch.5). <span class="citation">[Slide: ch3 s.15]</span></p>
+<div class="callout">"Descriptive research remains the most popular way to collect primary quantitative data in marketing research." <span class="citation">[Slide: ch3 s.15]</span></div>
+
+<p>Descriptive research comes in two time-shapes. The definitions to memorise:</p>
+<p class="verbatim">A <strong>cross-sectional design</strong> involves the collection of information from any given sample of population elements only once. <span class="citation">[Slide: ch3 s.16]</span></p>
+<p class="verbatim">In a <strong>longitudinal design</strong>, a fixed sample (or samples) of population elements is measured repeatedly on the same variables. A longitudinal design differs from a cross-sectional design in that the sample or samples remain the same over time. <span class="citation">[Slide: ch3 s.16]</span></p>
+<div class="branch">
+  <div class="b-blue"><h5>Cross-Sectional Design</h5><p style="font-size:.9rem;margin:.2rem 0;">Sample Surveyed at T<sub>1</sub> — one snapshot, taken once.</p></div>
+  <div class="b-orange"><h5>Longitudinal Design</h5><p style="font-size:.9rem;margin:.2rem 0;">Sample Surveyed at T<sub>1</sub> → the <em>same</em> sample also Surveyed at T<sub>2</sub> — repeated over time.</p></div>
+</div>
+<p class="citation" style="white-space:normal;">Recreation of Figure 3.4, "Cross-Sectional vs. Longitudinal Designs." <span class="citation">[Slide: ch3 s.17]</span></p>
+
+<h3 id="c3-5">5. Causal research</h3>
+<p>Figure 3.5 splits conclusive research into descriptive and causal and names what each establishes: descriptive establishes <strong>association</strong> ("X and Y vary together"); causal establishes <strong>cause and effect</strong> ("X is a cause of Y"). <span class="citation">[Slide: ch3 s.18]</span></p>
+<div class="branch">
+  <div class="b-green"><h5>Descriptive Research → Association</h5><p style="font-size:.9rem;margin:.2rem 0;"><em>X</em> and <em>Y</em> Vary Together</p></div>
+  <div class="b-blue"><h5>Causal Research → Cause and Effect</h5><p style="font-size:.9rem;margin:.2rem 0;"><em>X</em> is a Cause of <em>Y</em></p></div>
+</div>
+<p class="citation" style="white-space:normal;">Recreation of Figure 3.5, "Descriptive versus Causal Research." <span class="citation">[Slide: ch3 s.18]</span></p>
+<p><strong>Uses of causal research:</strong> to understand which variables are the cause (independent variables) and which are the effect (dependent variables) of a phenomenon; and to determine the nature of the relationship between the causal variables and the effect to be predicted. Its <strong>method</strong> is the experiment (Ch.6). <span class="citation">[Slide: ch3 s.19]</span></p>
+<div class="callout">"An <strong>experiment</strong> is the main method of causal research." <span class="citation">[Slide: ch3 s.19]</span></div>
+
+<p>Designs are not used in isolation. Figure 3.6's "Some Alternative Research Designs" slide shows three valid sequences: (a) exploratory → conclusive; (b) conclusive alone; (c) conclusive → exploratory (to help interpret results). <span class="citation">[Slide: ch3 s.20]</span></p>
+<figure>
+  <img src="extracted/ch03/slide-20.png" alt="Three alternative design sequences: (a) Exploratory Research (secondary data analysis, focus group) leading to Conclusive Research (descriptive/causal); (b) Conclusive Research alone; (c) Conclusive Research leading back to Exploratory Research.">
+  <figcaption>"Some Alternative Research Designs." Sequence (a) explore-then-conclude is the most common; (c) concludes then explores to interpret. <span class="citation">[Slide: ch3 s.20]</span></figcaption>
+</figure>
+
+<h3 id="c3-6">6. Primary vs secondary data</h3>
+<p>The second half of the chapter pivots to data sources. Two definitions anchor everything:</p>
+<p class="verbatim"><strong>Primary data</strong> are originated by a researcher for the specific purpose of addressing the problem at hand. The collection of primary data involves all six steps of the marketing research process. <span class="citation">[Slide: ch3 s.21]</span></p>
+<p class="verbatim"><strong>Secondary data</strong> are data which have already been collected for purposes other than the problem at hand. These data can be located quickly and inexpensively. <span class="citation">[Slide: ch3 s.21]</span></p>
+<div class="callout"><strong>Secondary data are of primary importance in marketing research</strong> — that is, you start with them. <span class="citation">[Slide: ch3 s.21]</span></div>
+
+<p>Table 3.2 compares the two on four dimensions:</p>
+<table>
+  <thead><tr><th></th><th>Primary Data</th><th>Secondary Data</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Collection purpose</strong></td><td>For the problem at hand</td><td>For other problems</td></tr>
+    <tr><td><strong>Collection process</strong></td><td>Very involved</td><td>Rapid and easy</td></tr>
+    <tr><td><strong>Collection cost</strong></td><td>High</td><td>Relatively low</td></tr>
+    <tr><td><strong>Collection time</strong></td><td>Long</td><td>Short</td></tr>
+  </tbody>
+</table>
+<p class="citation" style="white-space:normal;">Reproduced from Table 3.2, "A Comparison of Primary and Secondary Data." <span class="citation">[Slide: ch3 s.22]</span></p>
+
+<p><strong>Uses of secondary data:</strong> identify the problem; better define the problem; develop an approach to the problem; formulate an appropriate research design (e.g. by identifying key variables); answer certain research questions and test some hypotheses; and interpret primary data more insightfully. <span class="citation">[Slide: ch3 s.23]</span></p>
+
+<h3 id="c3-7">7. Evaluating &amp; classifying secondary data</h3>
+<p>Because secondary data was collected for someone else's purpose, you must evaluate it before trusting it. Six criteria, captured by the acronym <strong>SECOND</strong>:</p>
+<table>
+  <thead><tr><th>Criterion</th><th>Issues to check</th><th>Remarks / why it matters</th></tr></thead>
+  <tbody>
+    <tr><td><strong>S</strong>pecifications / Methodology</td><td>Data collection method, response rate, quality, sampling technique, size, questionnaire design, field work, data analysis</td><td>Data should be reliable, valid, and generalizable to the problem at hand. <span class="citation">[Slide: ch3 s.24]</span> <span class="citation">[Slide: ch3 s.25]</span></td></tr>
+    <tr><td><strong>E</strong>rror — accuracy</td><td>Examine errors in approach, research design, sampling, data collection, data analysis, reporting</td><td>Assess accuracy by comparing data from different sources. <span class="citation">[Slide: ch3 s.25]</span></td></tr>
+    <tr><td><strong>C</strong>urrency — when collected</td><td>Time lag between collection and publication; frequency of updates</td><td>Census data are periodically updated by syndicated firms. <span class="citation">[Slide: ch3 s.25]</span></td></tr>
+    <tr><td><strong>O</strong>bjective — why collected</td><td>Why were the data collected?</td><td>The objective will determine the relevance of the data. <span class="citation">[Slide: ch3 s.26]</span></td></tr>
+    <tr><td><strong>N</strong>ature — content</td><td>Definition of key variables, units of measurement, categories used, relationships examined</td><td>Reconfigure the data to increase their usefulness, if possible. <span class="citation">[Slide: ch3 s.26]</span></td></tr>
+    <tr><td><strong>D</strong>ependability</td><td>Expertise, credibility, reputation, and trustworthiness of the source</td><td>Data should be obtained from an original rather than an acquired source. <span class="citation">[Slide: ch3 s.26]</span></td></tr>
+  </tbody>
+</table>
+<p class="citation" style="white-space:normal;">The six criteria appear on the "Criteria for Evaluating Secondary Data" slides; the SECOND acronym packages them. <span class="citation">[Slide: ch3 s.24]</span> <span class="citation">[Slide: ch3 s.50]</span></p>
+<div class="mnemonic"><strong>SECOND</strong> = <strong>S</strong>pecifications · <strong>E</strong>rror · <strong>C</strong>urrency · <strong>O</strong>bjective · <strong>N</strong>ature · <strong>D</strong>ependability. <span class="citation">[Slide: ch3 s.50]</span></div>
+
+<p>Secondary data is then classified by where it comes from. Figure 3.6 splits it into <strong>internal</strong> and <strong>external</strong> sources:</p>
+<figure>
+  <img src="extracted/ch03/slide-27.png" alt="Figure 3.6: Secondary Data splits into Internal (Customer Databases, Data Warehousing & Data Mining, CRM & Database Marketing, Social Media) and External (Social Media, Business/Nongovernment, Government, Syndicated Services).">
+  <figcaption>Figure 3.6, "A Classification of Secondary Data." <span class="citation">[Slide: ch3 s.27]</span></figcaption>
+</figure>
+<div class="branch">
+  <div class="b-green"><h5>Internal sources</h5><ul><li>Customer Databases</li><li>Data Warehousing &amp; Data Mining</li><li>CRM &amp; Database Marketing</li><li>Social Media</li></ul></div>
+  <div class="b-blue"><h5>External sources</h5><ul><li>Social Media</li><li>Business / Nongovernment</li><li>Government</li><li>Syndicated Services</li></ul></div>
+</div>
+<p class="citation" style="white-space:normal;">Word recreation of the Figure 3.6 tree. <span class="citation">[Slide: ch3 s.27]</span></p>
+
+<p><strong>Internal secondary data</strong> example — the book's "Department Store Project" analysed sales by: product line; major department (e.g., men's wear, house wares); specific stores; geographical region; cash versus credit purchases; specific time periods; size of purchase; and sales trends across these classifications. <span class="citation">[Slide: ch3 s.28]</span></p>
+
+<p>Syndicated firms also sell rich <strong>individual / household-level data</strong>, split into demographic and psychographic types:</p>
+<table>
+  <thead><tr><th>I. Demographic data</th><th>II. Psychographic / lifestyle data</th></tr></thead>
+  <tbody>
+    <tr><td>Identification (name, address, telephone number); sex; marital status; names of family members; age (including ages of family members); income; occupation; number of children present; home ownership; length of residence; number and make of cars owned. <span class="citation">[Slide: ch3 s.29]</span></td><td>Interest in: golf; winter skiing; book reading; running; bicycling; pets; fishing; electronics; cable television. <span class="citation">[Slide: ch3 s.29]</span></td></tr>
+  </tbody>
+</table>
+<div class="callout">"There are also firms such as <strong>D&amp;B</strong> (Dun &amp; Bradstreet) that collect demographic data on businesses." <span class="citation">[Slide: ch3 s.29]</span></div>
+
+<p><strong>External, business/nongovernment</strong> sources are classified into <strong>guides, directories, indices,</strong> and <strong>statistical data</strong>. <span class="citation">[Slide: ch3 s.30]</span> Government data is often organised geographically; Figure (Geographic Subdivision of an MSA) shows a metropolitan statistical area drilling down: MSA → Center City → Census Tract → Block Group → Block. <span class="citation">[Slide: ch3 s.31]</span></p>
+
+<p><strong>Computerized databases</strong> are classified by access (Online, Internet, Offline) and by content. The content types: <strong>bibliographic</strong> databases (composed of citations to articles), <strong>numeric</strong> (numerical and statistical information), <strong>full-text</strong> (the complete text of source documents), <strong>directory</strong> (information on individuals, organizations, and services), and <strong>special-purpose</strong> (specialized information). <span class="citation">[Slide: ch3 s.32]</span> <span class="citation">[Slide: ch3 s.33]</span></p>
+
+<h3 id="c3-8">8. Syndicated services &amp; single-source data</h3>
+<p>The chapter's biggest external category. The definition:</p>
+<p class="verbatim"><strong>Syndicated services</strong> are companies that collect and sell common pools of data of known commercial value designed to serve a number of clients. <span class="citation">[Slide: ch3 s.34]</span></p>
+<p>Syndicated sources are classified by their <strong>unit of measurement</strong> — either households/consumers or institutions. <span class="citation">[Slide: ch3 s.34]</span> <span class="citation">[Slide: ch3 s.36]</span></p>
+<div class="branch">
+  <div class="b-green"><h5>Households / Consumers</h5><p style="font-size:.9rem;margin:.2rem 0 0;">Data may be obtained from surveys, panels, or electronic scanner services. <span class="citation">[Slide: ch3 s.34]</span></p></div>
+  <div class="b-orange"><h5>Institutions</h5><p style="font-size:.9rem;margin:.2rem 0 0;">Data may be obtained from retailers, wholesalers, or industrial firms. <span class="citation">[Slide: ch3 s.35]</span></p></div>
+</div>
+<p class="citation" style="white-space:normal;">Recreation of Figure 3.7, "A Classification of Syndicated Services." <span class="citation">[Slide: ch3 s.36]</span></p>
+<div class="callout">"Generally, it would not be feasible for individual users to collect the data, such as scanner data, obtainable from syndicated firms." <span class="citation">[Slide: ch3 s.35]</span></div>
+
+<p><strong>Household/consumer syndicated services</strong> (Figure 3.8) break down as:</p>
+<ul>
+  <li><strong>Surveys</strong> → psychographic &amp; lifestyles, advertising evaluation, general.</li>
+  <li><strong>Purchase/Media Panels</strong> → purchase panels and media panels.</li>
+  <li><strong>Electronic Scanner Services</strong> → volume tracking data, scanner panels, scanner panels with cable TV. <span class="citation">[Slide: ch3 s.37]</span></li>
+</ul>
+<p>Syndicated <strong>survey</strong> research itself is classified into <strong>periodic</strong> and <strong>panel</strong> surveys, each covering psychographic &amp; lifestyle, advertising evaluation, and general topics. <span class="citation">[Slide: ch3 s.38]</span></p>
+<p><strong>Institutional syndicated services</strong> (Figure 3.9) split into <strong>audit services</strong> (retailers, wholesalers) and <strong>industry services</strong> (direct inquiries, clipping services, corporate reports). <span class="citation">[Slide: ch3 s.39]</span></p>
+
+<p>The deck devotes a five-slide "Overview of Syndicated Services" comparison table covering characteristics, advantages, disadvantages, and uses for each type. Reproduced in full below.</p>
+<details class="deck-quotes" open><summary>Full "Overview of Syndicated Services" comparison table (5 slides)</summary>
+<table>
+  <thead><tr><th>Type</th><th>Characteristics</th><th>Advantages</th><th>Disadvantages</th><th>Uses</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Surveys</strong></td><td>Surveys conducted at regular intervals</td><td>Most flexible way of obtaining data; information on underlying motives</td><td>Interviewer errors; respondent errors</td><td>Market segmentation; advertising theme selection, and advertising effectiveness</td></tr>
+    <tr><td><strong>Purchase Panels</strong></td><td>Households provide specific information regularly over an extended period of time; respondents asked to record specific behaviors as they occur</td><td>Recorded purchase behavior can be linked to the demographic/psychographic characteristics</td><td>Lack of representativeness; response bias; maturation</td><td>Forecasting sales, market share, and trends; establishing consumer profiles, brand loyalty, and switching; evaluating test markets, advertising, and distribution</td></tr>
+    <tr><td><strong>Media Panels</strong></td><td>Electronic devices automatically recording behavior, supplemented by a diary</td><td>Same as purchase panel</td><td>Same as purchase panel</td><td>Establishing advertising rates; selecting media program or air time; establishing viewer profiles</td></tr>
+    <tr><td><strong>Scanner Volume Tracking Data</strong></td><td>Household purchases are recorded through electronic scanners in supermarkets</td><td>Data reflect actual purchases; timely data; less expensive</td><td>Data may not be representative; errors in recording purchases; difficult to link purchases to elements of marketing mix other than price</td><td>Price tracking, modeling; effectiveness of in-store modeling</td></tr>
+    <tr><td><strong>Scanner Diary Panels with Cable TV</strong></td><td>Scanner panels of households that subscribe to cable TV</td><td>Data reflect actual purchases; sample control; ability to link panel data to household characteristics</td><td>Data may not be representative; quality of data limited</td><td>Promotional mix analyses; copy testing; new-product testing; positioning</td></tr>
+    <tr><td><strong>Audit Services</strong></td><td>Verification of product movement by examining physical records or performing inventory analysis</td><td>Relatively precise information at the retail and wholesale levels</td><td>Coverage may be incomplete; matching of data on competitive activity may be difficult</td><td>Measurement of consumer sales and market share; competitive activity; analyzing distribution patterns; tracking of new products</td></tr>
+    <tr><td><strong>Institutional / Industrial Syndicated Services</strong></td><td>Data banks on industrial establishments created through direct inquiries of companies, clipping services, and corporate reports</td><td>Important source of information on industrial firms; particularly useful in initial phases of the projects</td><td>Data is lacking in terms of content, quantity, and quality</td><td>Determining market potential by geographic area; defining sales territories; allocating advertising budget</td></tr>
+  </tbody>
+</table>
+<p class="citation" style="white-space:normal;">Every cell reproduced verbatim across the five "Overview of Syndicated Services" slides. <span class="citation">[Slide: ch3 s.40]</span> <span class="citation">[Slide: ch3 s.41]</span> <span class="citation">[Slide: ch3 s.42]</span> <span class="citation">[Slide: ch3 s.43]</span></p>
+</details>
+<div class="callout">"Combining data from different syndicated sources compensates for the weaknesses of one method with the strengths of another." <span class="citation">[Slide: ch3 s.43]</span></div>
+
+<p><strong>Single-source data</strong> is the pay-off of combining syndicated sources:</p>
+<p class="verbatim"><strong>Single-source data</strong> provide integrated information on household variables, including media consumption and purchases, and marketing variables, such as product sales, price, advertising, promotion, and in-store marketing effort. <span class="citation">[Slide: ch3 s.44]</span></p>
+<p>How it is assembled: recruit a test panel of households and meter each home's TV sets; survey households periodically on what they read; track grocery purchases by UPC scanners; and track retail data such as sales, advertising, and promotion. <span class="citation">[Slide: ch3 s.44]</span></p>
+<div class="callout">"Single-source data are used by consumer packaged goods companies, like <strong>P&amp;G</strong>, to design integrated marketing programs for households." <span class="citation">[Slide: ch3 s.45]</span></div>
+
+<p>The salient characteristics of syndicated data are packaged in the acronym <strong>SYNDICATED</strong>:</p>
+<div class="mnemonic"><strong>SYNDICATED</strong> = <strong>S</strong>urveys · <strong>Y</strong>ields data of known commercial value · <strong>N</strong>umber of clients use the data · <strong>D</strong>iary, online and media panels · <strong>I</strong>nstitutional services · <strong>C</strong>ost is low · <strong>A</strong>udits · <strong>T</strong>imely and current · <strong>E</strong>lectronic scanner services · <strong>D</strong>ata combined from different sources: single-source data. <span class="citation">[Slide: ch3 s.51]</span></div>
+
+<p>Three concept-map slides (Figures 3.13, 3.14, 3.15) summarise the chapter visually. They are embedded with word summaries beneath.</p>
+<figure>
+  <img src="extracted/ch03/slide-46.png" alt="Figure 3.13 concept map for Research Design: Research Design has basic types Exploratory, Descriptive, and Causal; Exploratory may follow into Descriptive and Causal; Exploratory main methods are Secondary Data Analysis and Qualitative Research; Descriptive may be Cross-Sectional or Longitudinal with main methods Surveys, Panels, Observations; Causal main method is Experiments.">
+  <figcaption>Figure 3.13, "A Concept Map for Research Design." In words: design's basic types are <em>exploratory</em>, <em>descriptive</em>, <em>causal</em>; exploratory (methods: secondary data analysis, qualitative research) may lead into descriptive/causal; descriptive (methods: surveys, panels, observations) may be cross-sectional or longitudinal; causal's method is experiments. <span class="citation">[Slide: ch3 s.46]</span></figcaption>
+</figure>
+<figure>
+  <img src="extracted/ch03/slide-47.png" alt="Figure 3.14 concept map for Secondary Data: Step 1 Problem Definition guides Step 2 Approach guides Step 3 Research Design, which involves Secondary Data and Primary Data; Secondary Data may be Internal (Customer Databases, Data Warehousing & Data Mining, CRM & Database Marketing, Social Media) or External (Business/Nongovernment, Government, Syndicated Services).">
+  <figcaption>Figure 3.14, "A Concept Map for Secondary Data." In words: the research design involves <em>secondary</em> and <em>primary</em> data; secondary data is <em>internal</em> (customer databases, data warehousing/mining, CRM &amp; database marketing, social media) or <em>external</em> (business/nongovernment, government, syndicated services). <span class="citation">[Slide: ch3 s.47]</span></figcaption>
+</figure>
+<figure>
+  <img src="extracted/ch03/slide-48.png" alt="Figure 3.15 concept map for Syndicated Data: Syndicated Data is classified by unit of measurement into Households/Consumers (data obtained by Surveys, Panels, Electronic Scanners) and Institutions (data obtained by Audit Services, Industry Services); Surveys may be Psychographic & Lifestyle, Advertising Evaluation, General; Panels may be Purchase or Media; Electronic Scanners may be Volume Tracking, Scanner Panels, Scanner Panels with Cable TV.">
+  <figcaption>Figure 3.15, "A Concept Map for Syndicated Data." In words: syndicated data is split by <em>unit of measurement</em> into households/consumers (via surveys, panels, electronic scanners) and institutions (via audit services, industry services), each fanning into the sub-types shown above. <span class="citation">[Slide: ch3 s.48]</span></figcaption>
+</figure>
+
+<h2 id="c3-exam">Common confusions</h2>
+<table>
+  <thead><tr><th>Concept A</th><th>Concept B</th><th>Key difference</th></tr></thead>
+  <tbody>
+    <tr><td>Exploratory research</td><td>Conclusive research</td><td>Exploratory = insight/understanding, loose &amp; flexible, small nonrepresentative sample, qualitative, tentative findings. Conclusive = test hypotheses, formal &amp; structured, large representative sample, quantitative, conclusive findings used in decisions. <span class="citation">[Slide: ch3 s.9]</span></td></tr>
+    <tr><td>Descriptive research</td><td>Causal research</td><td>Descriptive establishes <em>association</em> (X and Y vary together); causal establishes <em>cause and effect</em> (X is a cause of Y) and uses experiments. <span class="citation">[Slide: ch3 s.18]</span></td></tr>
+    <tr><td>Cross-sectional design</td><td>Longitudinal design</td><td>Cross-sectional collects from a sample <em>once</em> (snapshot); longitudinal measures the <em>same</em> fixed sample <em>repeatedly</em> over time (movie). <span class="citation">[Slide: ch3 s.16]</span></td></tr>
+    <tr><td>Primary data</td><td>Secondary data</td><td>Primary = collected fresh for the problem at hand (involved, high cost, long). Secondary = already collected for other purposes (rapid, low cost, short). Start with secondary. <span class="citation">[Slide: ch3 s.21]</span> <span class="citation">[Slide: ch3 s.22]</span></td></tr>
+    <tr><td>Internal secondary data</td><td>External secondary data</td><td>Internal = generated inside the organisation (customer databases, CRM, data warehousing). External = from outside (government, business/nongovernment, syndicated services). <span class="citation">[Slide: ch3 s.27]</span></td></tr>
+    <tr><td>Syndicated services</td><td>Single-source data</td><td>Syndicated services sell a common data pool to many clients; single-source data <em>integrates</em> several syndicated sources into one household-level picture (media + purchases + marketing variables). <span class="citation">[Slide: ch3 s.34]</span> <span class="citation">[Slide: ch3 s.44]</span></td></tr>
+  </tbody>
+</table>
+
+<h2>Exam practice</h2>
+<details class="exam"><summary>Q1 (the tree). Draw/describe the full classification of research designs from Figure 3.3.</summary><div class="ans">Research Design → Exploratory Research Design and Conclusive Research Design. Conclusive → Descriptive Research and Causal Research. Descriptive → Cross-Sectional Design and Longitudinal Design. <span class="citation">[Slide: ch3 s.8]</span></div></details>
+<details class="exam"><summary>Q2 (design choice). A manager wants to <em>prove</em> that a price cut will <em>cause</em> higher sales, not merely that the two move together. Which design and method?</summary><div class="ans"><strong>Causal research</strong>, whose main method is the <strong>experiment</strong>. Descriptive research would only show association. <span class="citation">[Slide: ch3 s.18]</span> <span class="citation">[Slide: ch3 s.19]</span></div></details>
+<details class="exam"><summary>Q3 (definitions). Distinguish a cross-sectional design from a longitudinal design.</summary><div class="ans">Cross-sectional collects information from a sample of population elements <em>only once</em>; longitudinal measures a <em>fixed</em> sample <em>repeatedly</em> on the same variables, so the sample stays the same over time. <span class="citation">[Slide: ch3 s.16]</span></div></details>
+<details class="exam"><summary>Q4 (data sources). Why does the book say "secondary data are of primary importance," and give two reasons to start with them.</summary><div class="ans">Because they can be located quickly and inexpensively, so you should exhaust them before collecting costly primary data. Reasons: lower cost and shorter time (Table 3.2), plus they help identify/define the problem, develop an approach, formulate the design, answer some research questions, and interpret primary data. <span class="citation">[Slide: ch3 s.21]</span> <span class="citation">[Slide: ch3 s.22]</span> <span class="citation">[Slide: ch3 s.23]</span></div></details>
+<details class="exam"><summary>Q5 (acronym). What does SECOND stand for, and when do you use it?</summary><div class="ans">It is the checklist for <em>evaluating secondary data</em>: <strong>S</strong>pecifications, <strong>E</strong>rror, <strong>C</strong>urrency, <strong>O</strong>bjective, <strong>N</strong>ature, <strong>D</strong>ependability. Use it before trusting any secondary source, because the data were collected for someone else's purpose. <span class="citation">[Slide: ch3 s.50]</span></div></details>
+<details class="exam"><summary>Q6 (syndicated). What is the unit-of-measurement classification of syndicated services, and name one data-collection method under each branch.</summary><div class="ans">Households/Consumers (methods: surveys, panels, or electronic scanner services) and Institutions (data from retailers, wholesalers, or industrial firms via audit services and industry services). <span class="citation">[Slide: ch3 s.34]</span> <span class="citation">[Slide: ch3 s.36]</span> <span class="citation">[Slide: ch3 s.39]</span></div></details>
+<details class="exam"><summary>Q7 (application). A scanner panel links what a household buys to which TV ads it sees. What integrated data type is this, and who uses it?</summary><div class="ans">This is moving toward <strong>single-source data</strong> — integrated information on household media consumption, purchases, and marketing variables. It is used by consumer packaged goods companies like P&amp;G to design integrated marketing programs. <span class="citation">[Slide: ch3 s.44]</span> <span class="citation">[Slide: ch3 s.45]</span></div></details>
+
+<h2>Slide coverage audit — Chapter 3</h2>
+<table>
+  <thead><tr><th>Slide</th><th>Banner / title</th><th>Portal section</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Chapter 3 title</td><td>Chapter header</td></tr>
+    <tr><td>2</td><td>Figure 3.1 Relationship of chapter to MR process</td><td>§1</td></tr>
+    <tr><td>3</td><td>Step 3 enlarged</td><td>§1</td></tr>
+    <tr><td>4</td><td>Figure 3.2 Steps leading to research design</td><td>§1 (iterative loop)</td></tr>
+    <tr><td>5</td><td>Research Design: Definition</td><td>§1 (verbatim + builder callout)</td></tr>
+    <tr><td>6</td><td>Components of a Research Design (list)</td><td>§1</td></tr>
+    <tr><td>7</td><td>Components of a Research Design (flow)</td><td>§1</td></tr>
+    <tr><td>8</td><td>Figure 3.3 Classification of research designs</td><td>§2 (figure + tree)</td></tr>
+    <tr><td>9</td><td>Table 3.1 Exploratory vs Conclusive</td><td>§3 (table)</td></tr>
+    <tr><td>10</td><td>Table 3.1 Cont.</td><td>§3 (table continuation)</td></tr>
+    <tr><td>11</td><td>Uses of Exploratory Research</td><td>§3</td></tr>
+    <tr><td>12</td><td>Methods of Exploratory Research</td><td>§3 (Nokia callout)</td></tr>
+    <tr><td>13</td><td>Major Types of Descriptive Studies</td><td>§4</td></tr>
+    <tr><td>14</td><td>Use of Descriptive Research</td><td>§4</td></tr>
+    <tr><td>15</td><td>Methods of Descriptive Research</td><td>§4 (callout)</td></tr>
+    <tr><td>16</td><td>Cross-sectional and Longitudinal Designs</td><td>§4 (verbatim definitions)</td></tr>
+    <tr><td>17</td><td>Figure 3.4 Cross-Sectional vs Longitudinal</td><td>§4 (cards)</td></tr>
+    <tr><td>18</td><td>Figure 3.5 Descriptive versus Causal Research</td><td>§5 (cards)</td></tr>
+    <tr><td>19</td><td>Uses of Causal Research</td><td>§5 (experiment callout)</td></tr>
+    <tr><td>20</td><td>Some Alternative Research Designs</td><td>§5 (figure + a/b/c sequences)</td></tr>
+    <tr><td>21</td><td>Primary vs Secondary Data</td><td>§6 (verbatim definitions)</td></tr>
+    <tr><td>22</td><td>Table 3.2 Comparison of Primary and Secondary Data</td><td>§6 (table)</td></tr>
+    <tr><td>23</td><td>Uses of Secondary Data</td><td>§6</td></tr>
+    <tr><td>24</td><td>Criteria for Evaluating Secondary Data</td><td>§7 (SECOND table)</td></tr>
+    <tr><td>25</td><td>Criteria … (Specifications, Error, Currency)</td><td>§7 (SECOND table)</td></tr>
+    <tr><td>26</td><td>Criteria … Cont. (Objective, Nature, Dependability)</td><td>§7 (SECOND table)</td></tr>
+    <tr><td>27</td><td>Figure 3.6 Classification of Secondary Data</td><td>§7 (figure + internal/external)</td></tr>
+    <tr><td>28</td><td>Internal Secondary Data (Department Store Project)</td><td>§7</td></tr>
+    <tr><td>29</td><td>Individual/Household Level Data from Syndicated Firms</td><td>§7 (demographic/psychographic table + D&amp;B callout)</td></tr>
+    <tr><td>30</td><td>Classification of Business/Nongovernment Sources</td><td>§7 (guides/directories/indices/statistical)</td></tr>
+    <tr><td>31</td><td>Geographic Subdivision of an MSA</td><td>§7 (MSA→Block drill-down)</td></tr>
+    <tr><td>32</td><td>A Classification of Computerized Databases</td><td>§7</td></tr>
+    <tr><td>33</td><td>Classification of Computerized Databases (defs)</td><td>§7 (bibliographic/numeric/full-text/directory/special)</td></tr>
+    <tr><td>34</td><td>Syndicated Services (definition)</td><td>§8 (verbatim + unit of measurement)</td></tr>
+    <tr><td>35</td><td>Syndicated Services Cont. (institutional)</td><td>§8 (Institutions card + callout)</td></tr>
+    <tr><td>36</td><td>Figure 3.7 Classification of Syndicated Services</td><td>§8 (cards)</td></tr>
+    <tr><td>37</td><td>Figure 3.8 Syndicated Services: Households/Consumers</td><td>§8 (surveys/panels/scanners breakdown)</td></tr>
+    <tr><td>38</td><td>Classification of Syndicated Survey Research</td><td>§8 (periodic/panel)</td></tr>
+    <tr><td>39</td><td>Figure 3.9 Syndicated Services: Institutions</td><td>§8 (audit/industry services)</td></tr>
+    <tr><td>40</td><td>Overview of Syndicated Services (Surveys, Purchase Panels)</td><td>§8 (full comparison table)</td></tr>
+    <tr><td>41</td><td>Overview … Cont. (Media Panels, Scanner Volume Tracking)</td><td>§8 (full comparison table)</td></tr>
+    <tr><td>42</td><td>Overview … Cont. (Scanner Diary w/ Cable TV, Audit Services)</td><td>§8 (full comparison table)</td></tr>
+    <tr><td>43</td><td>Overview … Cont. (Institutional Syndicated Services)</td><td>§8 (full comparison table + combine callout)</td></tr>
+    <tr><td>44</td><td>Single-Source Data</td><td>§8 (verbatim + how assembled)</td></tr>
+    <tr><td>45</td><td>Single-Source Data Application</td><td>§8 (P&amp;G callout)</td></tr>
+    <tr><td>46</td><td>Figure 3.13 Concept Map for Research Design</td><td>§8 (embedded + word summary)</td></tr>
+    <tr><td>47</td><td>Figure 3.14 Concept Map for Secondary Data</td><td>§8 (embedded + word summary)</td></tr>
+    <tr><td>48</td><td>Figure 3.15 Concept Map for Syndicated Data</td><td>§8 (embedded + word summary)</td></tr>
+    <tr><td>49</td><td>Acronym: DESIGN</td><td>§1 (mnemonic)</td></tr>
+    <tr><td>50</td><td>Acronym: SECOND</td><td>§7 (mnemonic)</td></tr>
+    <tr><td>51</td><td>Acronym: SYNDICATED</td><td>§8 (mnemonic)</td></tr>
+  </tbody>
+</table>
+</section>
+
+<!-- CH3-PLACEHOLDER -->
+
+<script>
+// Collapse every .plain-english box into a <details> on load, collapsed by default.
+document.querySelectorAll('.plain-english').forEach(function(box){
+  var h = box.querySelector('h3');
+  var det = document.createElement('details');
+  det.className = 'plain-english';
+  det.style.cssText = box.style.cssText;
+  var sum = document.createElement('summary');
+  sum.style.cssText = 'cursor:pointer;list-style:none;color:#8a5a00;font-size:1.08rem;font-weight:700;font-family:ui-serif,Georgia,serif;';
+  sum.textContent = (h ? h.textContent : 'In Plain English') + '  ▸ (click to open)';
+  if (h) h.remove();
+  while (box.firstChild) det.appendChild(box.firstChild);
+  det.insertBefore(sum, det.firstChild);
+  det.addEventListener('toggle', function(){
+    sum.textContent = (det.open ? '▾ ' : '') + (h ? h.textContent : 'In Plain English') + (det.open ? '' : '  ▸ (click to open)');
+  });
+  box.replaceWith(det);
+});
+
+// On print, open everything.
+window.addEventListener('beforeprint', function(){
+  document.querySelectorAll('details').forEach(function(d){ d.dataset.prevOpen = d.open ? '1':'0'; d.open = true; });
+});
+window.addEventListener('afterprint', function(){
+  document.querySelectorAll('details').forEach(function(d){ if(d.dataset.prevOpen==='0') d.open=false; });
+});
+
+// Chart 1: top-10 org revenue
+(function(){
+  var el = document.getElementById('ch1TopOrgs');
+  if(!el || !window.Chart) return;
+  new Chart(el, {
+    type: 'bar',
+    data: {
+      labels: ['Nielsen','Kantar','Ipsos','GfK','IMS Health','Info Resources','INTAGE','Westat','Arbitron','NPD Group'],
+      datasets: [{ label: 'Global revenue (USD millions, 2012)',
+        data: [5429.0,3338.6,2301.1,1947.8,775.0,763.8,500.3,495.9,449.9,272.0],
+        backgroundColor: '#1f6f8b' }]
+    },
+    options: { responsive: true, plugins: { legend: { display: true } },
+      scales: { y: { beginAtZero: true, title: { display: true, text: 'USD millions' } } } }
+  });
+})();
+</script>
+</body>
+</html>
