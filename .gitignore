@@ -1,0 +1,9 @@
+# Local-only working files: kept on disk in this folder, NOT published to GitHub Pages.
+# The hi-res re-renders, the unused raw slide PNGs, and the Playwright test artifacts
+# all live here for reference but are intentionally not pushed.
+extracted/
+tests/
+
+# The 12 figure images actually embedded by index.html ARE tracked (added before this
+# ignore rule). To publish a NEW figure for a future chapter, force-add it:
+#   git add -f extracted/chNN/slide-NN.png
