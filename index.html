@@ -174,7 +174,69 @@
     table { font-size: .9rem; }
     th, td { padding: .45rem .55rem; }
     .citation { white-space: normal; }      /* let citations wrap, never push width */
+    .tabbar { top: 0; }
+    .tab-btn { font-size: .82rem; padding: .5rem .7rem; }
+    .quiz-controls { gap: 6px; }
   }
+
+  /* ===== Tab bar (Study Portal / Quiz) ===== */
+  .tabbar {
+    position: sticky; top: 0; z-index: 50;
+    display: flex; gap: 8px; flex-wrap: wrap;
+    background: var(--bg); border-bottom: 1px solid var(--rule);
+    padding: 10px 0 8px; margin: .4rem 0 1.4rem;
+  }
+  .tab-btn {
+    font-family: system-ui, sans-serif; font-size: .95rem; font-weight: 600;
+    background: var(--card); color: var(--fg); border: 1px solid var(--rule);
+    border-radius: 8px; padding: .55rem 1rem; cursor: pointer;
+  }
+  .tab-btn:hover { border-color: var(--accent); }
+  .tab-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  /* ===== Quiz ===== */
+  .quiz-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 1rem 0 1.4rem; }
+  .filter-chip {
+    font-family: system-ui, sans-serif; font-size: .82rem; font-weight: 600;
+    background: var(--card); color: var(--fg); border: 1px solid var(--rule);
+    border-radius: 16px; padding: .35rem .8rem; cursor: pointer;
+  }
+  .filter-chip.active { background: var(--accent2); color: #fff; border-color: var(--accent2); }
+  .scorebar {
+    position: sticky; top: 58px; z-index: 40;
+    background: var(--card); border: 1px solid var(--rule); border-radius: 8px;
+    padding: .6rem .9rem; margin: 0 0 1.2rem; font-family: system-ui, sans-serif;
+    font-size: .95rem; box-shadow: 0 2px 8px var(--shadow);
+  }
+  .scorebar strong { color: var(--accent); }
+  #resetQuiz {
+    float: right; font-family: system-ui, sans-serif; font-size: .8rem; font-weight: 600;
+    background: transparent; color: var(--accent2); border: 1px solid var(--rule);
+    border-radius: 6px; padding: .25rem .6rem; cursor: pointer;
+  }
+  .q-card { border: 1px solid var(--rule); border-radius: 10px; padding: 1rem 1.1rem; margin: 0 0 1rem; background: var(--card); }
+  .q-meta { font-family: system-ui, sans-serif; font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; margin-bottom: .35rem; }
+  .q-meta .badge { background: var(--code-bg); border-radius: 10px; padding: .05rem .5rem; margin-right: .4rem; }
+  .q-prompt { font-weight: 600; margin: 0 0 .7rem; }
+  .q-opt {
+    display: block; width: 100%; text-align: left; font-family: inherit; font-size: .98rem;
+    background: var(--bg); color: var(--fg); border: 1.5px solid var(--rule);
+    border-radius: 8px; padding: .55rem .8rem; margin: .4rem 0; cursor: pointer; line-height: 1.45;
+  }
+  .q-opt:hover { border-color: var(--accent2); }
+  .q-card.answered .q-opt { cursor: default; }
+  .q-card.answered .q-opt:hover { border-color: var(--rule); }
+  .q-opt .mark { font-weight: 700; margin-right: .5rem; }
+  .q-opt.correct { background: var(--ok-bg); border-color: var(--ok-bd); }
+  .q-opt.wrong   { background: var(--bad-bg); border-color: var(--bad-bd); }
+  .q-opt.correct .mark { color: var(--ok-bd); }
+  .q-opt.wrong .mark   { color: var(--bad-bd); }
+  .q-explain { display: none; margin-top: .7rem; padding: .6rem .8rem; border-left: 3px solid var(--accent2); background: var(--callout-bg); border-radius: 4px; font-size: .94rem; }
+  .q-card.answered .q-explain { display: block; }
+  .quiz-done { font-family: system-ui, sans-serif; font-weight: 700; padding: 1rem; border-radius: 10px; background: var(--ok-bg); border: 1px solid var(--ok-bd); margin: 1rem 0; }
+
+  :root { --ok-bg:#e6f6e8; --ok-bd:#2e8b57; --bad-bg:#fdeaea; --bad-bd:#c0392b; }
+  html[data-theme="dark"] { --ok-bg:#18301f; --ok-bd:#4cae7a; --bad-bg:#34191a; --bad-bd:#e07a72; }
 </style>
 <script>
 // Set theme before first paint to avoid a flash. Order: saved choice > OS preference > light.
@@ -198,6 +260,12 @@
   <p class="citation" style="white-space:normal;">Every factual claim is traced to a slide I read visually, cited as [Slide: chN s.NN]. No lecture audio was provided, so there are no [Lec] citations. The amber boxes are a plain-English tutor layer and carry no citations on purpose.</p>
 </header>
 
+<div class="tabbar" role="tablist">
+  <button class="tab-btn active" id="tab-study" role="tab" aria-selected="true" type="button">📚 Study Portal</button>
+  <button class="tab-btn" id="tab-quiz" role="tab" aria-selected="false" type="button">📝 Quiz (Ch. 1–3)</button>
+</div>
+
+<div id="view-study">
 <nav class="toc">
   <strong>Contents</strong>
   <ul>
@@ -1107,6 +1175,30 @@
 </section>
 
 <!-- CH3-PLACEHOLDER -->
+</div><!-- /view-study -->
+
+<!-- ===================================================================== -->
+<!-- =============================== QUIZ ================================ -->
+<!-- ===================================================================== -->
+<div id="view-quiz" hidden>
+  <h1 style="border:none;">📝 Quiz — Chapters 1 to 3</h1>
+  <p class="meta">True/False and multiple-choice questions across all three chapters. Click an answer to see if you got it right, with the explanation and slide reference. Your score updates as you go.</p>
+
+  <div class="quiz-controls" id="quizFilters">
+    <span style="font-family:system-ui,sans-serif;font-size:.82rem;color:var(--muted);">Show:</span>
+    <button class="filter-chip active" data-ch="all" type="button">All</button>
+    <button class="filter-chip" data-ch="1" type="button">Chapter 1</button>
+    <button class="filter-chip" data-ch="2" type="button">Chapter 2</button>
+    <button class="filter-chip" data-ch="3" type="button">Chapter 3</button>
+  </div>
+
+  <div class="scorebar" id="scorebar">
+    <button id="resetQuiz" type="button">↺ Reset</button>
+    <span id="scoreText">Answered 0 / 0 · Correct 0 (0%)</span>
+  </div>
+
+  <div id="quizList"></div>
+</div>
 
 <script>
 // Wrap every table in a horizontal-scroll container so wide tables never
@@ -1200,6 +1292,155 @@ function applyChartTheme(){
       scales: { y: { beginAtZero: true, title: { display: true, text: 'USD millions' } } } }
   });
   applyChartTheme();
+})();
+
+// ===================== Tabs: Study Portal / Quiz =====================
+(function(){
+  var tStudy = document.getElementById('tab-study');
+  var tQuiz  = document.getElementById('tab-quiz');
+  var vStudy = document.getElementById('view-study');
+  var vQuiz  = document.getElementById('view-quiz');
+  function show(which){
+    var quiz = which === 'quiz';
+    vQuiz.hidden = !quiz; vStudy.hidden = quiz;
+    tQuiz.classList.toggle('active', quiz);  tQuiz.setAttribute('aria-selected', quiz);
+    tStudy.classList.toggle('active', !quiz); tStudy.setAttribute('aria-selected', !quiz);
+    window.scrollTo(0, 0);
+  }
+  tStudy.addEventListener('click', function(){ show('study'); });
+  tQuiz.addEventListener('click', function(){ show('quiz'); });
+})();
+
+// ===================== Quiz bank + engine =====================
+// type 'tf' -> options are ["True","False"]; answer = index of correct option.
+var QUIZ = [
+  // ---------- Chapter 1 ----------
+  {ch:1,type:'tf',q:'Marketing research is defined as the systematic and objective identification, collection, analysis, dissemination, and use of information.',answer:0,explain:'True. That is the textbook definition word-for-word.',cite:'[Slide: ch1 s.2]'},
+  {ch:1,type:'tf',q:'Segmentation, product, pricing, and promotion research are examples of problem-identification research.',answer:1,explain:'False. Those are examples of problem-SOLVING research. Problem-identification research is market potential, share, image, forecasting, and trends.',cite:'[Slide: ch1 s.5]'},
+  {ch:1,type:'tf',q:'The economy, technology, competition, and laws are examples of controllable marketing variables.',answer:1,explain:'False. They are UNcontrollable environmental factors. The controllable variables are the marketing mix: segmentation, product, price, promotion, distribution.',cite:'[Slide: ch1 s.12]'},
+  {ch:1,type:'tf',q:'A full-service supplier is able to conduct the entire marketing research project.',answer:0,explain:'True. Full-service suppliers (syndicated, standardized, customized, internet) can run the whole project; limited-service suppliers handle just one slice.',cite:'[Slide: ch1 s.14]'},
+  {ch:1,type:'mcq',q:'Which of these is an example of problem-identification research?',options:['Pricing research','Market potential research','Product research','Distribution research'],answer:1,explain:'Market potential is identification research. Pricing, product, and distribution are problem-solving research.',cite:'[Slide: ch1 s.5]'},
+  {ch:1,type:'mcq',q:'How many steps are in the marketing research process?',options:['Four','Five','Six','Eight'],answer:2,explain:'Six: define the problem, develop an approach, formulate a research design, collect data, analyse data, prepare and present the report.',cite:'[Slide: ch1 s.10]'},
+  {ch:1,type:'mcq',q:'"Price elasticity of demand" falls under which sub-type of problem-solving research?',options:['Promotional research','Pricing research','Product research','Segmentation research'],answer:1,explain:'Pricing research covers pricing policies, price in brand selection, product-line pricing, price elasticity, and price changes.',cite:'[Slide: ch1 s.8]'},
+  {ch:1,type:'mcq',q:'By 2012 global revenue, the largest research organization in the world was:',options:['Kantar','Ipsos','Nielsen','GfK'],answer:2,explain:'Nielsen Holdings, at USD 5,429.0 million, well ahead of #2 Kantar (3,338.6).',cite:'[Slide: ch1 s.15]'},
+  {ch:1,type:'mcq',q:'Which is NOT one of the five activities named in the definition of marketing research?',options:['Identification','Collection','Prediction','Dissemination'],answer:2,explain:'The five are identification, collection, analysis, dissemination, and use. "Prediction" is not one of them.',cite:'[Slide: ch1 s.2]'},
+  {ch:1,type:'mcq',q:'Research suppliers are first divided into which two groups?',options:['Full-service vs limited-service','Internal vs external','Syndicated vs customized','Qualitative vs quantitative'],answer:1,explain:'First split is internal vs external; the external branch then divides into full-service and limited-service.',cite:'[Slide: ch1 s.13]'},
+
+  // ---------- Chapter 2 ----------
+  {ch:2,type:'tf',q:'The management decision problem is information-oriented, while the marketing research problem is action-oriented.',answer:1,explain:'False. It is the reverse: the management decision problem is ACTION-oriented (what to do); the marketing research problem is INFORMATION-oriented (what to find out).',cite:'[Slide: ch2 s.13]'},
+  {ch:2,type:'tf',q:'The management decision problem focuses on symptoms, while the marketing research problem focuses on the underlying causes.',answer:0,explain:'True. That is exactly the distinction drawn in Table 2.2.',cite:'[Slide: ch2 s.13]'},
+  {ch:2,type:'tf',q:'A hypothesis is often a possible answer to a research question.',answer:0,explain:'True. A hypothesis is an unproven statement about a factor of interest, and is frequently a possible answer to the research question.',cite:'[Slide: ch2 s.25]'},
+  {ch:2,type:'tf',q:'Defining the problem too broadly tends to make you miss important components of the problem.',answer:1,explain:'False. Missing important components is the danger of a too-NARROW definition. A too-BROAD definition gives no guidance for the next steps.',cite:'[Slide: ch2 s.16]'},
+  {ch:2,type:'mcq',q:'In the acronym PROBLEM, the "O" stands for:',options:['Objectives of the decision maker','Outcomes of the research','Observation methods','Options available'],answer:0,explain:'PROBLEM = Past information, Resources/constraints, Objectives of the decision maker, Buyer behavior, Legal environment, Economic environment, Marketing & technological skills.',cite:'[Slide: ch2 s.31]'},
+  {ch:2,type:'mcq',q:'Which is NOT one of the four tasks involved in problem definition?',options:['Discussions with decision makers','Interviews with industry experts','Sample size determination','Qualitative research'],answer:2,explain:'The four tasks are discussions with decision makers, interviews with experts, secondary data analysis, and qualitative research. Sample size determination belongs to the research design (Chapter 9).',cite:'[Slide: ch2 s.5]'},
+  {ch:2,type:'mcq',q:'"Should the price of the brand be increased?" is an example of a:',options:['Marketing research problem','Management decision problem','Hypothesis','Research question'],answer:1,explain:'It is action-oriented ("should we...?"), so it is a management decision problem. The matching research problem would be "to determine the price elasticity of demand...".',cite:'[Slide: ch2 s.14]'},
+  {ch:2,type:'mcq',q:'A graphical model:',options:['Provides precise numerical results','Shows the direction of relationships without giving numbers','Is a kind of hypothesis','Replaces the research design'],answer:1,explain:'A graphical model is visual: it isolates variables and suggests the direction of relationships but is not designed to provide numerical results.',cite:'[Slide: ch2 s.23]'},
+  {ch:2,type:'mcq',q:'The seven Cs of interaction between the decision maker and researcher include all of these EXCEPT:',options:['Communication','Candor','Competition','Creativity'],answer:2,explain:'The seven Cs are Communication, Cooperation, Confidence, Candor, Closeness, Continuity, Creativity. "Competition" is not one of them.',cite:'[Slide: ch2 s.8]'},
+  {ch:2,type:'mcq',q:'A properly defined marketing research problem is stated as:',options:['A single narrow question','A broad statement plus specific components','Only specific components','A single hypothesis'],answer:1,explain:'It should have both a broad statement (for perspective) and specific components (the exact sub-questions to research).',cite:'[Slide: ch2 s.17]'},
+
+  // ---------- Chapter 3 ----------
+  {ch:3,type:'tf',q:'Exploratory research uses a large, representative sample and quantitative analysis.',answer:1,explain:'False. That describes conclusive research. Exploratory research uses a small, nonrepresentative sample and qualitative analysis, with tentative findings.',cite:'[Slide: ch3 s.9]'},
+  {ch:3,type:'tf',q:'In a longitudinal design, the same fixed sample is measured repeatedly over time.',answer:0,explain:'True. That is what distinguishes it from a cross-sectional design, where a sample is measured only once.',cite:'[Slide: ch3 s.16]'},
+  {ch:3,type:'tf',q:'Secondary data are collected fresh, specifically for the problem at hand.',answer:1,explain:'False. That is primary data. Secondary data were already collected for some other purpose and can be located quickly and inexpensively.',cite:'[Slide: ch3 s.21]'},
+  {ch:3,type:'tf',q:'Causal research is used to establish cause-and-effect relationships.',answer:0,explain:'True. Descriptive research only establishes association (X and Y vary together); causal research establishes that X is a cause of Y.',cite:'[Slide: ch3 s.18]'},
+  {ch:3,type:'tf',q:'Single-source data integrate a household’s media consumption with its actual purchases.',answer:0,explain:'True. Single-source data combine household media exposure, purchases, and marketing variables (price, advertising, promotion) into one integrated picture.',cite:'[Slide: ch3 s.44]'},
+  {ch:3,type:'mcq',q:'Conclusive research is divided into:',options:['Exploratory and descriptive','Descriptive and causal','Cross-sectional and longitudinal','Primary and secondary'],answer:1,explain:'Research design splits into exploratory and conclusive; conclusive then splits into descriptive and causal.',cite:'[Slide: ch3 s.8]'},
+  {ch:3,type:'mcq',q:'In the acronym SECOND (for evaluating secondary data), the "C" stands for:',options:['Cost','Currency','Content','Coverage'],answer:1,explain:'SECOND = Specifications, Error, Currency (when the data were collected), Objective, Nature, Dependability.',cite:'[Slide: ch3 s.50]'},
+  {ch:3,type:'mcq',q:'Which type of research establishes only association (that X and Y vary together)?',options:['Causal research','Descriptive research','Experiments','Exploratory pilot surveys'],answer:1,explain:'Descriptive research shows association; causal research is needed to show cause and effect.',cite:'[Slide: ch3 s.18]'},
+  {ch:3,type:'mcq',q:'The main method of causal research is the:',options:['Survey','Focus group','Experiment','Panel'],answer:2,explain:'The experiment is the main method of causal research (covered in Chapter 6).',cite:'[Slide: ch3 s.19]'},
+  {ch:3,type:'mcq',q:'Syndicated services are classified by unit of measurement into:',options:['Internal and external','Households/consumers and institutions','Primary and secondary','Surveys and panels'],answer:1,explain:'By unit of measurement: households/consumers (surveys, panels, scanners) and institutions (retailers, wholesalers, industrial firms).',cite:'[Slide: ch3 s.34]'},
+  {ch:3,type:'mcq',q:'A cross-sectional design collects information from a sample:',options:['Repeatedly over time','Only once','From the entire population','Only from institutions'],answer:1,explain:'A cross-sectional design collects information from any given sample of population elements only once (a snapshot).',cite:'[Slide: ch3 s.16]'},
+  {ch:3,type:'mcq',q:'Compared with primary data, secondary data are:',options:['Collected for the problem at hand','Rapid to obtain and relatively low cost','Always more accurate','Always perfectly current'],answer:1,explain:'Secondary data are collected rapidly and easily at relatively low cost and short time, which is why you exhaust them first.',cite:'[Slide: ch3 s.22]'}
+];
+
+(function(){
+  var listEl = document.getElementById('quizList');
+  if (!listEl) return;
+  var scoreText = document.getElementById('scoreText');
+  var answered = 0, correct = 0, filter = 'all';
+  var total = QUIZ.length;
+
+  function updateScore(){
+    var pct = answered ? Math.round(correct/answered*100) : 0;
+    scoreText.innerHTML = 'Answered <strong>'+answered+'</strong> / '+total+
+      ' &middot; Correct <strong>'+correct+'</strong> ('+pct+'%)';
+  }
+
+  function letter(i){ return String.fromCharCode(65+i); }
+
+  function render(){
+    listEl.innerHTML = '';
+    QUIZ.forEach(function(item, idx){
+      if (filter !== 'all' && String(item.ch) !== filter) return;
+      var opts = item.type === 'tf' ? ['True','False'] : item.options;
+      var card = document.createElement('div');
+      card.className = 'q-card';
+      card.dataset.idx = idx;
+
+      var meta = document.createElement('div');
+      meta.className = 'q-meta';
+      meta.innerHTML = '<span class="badge">Chapter '+item.ch+'</span>' +
+                       '<span class="badge">'+(item.type==='tf'?'True / False':'Multiple choice')+'</span>';
+      card.appendChild(meta);
+
+      var prompt = document.createElement('div');
+      prompt.className = 'q-prompt';
+      prompt.textContent = (idx+1)+'. '+item.q;
+      card.appendChild(prompt);
+
+      opts.forEach(function(opt, oi){
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'q-opt';
+        b.innerHTML = '<span class="mark"></span>' +
+          (item.type==='tf' ? '' : '<b>'+letter(oi)+'.</b> ') +
+          opt.replace(/</g,'&lt;');
+        b.addEventListener('click', function(){ choose(card, item, oi, b); });
+        card.appendChild(b);
+      });
+
+      var ex = document.createElement('div');
+      ex.className = 'q-explain';
+      ex.innerHTML = item.explain + ' <span class="citation">'+item.cite+'</span>';
+      card.appendChild(ex);
+
+      listEl.appendChild(card);
+    });
+  }
+
+  function choose(card, item, oi, btn){
+    if (card.classList.contains('answered')) return;
+    card.classList.add('answered');
+    answered++;
+    var optButtons = card.querySelectorAll('.q-opt');
+    var ok = (oi === item.answer);
+    if (ok) correct++;
+    // mark chosen
+    btn.classList.add(ok ? 'correct' : 'wrong');
+    btn.querySelector('.mark').textContent = ok ? '✓' : '✗';
+    // always reveal the correct one
+    if (!ok) {
+      var right = optButtons[item.answer];
+      right.classList.add('correct');
+      right.querySelector('.mark').textContent = '✓';
+    }
+    updateScore();
+  }
+
+  // filters
+  document.getElementById('quizFilters').addEventListener('click', function(e){
+    var chip = e.target.closest('.filter-chip'); if (!chip) return;
+    filter = chip.dataset.ch;
+    document.querySelectorAll('#quizFilters .filter-chip').forEach(function(c){ c.classList.toggle('active', c===chip); });
+    render();
+  });
+
+  // reset
+  document.getElementById('resetQuiz').addEventListener('click', function(){
+    answered = 0; correct = 0; updateScore(); render();
+  });
+
+  render();
+  updateScore();
 })();
 </script>
 </body>
