@@ -74,14 +74,14 @@
   code { background: var(--code-bg); padding: 0 .25rem; border-radius: 3px; font-size: .9em; color: var(--fg); }
 
   /* Theme toggle button */
-  #themeToggle {
-    position: fixed; top: 12px; right: 14px; z-index: 999;
+  #topControls { position: fixed; top: 12px; right: 14px; z-index: 999; display: flex; gap: 8px; }
+  #topControls button {
     font-family: system-ui, sans-serif; font-size: .82rem; font-weight: 600;
     background: var(--card); color: var(--fg); border: 1px solid var(--rule);
     border-radius: 20px; padding: .4rem .8rem; cursor: pointer;
     box-shadow: 0 2px 8px var(--shadow);
   }
-  #themeToggle:hover { border-color: var(--accent); }
+  #topControls button:hover { border-color: var(--accent); }
 
   /* Citation = quiet sidenote, never a shouting badge */
   .citation { color: var(--cite); font-size: 0.7rem; font-family: inherit; font-style: italic; opacity: 1; white-space: nowrap; }
@@ -165,8 +165,9 @@
     h2 { font-size: 1.22rem; }
     h3 { font-size: 1.08rem; }
     p, li { font-size: 1.02rem; }           /* a touch larger for phone reading */
-    header h1 { font-size: 1.5rem; padding-right: 84px; } /* clear the fixed toggle */
-    #themeToggle { top: 8px; right: 8px; font-size: .76rem; padding: .35rem .6rem; }
+    header h1 { font-size: 1.5rem; padding-top: 2.6rem; } /* clear the fixed controls */
+    #topControls { top: 8px; right: 8px; gap: 6px; }
+    #topControls button { font-size: .72rem; padding: .35rem .55rem; }
     nav.toc { padding: .8rem 1rem; }
     .plain-english { padding: 14px 15px 6px; }
     .branch > div { flex: 1 1 100%; }       /* stack branch cards vertically */
@@ -237,6 +238,34 @@
 
   :root { --ok-bg:#e6f6e8; --ok-bd:#2e8b57; --bad-bg:#fdeaea; --bad-bd:#c0392b; }
   html[data-theme="dark"] { --ok-bg:#18301f; --ok-bd:#4cae7a; --bad-bg:#34191a; --bad-bd:#e07a72; }
+
+  /* ===== Print / Save as PDF ===== */
+  @media print {
+    /* Always print on a clean light palette regardless of the on-screen theme. */
+    html, html[data-theme="dark"] {
+      --bg:#fff; --fg:#1a1a1a; --muted:#444; --rule:#bbb; --card:#fff;
+      --code-bg:#f1efec; --callout-bg:#f4f8fc; --pe-bg:#fbf8f2; --shadow:transparent;
+    }
+    body { max-width: none; padding: 0; font-size: 11pt; line-height: 1.45; }
+    /* Hide interactive chrome that makes no sense on paper. */
+    #topControls, .tabbar, .scorebar, .quiz-controls, nav.toc { display: none !important; }
+    /* Print whichever tab is currently open (the hidden one stays hidden). */
+    [hidden] { display: none !important; }
+    /* Expand every collapsible so nothing is hidden in the PDF. */
+    details { display: block !important; }
+    details > summary { font-weight: 700; list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details > *:not(summary) { display: block !important; }
+    /* Keep boxes and headings from breaking awkwardly across pages. */
+    .plain-english, .callout, .verbatim, .deck-quotes, .exam, .q-card, table, figure, img { break-inside: avoid; page-break-inside: avoid; }
+    h1, h2, h3, h4 { break-after: avoid; page-break-after: avoid; }
+    section { page-break-before: always; }
+    section:first-of-type { page-break-before: avoid; }
+    img { max-width: 100% !important; height: auto !important; }
+    a { color: inherit; text-decoration: none; }
+    /* Print background colours of the tutor/callout boxes (Chrome honours this). */
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
 </style>
 <script>
 // Set theme before first paint to avoid a flash. Order: saved choice > OS preference > light.
@@ -252,7 +281,10 @@
 </head>
 <body>
 
-<button id="themeToggle" type="button" aria-label="Toggle light or dark mode">🌙 Dark</button>
+<div id="topControls">
+  <button id="themeToggle" type="button" aria-label="Toggle light or dark mode">🌙 Dark</button>
+  <button id="printBtn" type="button" aria-label="Print or save this page as PDF">🖨️ Print</button>
+</div>
 
 <header>
   <h1 style="border:none; margin-top:0;">Essentials of Marketing Research — Study Portal</h1>
@@ -1274,6 +1306,25 @@ function applyChartTheme(){
     paintToggle();
     applyChartTheme();
   });
+})();
+
+// Print / Save as PDF: always print the Study Portal, with every <details> expanded.
+(function(){
+  var btn = document.getElementById('printBtn');
+  if (!btn) return;
+  var reopened = [];
+  function expandAll(){
+    reopened = [];
+    var ds = document.querySelectorAll('details:not([open])');
+    for (var i = 0; i < ds.length; i++) { ds[i].open = true; reopened.push(ds[i]); }
+  }
+  function restoreAll(){
+    for (var i = 0; i < reopened.length; i++) { reopened[i].open = false; }
+    reopened = [];
+  }
+  window.addEventListener('beforeprint', expandAll);
+  window.addEventListener('afterprint', restoreAll);
+  btn.addEventListener('click', function(){ window.print(); });
 })();
 
 // Chart 1: top-10 org revenue
