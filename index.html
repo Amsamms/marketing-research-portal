@@ -292,6 +292,11 @@
   .bq-reveal { margin-top: .5rem; font-family: system-ui, sans-serif; font-size: .8rem; cursor: pointer; border: 1px solid var(--accent); background: transparent; color: var(--accent); padding: .3rem .8rem; border-radius: 7px; }
   .bq-reveal:hover { background: var(--accent); color: #fff; }
   .bq-ans { margin-top: .55rem; background: var(--ok-bg); border: 1px solid var(--ok-bd); border-radius: 7px; padding: .5rem .75rem; font-size: .95rem; }
+  .bank-note { background: var(--callout-bg); border-left: 3px solid var(--accent); padding: .55rem .85rem; margin: .8rem 0; font-size: .9rem; border-radius: 0 6px 6px 0; }
+  .bank-terms-h { margin: 1.6rem 0 .5rem; font-family: system-ui, sans-serif; font-size: 1rem; color: var(--accent2); border-top: 1px dashed var(--rule); padding-top: .8rem; }
+  .bq.bt { border-left: 3px solid var(--accent2); }
+  .bq.bt .bq-q { font-weight: 700; }
+  .bq.bt .bq-ans { background: var(--callout-bg); border-color: var(--accent2); }
   @media print { .bank-filters, .bq-reveal { display: none !important; } .bq-ans { display: block !important; } .bq.revealed .bq-opts li[data-correct="1"] { background: var(--ok-bg) !important; } }
 </style>
 <script>
@@ -2034,7 +2039,8 @@
 <div id="view-bank" hidden>
 <section class="bank-intro">
   <h2>📋 Exam Question Bank</h2>
-  <p>Real exam-style questions (True/False, multiple choice, fill-in-the-blank) extracted from the shared Quizlet test-bank sets, organised under the five course chapters. Pure definition cards were removed. <strong>82 questions</strong> in total. Click <em>Show answer</em> under each question to reveal the answer.</p>
+  <p>Real exam-style questions (True/False, multiple choice, fill-in-the-blank) taken from the shared Quizlet test-bank sets that match the professor's exam, organised under the five course chapters. Each chapter also has a <strong>Key Terms / Matching</strong> block for the exam's matching section. <strong>82 questions</strong> + <strong>37 key terms</strong>. Click a button to reveal the answer/definition.</p>
+  <div class="bank-note">⚠️ These 6 Quizlet sets are a <strong>partial</strong> copy of the full Malhotra test bank: they cover many exam questions but not all. Some multiple-choice/true-false items on the real exam are not in these sets. Use this as strong practice, not a guaranteed complete match.</div>
   <div class="bank-filters" id="bankFilters">
     <button class="bfil active" data-ch="all" type="button">All</button>
     <button class="bfil" data-ch="1" type="button">Ch 1</button>
@@ -2047,7 +2053,7 @@
   </div>
 </section>
 <section class="bank-ch" data-ch="1">
-  <h3 class="bank-ch-h">Chapter 1 — Introduction to Marketing Research <span class="chip">10 questions</span></h3>
+  <h3 class="bank-ch-h">Chapter 1 — Introduction to Marketing Research <span class="chip">10 questions</span> <span class="chip">7 key terms</span></h3>
 <div class="bq" data-type="tf">
   <div class="bq-head"><span class="bq-num">Q1</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Marketing research is classified into two areas - problem identification and problem solving research. T/F?</div>
@@ -2138,9 +2144,51 @@
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> D) all of the above</div>
 </div>
+  <h4 class="bank-terms-h">🔑 Key Terms / Matching (Ch 1)</h4>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Marketing research</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>the systematic and objective identification, collection, analysis, dissemination, and use of information for
+the purpose of assisting management in decision making related to the identification and solution of problems (and opportunities) in marketing.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Problem identification research</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>undertaken to help identify problems that are perhaps not apparent on the surface and yet exist or
+are likely to arise in the future.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Marketing research process</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>conceptualized as consisting of six steps which include problem definition, developing an approach to the problem, research design formulation, field work, data preparation and analysis, and report generation and presentation.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">competitive intelligence</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>Enables senior managers in companies to make informed decisions about everything and it is a continuous process involving the legal and ethical collection of information.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Problem solving research</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>Research undertaken to help solve specific
+marketing problems. EX: Segmentation, product, price, promotion, distribution research.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Problem Identification Research</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>Research undertaken to help identify problems
+which are not necessarily apparent on the
+surface and yet exist or are likely to arise in the
+future EX: Market potential, market share, market characteristic, sales analysis, &amp; business trend research.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Marketing Information System</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>a formalized set of procedures for generating, analyzing, storing, and distributing pertinent information to marketing decision makers on an ongoing basis</div>
+</div>
 </section>
 <section class="bank-ch" data-ch="2">
-  <h3 class="bank-ch-h">Chapter 2 — Defining the Problem &amp; Developing an Approach <span class="chip">6 questions</span></h3>
+  <h3 class="bank-ch-h">Chapter 2 — Defining the Problem &amp; Developing an Approach <span class="chip">6 questions</span> <span class="chip">0 key terms</span></h3>
 <div class="bq" data-type="tf">
   <div class="bq-head"><span class="bq-num">Q11</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Problem definition is the most important step in the marketing research project</div>
@@ -2203,7 +2251,7 @@
 </div>
 </section>
 <section class="bank-ch" data-ch="3">
-  <h3 class="bank-ch-h">Chapter 3 — Research Design, Secondary &amp; Syndicated Data <span class="chip">30 questions</span></h3>
+  <h3 class="bank-ch-h">Chapter 3 — Research Design, Secondary &amp; Syndicated Data <span class="chip">30 questions</span> <span class="chip">17 key terms</span></h3>
 <div class="bq" data-type="tf">
   <div class="bq-head"><span class="bq-num">Q17</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">The objective of conclusive research is to test specific results and examine specific relationships.</div>
@@ -2504,9 +2552,97 @@
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> B) It features information on retail spending; and projections for future growth in these areas.</div>
 </div>
+  <h4 class="bank-terms-h">🔑 Key Terms / Matching (Ch 3)</h4>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Research design</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>A framework or blueprint for conducting the marketing research project. Specifies the details of the procedures necessary for obtaining the required information to structure and solve the problem.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Exploratory research</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>used in cases when you must define the problem more precisely, identify relevant courses of action, or gain additional insights before an approach can be developed.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Descriptive design</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>Requires a clear specification of the who, what, when, where, why, and way (the six Ws) of the research.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Cross-sectional studies</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>Involve the collection of information from any given sample of population elements only once.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Panel</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>Refers to a sample of respondents who have agreed to provide information at specified intervals over an extended period.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">single cross-sectional design</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>only one sample of respondents and information is obtained from this sample only once</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Multiple cross-sectional design</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>two or more samples of respondents, and information from each sample is obtained only once</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Longitudinal studies</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>A fixed sample (or samples) of population elements is measured repeatedly on the same variables.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Cohort analysis</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>Consists of a series of surveys conducted at appropriate time intervals, where the cohort serves as the basic unit of analysis. A cohort is a group of respondents who experience the same event within the same time interval.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Causal research</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>To understand which variables are the cause and which variables are the effect of a phenomenon.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Primary data</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>Originated by a researcher for the specific purpose of addressing the problem at hand. The collection involves all six steps of the marketing research process (very involved, high cost, long collection time).</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Secondary data</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>Data that have already been collected for purposes other than the problem at hand (rapid and easy, low cost, short collection time).</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Internal secondary data</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>ready to use, requires further processing</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">External secondary data</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>- published materials
+- computerized databases
+- syndicated services</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Syndicated services</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>Companies that collect and sell common pools of data of known commercial value designed to serve a number of clients.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Household/consumer data</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>May be obtained from surveys, diary panels, or electronic scanner services.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Institutional data</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>May be obtained from retailers, wholesalers, or industrial firms.</div>
+</div>
 </section>
 <section class="bank-ch" data-ch="4">
-  <h3 class="bank-ch-h">Chapter 4 — Qualitative Research <span class="chip">18 questions</span></h3>
+  <h3 class="bank-ch-h">Chapter 4 — Qualitative Research <span class="chip">18 questions</span> <span class="chip">11 key terms</span></h3>
 <div class="bq" data-type="tf">
   <div class="bq-head"><span class="bq-num">Q47</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Qualitative research is an unstructured, exploratory research methodology based on small samples that provides insights and understanding of the problem setting.</div>
@@ -2675,9 +2811,65 @@
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> B) symbolic analysis</div>
 </div>
+  <h4 class="bank-terms-h">🔑 Key Terms / Matching (Ch 4)</h4>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Focus group</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>An interview conducted by a trained moderator among a small group of respondents in an unstructured and natural manner.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Laddering</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>A technique for conducting depth interviews in which a line of questioning proceeds from product characteristics to user characteristics.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Hidden issue questioning</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>A type of depth interview that attempts to locate personal sore spots related to deeply felt personal concerns.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Projective technique</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>An unstructured, indirect form of questioning that encourages respondents to project their underlying motivations, beliefs, attitudes, or feelings regarding the issues of concern.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Word association</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>Respondents are presented with a list of words, one at a time. After each word, they are asked to give the first word that comes to mind.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Completion technique</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>A projective technique that requires the respondent to complete an incomplete stimulus situation.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Sentence completion</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>A projective technique in which respondents are presented with a number of incomplete sentences and asked to complete them.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Story completion</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>A projective technique in which the respondents are provided with part of a story and required to give the conclusion in their own words.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Cartoon tests</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>Cartoon characters are shown in a specific situation related to the problem. The respondents are asked to indicate what one cartoon character might say in response to the comments of another character.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Role play</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>Respondents are asked to play the role or assume the behavior of someone else.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Depth interview</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>An unstructured, direct, personal interview in which a single respondent is probed by a highly skilled interviewer to uncover underlying motivations, beliefs, attitudes, and feelings on a topic.</div>
+</div>
 </section>
 <section class="bank-ch" data-ch="5">
-  <h3 class="bank-ch-h">Chapter 5 — Survey and Observation <span class="chip">18 questions</span></h3>
+  <h3 class="bank-ch-h">Chapter 5 — Survey and Observation <span class="chip">18 questions</span> <span class="chip">2 key terms</span></h3>
 <div class="bq" data-type="tf">
   <div class="bq-head"><span class="bq-num">Q65</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">The most popular data-collection method is the structured direct survey.</div>
@@ -2840,6 +3032,17 @@
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> C) Mystery shopping</div>
 </div>
+  <h4 class="bank-terms-h">🔑 Key Terms / Matching (Ch 5)</h4>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Sampling frame</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>A representation of the elements of the target population. It consists of a list or set of directions for identifying the target population.</div>
+</div>
+<div class="bq bt" data-type="def">
+  <div class="bq-q">Structured observation</div>
+  <button class="bq-reveal" type="button">Show definition</button>
+  <div class="bq-ans" hidden>Involves observation techniques where the researcher clearly defines the behaviors to be observed and the methods by which they will be measured.</div>
+</div>
 </section>
 </div><!-- /view-bank -->
 
@@ -2991,7 +3194,8 @@ function applyChartTheme(){
     var nowHidden = ans.hidden;
     ans.hidden = !nowHidden;
     card.classList.toggle('revealed', nowHidden);
-    btn.textContent = nowHidden ? 'Hide answer' : 'Show answer';
+    var word = card.classList.contains('bt') ? 'definition' : 'answer';
+    btn.textContent = (nowHidden ? 'Hide ' : 'Show ') + word;
   });
   // reveal all / hide all
   function setAll(reveal){
@@ -3001,7 +3205,8 @@ function applyChartTheme(){
       var btn = card.querySelector('.bq-reveal');
       ans.hidden = !reveal;
       card.classList.toggle('revealed', reveal);
-      if (btn) btn.textContent = reveal ? 'Hide answer' : 'Show answer';
+      var word = card.classList.contains('bt') ? 'definition' : 'answer';
+      if (btn) btn.textContent = (reveal ? 'Hide ' : 'Show ') + word;
     });
   }
   var ra = document.getElementById('bankRevealAll');
