@@ -266,6 +266,33 @@
     /* Print background colours of the tutor/callout boxes (Chrome honours this). */
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
+
+  /* ===== Exam Bank (Quizlet) tab ===== */
+  .bank-intro { margin-top: 1.4rem; }
+  .bank-intro h2 { border-bottom: 3px solid var(--accent); padding-bottom: .3rem; color: var(--heading); }
+  .bank-filters { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1rem 0 .4rem; align-items: center; position: sticky; top: 0; background: var(--bg); padding: .5rem 0; z-index: 5; }
+  .bfil, .bank-revealall, .bank-hideall { font-family: system-ui, sans-serif; font-size: .82rem; cursor: pointer; border: 1px solid var(--rule); background: var(--card); color: var(--fg); padding: .3rem .7rem; border-radius: 999px; }
+  .bfil.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .bfil:hover, .bank-revealall:hover, .bank-hideall:hover { border-color: var(--accent); }
+  .bank-revealall, .bank-hideall { margin-left: auto; }
+  .bank-hideall { margin-left: 0; }
+  .bank-ch-h { margin-top: 2rem; border-bottom: 2px solid var(--accent2); padding-bottom: .25rem; color: var(--heading); }
+  .bq { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: .85rem 1rem; margin: .7rem 0; }
+  .bq-head { display: flex; align-items: center; gap: .5rem; margin-bottom: .45rem; font-family: system-ui, sans-serif; }
+  .bq-num { font-weight: 700; color: var(--muted); font-size: .8rem; }
+  .bq-badge { font-size: .68rem; padding: .08rem .5rem; border-radius: 999px; font-family: system-ui, sans-serif; }
+  .b-tf { background: rgba(31,111,139,.15); color: var(--accent2); }
+  .b-mcq { background: rgba(184,67,15,.13); color: var(--accent); }
+  .b-fill { background: var(--code-bg); color: var(--muted); }
+  .bq-q { font-weight: 600; line-height: 1.5; }
+  .bq-opts { list-style: none; padding: 0; margin: .55rem 0 .3rem; }
+  .bq-opts li { padding: .35rem .6rem; margin: .25rem 0; border: 1px solid var(--rule); border-radius: 7px; font-size: .95rem; }
+  .opt-letter { font-weight: 700; color: var(--muted); margin-right: .3rem; }
+  .bq.revealed .bq-opts li[data-correct="1"] { background: var(--ok-bg); border-color: var(--ok-bd); font-weight: 600; }
+  .bq-reveal { margin-top: .5rem; font-family: system-ui, sans-serif; font-size: .8rem; cursor: pointer; border: 1px solid var(--accent); background: transparent; color: var(--accent); padding: .3rem .8rem; border-radius: 7px; }
+  .bq-reveal:hover { background: var(--accent); color: #fff; }
+  .bq-ans { margin-top: .55rem; background: var(--ok-bg); border: 1px solid var(--ok-bd); border-radius: 7px; padding: .5rem .75rem; font-size: .95rem; }
+  @media print { .bank-filters, .bq-reveal { display: none !important; } .bq-ans { display: block !important; } .bq.revealed .bq-opts li[data-correct="1"] { background: var(--ok-bg) !important; } }
 </style>
 <script>
 // Set theme before first paint to avoid a flash. Order: saved choice > OS preference > light.
@@ -296,6 +323,7 @@
   <button class="tab-btn active" id="tab-study" role="tab" aria-selected="true" type="button">📚 Study Portal</button>
   <button class="tab-btn" id="tab-course" role="tab" aria-selected="false" type="button">🧠 Whole Course in Plain English</button>
   <button class="tab-btn" id="tab-quiz" role="tab" aria-selected="false" type="button">📝 Quiz (Ch. 1-5)</button>
+  <button class="tab-btn" id="tab-bank" role="tab" aria-selected="false" type="button">📋 Exam Bank (Quizlet)</button>
 </div>
 
 <div id="view-study">
@@ -2003,6 +2031,818 @@
   <div id="quizList"></div>
 </div>
 
+<div id="view-bank" hidden>
+<section class="bank-intro">
+  <h2>📋 Exam Question Bank</h2>
+  <p>Real exam-style questions (True/False, multiple choice, fill-in-the-blank) extracted from the shared Quizlet test-bank sets, organised under the five course chapters. Pure definition cards were removed. <strong>82 questions</strong> in total. Click <em>Show answer</em> under each question to reveal the answer.</p>
+  <div class="bank-filters" id="bankFilters">
+    <button class="bfil active" data-ch="all" type="button">All</button>
+    <button class="bfil" data-ch="1" type="button">Ch 1</button>
+    <button class="bfil" data-ch="2" type="button">Ch 2</button>
+    <button class="bfil" data-ch="3" type="button">Ch 3</button>
+    <button class="bfil" data-ch="4" type="button">Ch 4</button>
+    <button class="bfil" data-ch="5" type="button">Ch 5</button>
+    <button class="bank-revealall" id="bankRevealAll" type="button">Reveal all</button>
+    <button class="bank-hideall" id="bankHideAll" type="button">Hide all</button>
+  </div>
+</section>
+<section class="bank-ch" data-ch="1">
+  <h3 class="bank-ch-h">Chapter 1 — Introduction to Marketing Research <span class="chip">10 questions</span></h3>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q1</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Marketing research is classified into two areas - problem identification and problem solving research. T/F?</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q2</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Problem solving research provides information about the marketing environment and helps diagnose a problem. T/F?</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q3</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Operational supervisor, project manager, research director, analyst, and statistician/data processing specialist are all positions in the marketing research field. T/F?</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q4</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Field service organizations are limited service suppliers that specialize in interviewing or specialize in collecting data through the mail or through personal or telephone interviewing. T/F?</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q5</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Which of the issues listed below would be addressed using problem-solving research?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> the need to understand market potential</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> the need to understand current cultural trends</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> the need to understand changes in consumer behavior</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> the need to determine where to locate retail outlets</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) the need to determine where to locate retail outlets</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q6</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Marketing managers need the information provided by marketing research for many reasons. Which of the following is not a reason to need information provided by marketing research?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Firms have become national and international in scope.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Consumers have become more affluent and sophisticated.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Competition has become more intense.</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> All of the above are reasons to need information provided by marketing research.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) All of the above are reasons to need information provided by marketing research.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q7</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Which of the following statements is (are) true concerning big firms?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Many firms maintain in-house marketing research departments.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> The marketing research department&#x27;s place in the organizational structure may vary considerably.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Firms with in-house research departments never use external research suppliers.</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> Both A and B are correct.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) Both A and B are correct.</div>
+</div>
+<div class="bq" data-type="fill">
+  <div class="bq-head"><span class="bq-num">Q8</span><span class="bq-badge b-fill">Fill in the blank</span></div>
+  <div class="bq-q">External research suppliers can be classified as ________ and ________.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> full service and limited service</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q9</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">The Nielsen Television Index is a set of information of known commercial value that is provided to multiple clients on a subscription basis. The Nielsen Index is an example of ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> syndicated services</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> customized services</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> standardized services</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> analytical services</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) syndicated services</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q10</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Which of the tasks below might be conducted by the researcher during the &quot;problem definition&quot; and the &quot;development of an approach to the problem&quot; steps of the marketing research process?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> analysis of secondary data</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> interviews with industry experts</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> qualitative research</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> all of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) all of the above</div>
+</div>
+</section>
+<section class="bank-ch" data-ch="2">
+  <h3 class="bank-ch-h">Chapter 2 — Defining the Problem &amp; Developing an Approach <span class="chip">6 questions</span></h3>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q11</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Problem definition is the most important step in the marketing research project</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q12</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">To understand the background of a marketing research problem, the researcher must understand the client&#x27;s firm and industry.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q13</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">The need for the researcher to understand the nature of what decision managers face and what they hope to learn from research is one of the reasons to conduct ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> discussions with decision makers</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> interview with experts</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> secondary data analysis</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> qualitative research</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) discussions with decision makers</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q14</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">If the management decision problem is: &quot;Should a new product be introduced?&quot; what is the most appropriate marketing research problem?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> determining the price elasticity of demand and the impact on sales and profits of various levels of price changes</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> determining consumer preferences and purchase intentions for the proposed new product</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> determining the effectiveness of the current advertising campaign</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> determining the impact of new distribution outlets</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) determining consumer preferences and purchase intentions for the proposed new product</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q15</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Which statement is true concerning defining the marketing research problem?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> The definition should allow the researcher to obtain all the information needed to address the management decision problem.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> The definition should guide the researcher in proceeding with the project.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> The marketing research problem should be stated in broad, general terms with specific components identified.</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> All of the above are correct.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) All of the above are correct.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q16</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Which statement about hypotheses is not true?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> A hypothesis is an unproven statement or proposition about a factor or phenomenon that is of interest to the researcher.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Hypotheses are declarative and can be tested empirically.</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> It is possible to formulate hypotheses in all situations.</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> An important role of a hypothesis is to suggest variables to be included in the research design.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) It is possible to formulate hypotheses in all situations.</div>
+</div>
+</section>
+<section class="bank-ch" data-ch="3">
+  <h3 class="bank-ch-h">Chapter 3 — Research Design, Secondary &amp; Syndicated Data <span class="chip">30 questions</span></h3>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q17</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">The objective of conclusive research is to test specific results and examine specific relationships.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q18</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Shorter Labs is conducting experiments to see if shoppers will buy unknown products if they are sent coupons. Shorter Labs is conducting causal research.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q19</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">A longitudinal design differs from a cross-sectional design in that the sample or samples remain the same over time.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q20</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Which statement is not true about research design?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Research design is a framework for conducting the marketing research project.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Research design specifies the measurement and scaling procedures.</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> Research design is undertaken before developing the approach to the problem.</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Research design is undertaken after the marketing research problem is defined.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) Research design is undertaken before developing the approach to the problem.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q21</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Typically, a ________ involves the tasks of designing the information needed, specifying the measurement and scaling procedures, and developing a plan of data analysis.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> research classification</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> research design</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> design formulation</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) research design</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q22</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Cross-sectional and longitudinal designs are types of ________ .</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> causal research</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> exploratory research</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> descriptive research</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) descriptive research</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q23</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Which of the objectives below would best represent exploratory research?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Describe market characteristics or functions.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Determine cause and effect relationships.</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> Provide insights and understanding.</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Test specific hypotheses and examine relationships.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) Provide insights and understanding.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q24</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Which data collection method is used in causal research?</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> experiments</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> surveys</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> expert surveys</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> panels</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) experiments</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q25</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Jerry and the team working on the Roger Tire Company marketing research project are developing ways to test their hypothesis that drivers of larger trucks prefer dual belted radial tires. What type of research are they conducting?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> simple research</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> exploratory research</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> descriptive research</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> causal research</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) descriptive research</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q26</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">You work for Innovative Focus, an internationally recognized consulting firm. You are working on the Waterpik account to help them with finding their next successful product. You are meeting with the Waterpik marketing professionals tomorrow to conduct a trends meeting to list and prioritize key consumer wants and needs. You have also scheduled a meeting with the Waterpik engineers to uncover applicable technologies and the company&#x27;s internal competencies. What type of research are you conducting in your meetings with Waterpik?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> simple research</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> exploratory research</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> descriptive research</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> causal research</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) exploratory research</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q27</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Descriptive research is conducted for all of the following reasons except ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> to describe the characteristics of relevant groups, such as consumers, salespeople, organizations, or market areas</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> to determine the degree to which marketing variables are associated</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> to understand which variables are the cause and which variables are the effect of a phenomenon</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> to determine the perceptions of product characteristics</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) to understand which variables are the cause and which variables are the effect of a phenomenon</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q28</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">The question, &quot;How did the American people rate the performance of George W. Bush immediately after the war in Afghanistan?&quot; would be addressed using a ________. However, a ________ would be used to address the question, &quot;How did the American people change their view of Bush&#x27;s performance during the war in Afghanistan?&quot;</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> longitudinal design; multiple cross-sectional</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> cross-sectional design; longitudinal design</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> longitudinal; cross-sectional design</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) cross-sectional design; longitudinal design</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q29</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Which of the following tasks is not a component of research design?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Design the exploratory, descriptive, and/or causal phases of the research.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Construct and pretest a questionnaire (interviewing form) or an appropriate form for data collection.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Specify the sampling process and sample size.</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> Develop hypotheses.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) Develop hypotheses.</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q30</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Secondary data are originated by a researcher for the specific purpose of addressing the problem at hand.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q31</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Primary data are data that have already been collected for purposes other than the problem at hand.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q32</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Secondary data can help you develop an approach to the problem, answer certain research questions and test some hypotheses, and interpret primary data more insightfully.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q33</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Before collecting external secondary data, it is useful to analyze internal secondary data.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q34</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Chrysler&#x27;s Personal Information Centers collect data from car owners on all aspects of buying a car. These PICs give the company the ability to engage in customized marketing. Chrysler is using internal secondary data in its database marketing efforts.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q35</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">An advantage of scanner data is that in-store variables like pricing, promotions, and displays are part of the data set.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q36</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Audits can help consumer product firms determine the size of the total market and distribution of sales by type of outlet and by different regions.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q37</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">As compared to primary data, secondary data are collected ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> rapidly and easily</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> at a relatively low cost</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> in a short time</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> all of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) all of the above</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q38</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Which of the following classifications of secondary data is not a classification for external secondary data?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> published materials</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> computerized databases</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> ready-to-use</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> syndicated services</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) ready-to-use</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q39</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Caterpillar needed to know what truck fleets should test their two new engines; how they could get a marketing strategy that could be measured; and how to adjust for the coming downturn in sales. To answer these questions, they gave their salesforce laptops and paid them to enter customer information related to each sale they made. Caterpillar analyzed the newly acquired customer data and developed strategies to address their marketing questions. Caterpillar utilized ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> secondary marketing</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> external marketing</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> database marketing</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> internal marketing</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) database marketing</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q40</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">InfoUSA (www.infousa.com) is a leading provider of sales and marketing support data. InfoUSA provides data via a ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> offline database</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> bibliographic database</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> online database</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> internet database</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) internet database</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q41</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Which of the following is a characteristic of purchase panels?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> household purchases recorded through electronic scanners in supermarkets</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> households provide specific information regularly over an extended period of time; respondents asked to record specific behaviors as they occur</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> verification of product movement by examining physical records or performing inventory analysis</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> data banks on industrial establishment created through direct inquiries of companies, clipping services, and corporate reports</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) households provide specific information regularly over an extended period of time; respondents asked to record specific behaviors as they occur</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q42</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Which of the following is a characteristic of audit services?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> household purchases recorded through electronic scanners in supermarkets</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> households provide specific information regularly over an extended period of time; respondents asked to record specific behaviors as they occur</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> verification of product movement by examining physical records or performing inventory analysis</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> data banks on industrial establishment created through direct inquiries of companies, clipping services, and corporate reports</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) verification of product movement by examining physical records or performing inventory analysis</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q43</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">A data gathering technique that is comprised of samples of respondents whose television viewing behavior is automatically recorded by electronic devices, supplementing the purchase information recorded online or in a diary is referred to as ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> scanner diary panels/cable TV</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> scanner panels</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> purchase panels</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> media panels</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) media panels</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q44</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Scanner data where panel members are identified by an ID card allowing each panel member&#x27;s purchases to be stored with respect to the individual shopper are referred to as _______.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> scanner panels with cable TV</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> volume tracking data</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> scanner panels</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) scanner panels</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q45</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">The uses of retail and wholesale audit data include all of the following except ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> identifying shelf space allocation and inventory problems</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> establishing profiles of specific user groups</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> developing sales potentials and forecasts</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> analyzing distribution problems</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) establishing profiles of specific user groups</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q46</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Sales &amp; Marketing Management&#x27;s annual Survey of Buying Power provides data to help you analyze each of your U.S. markets, whether they are cities, counties, metro areas, or states. What of the following information is also true of the Survey of Buying Power?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> It features statistics, rankings, and projections for every county and media market in the United States with demographic broken out by age, race, city, county, and state.</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> It features information on retail spending; and projections for future growth in these areas.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> It features a unique measure of spending power that takes population, EBI, and retail sales into account to determine a market&#x27;s ability to buy.</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> All of the above are true.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) It features information on retail spending; and projections for future growth in these areas.</div>
+</div>
+</section>
+<section class="bank-ch" data-ch="4">
+  <h3 class="bank-ch-h">Chapter 4 — Qualitative Research <span class="chip">18 questions</span></h3>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q47</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Qualitative research is an unstructured, exploratory research methodology based on small samples that provides insights and understanding of the problem setting.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q48</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">The findings of qualitative research should be regarded as conclusive and used to make generalizations to the population of interest.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q49</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">The main purpose of focus groups is to gain insights by listening to a group of people from the appropriate target market talk about issues of interest to the researcher.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q50</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">A focus group generally includes 10 to 16 members.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q51</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">The quality of focus group results depends heavily on the skills of the moderator.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q52</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Depth interviews uncover less depth of insights than focus groups.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q53</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Projective techniques generally require personal interviews with highly trained interviewers. This is an advantage of projective techniques.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q54</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Focus groups, depth interviews, and projective techniques can be implemented over the Internet.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q55</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Whenever a new marketing research problem is being addressed, ________ research must be preceded by appropriate ________ research.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> qualitative; quantitative</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> observational; experimental</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> quantitative; qualitative</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> experimental; observational</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) quantitative; qualitative</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q56</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">There are several reasons to use qualitative research. Which of the following is not a reason to use qualitative research?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> It is not always possible, or desirable, to use fully structured or formal methods to obtain information from respondents.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> People may be unwilling or unable to answer certain questions.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> People are unwilling to give truthful answers to questions that invade their privacy, embarrass them, or have a negative impact on their ego or status.</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) none of the above</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q57</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">It is recommended that at least ________ focus groups be conducted.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> two</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> three</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> four</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> five</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) two</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q58</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Focus groups can be used to address substantive issues such as ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> defining a problem more precisely</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> generating new ideas about older products</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> developing an approach to a problem</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> interpreting previously obtained quantitative results</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) generating new ideas about older products</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q59</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Which of the following statements is not an advantage of online focus groups?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> The researcher can reach segments that are usually hard to survey.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Researchers can re-contact group participants at a later date.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> The cost of the online focus group is much less.</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> Only people that have and know how to use a computer can participate.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) Only people that have and know how to use a computer can participate.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q60</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Depth interviews are like focus groups in all of the following ways except ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> both are unstructured interviews</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> both are direct ways of obtaining information</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> both are qualitative research methods</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> both are one-on-one interviews</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) both are one-on-one interviews</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q61</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">In a study the researcher was investigating attitudes toward airlines among male middle managers. Each airline attribute, such as wide-body aircrafts, was probed (why do you like to travel in wide-body aircrafts?) to determine why it was important (I can get more work done) and then that reason was probed (I accomplish more), and so on (I feel good about myself). The depth interview techniques used in the study is called ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> hidden issue questioning</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> symbolic analysis</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> laddering</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) laddering</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q62</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">The 2000, 2004 and 2008 presidential elections were cited in your text for negative attacks by both the Republican and Democratic parties. The negative attacks were based on qualitative marketing research used to help design the messages. Which ethical concern is this use of marketing research related to?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> disguising the purpose of the research and the use of deceptive procedures</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> using qualitative research for questionable purposes</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> comfort level of the respondents</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) using qualitative research for questionable purposes</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q63</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Baby boomers are a large consumer target for many products and &quot;show and tell&quot; focus groups are being used by consumer researchers. Which of the following statements is not true about &quot;show and tell&quot; focus groups?</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> Respondents&#x27; attitudes are uncovered by analyzing their responses to scenarios that are deliberately unstructured, vague, and ambiguous.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> They provide the needed insight into the core values boomers hold close to their hearts.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Participants bring in three or four items that represent their ideal environment.</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Group discussion is centered on the items brought in for &quot;show and tell.&quot;</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) Respondents&#x27; attitudes are uncovered by analyzing their responses to scenarios that are deliberately unstructured, vague, and ambiguous.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q64</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">In a study the researcher was investigating attitudes toward airlines among male middle managers. Questions asked included, &quot;What would it be like if you could no longer use airplanes?&quot; Responses like, &quot;Without planes, I would have to rely on e-mail, letters, and telephone calls&quot; were received. This suggests that what airlines sell to the managers is face-to-face communication. The depth interview techniques used in the study is called ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> hidden issue questioning</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> symbolic analysis</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> laddering</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) symbolic analysis</div>
+</div>
+</section>
+<section class="bank-ch" data-ch="5">
+  <h3 class="bank-ch-h">Chapter 5 — Survey and Observation <span class="chip">18 questions</span></h3>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q65</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">The most popular data-collection method is the structured direct survey.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q66</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Survey questionnaires may be administered in four major modes: (1) telephone interview, (2) personal interviews, (3) mall interviews, and (4) electronic interview.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q67</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">A mail panel consists of a large, nationally representative sample of businesses that have agreed to participate in periodic mail questionnaires and product tests.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q68</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">The potential for non-response bias increases as the response rate decreases.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q69</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Observing children playing with new toys is an example of unstructured observation.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q70</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Voice pitch analysis measures emotional reactions through changes in the respondent&#x27;s voice and is a type of mechanical observation.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q71</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Response latency is used as a measure of the relative preference for various alternatives.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q72</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">The pantry audit is a type of audit where the researcher inventories the brands, quantities, and package sizes of products in a consumer&#x27;s home.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
+</div>
+<div class="bq" data-type="tf">
+  <div class="bq-head"><span class="bq-num">Q73</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-q">Content analysis could be profitably employed in the analysis of structured questions.</div>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q74</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Which of the following statements is not correct about computer-assisted telephone interviewing (CATI)?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> The computer checks the responses for appropriateness and consistency.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Interviewing time is reduced, data quality is enhanced, and the laborious steps in the data-collection process, coding questionnaires and entering the data into the computer, are eliminated.</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> Multiple questions appear on the screen at one time.</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Interim and update reports on data collection or results can be provided almost instantaneously.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) Multiple questions appear on the screen at one time.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q75</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Which of the following is not a personal interview method?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> in-home</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> mall intercept</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> computer-assisted personal interview (CAPI)</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> e-mail</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) e-mail</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q76</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Observational methods may be ________ or ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> structured; unstructured</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> direct; indirect</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> conducted in a natural environment; conducted in a contrived environment</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> all of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) all of the above</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q77</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">When Canon Cameras was losing market share in the United States to Minolta, Canon decided that its distributor, Bell &amp; Howell, was not giving adequate support. Canon sent Tatehiro Tsuruta to the United States to look into the problem. On entering a camera store, he would act just like a customer. He would note how the cameras were displayed and how the clerks served customers. Canon utilized ________, ________ observation in a ________ setting.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> unstructured; disguised; contrived</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> unstructured; disguised; natural</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> structured; undisguised; natural</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> structured; undisguised; contrived</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) unstructured; disguised; natural</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q78</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Nielsen uses audiometers attached to television sets to continually record what channel the set is tuned to. This is an example of ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> mechanical observation</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> personal observation</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> content analysis</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> trace analysis</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) mechanical observation</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q79</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">In the department store patronage project, ________ may be used to analyze magazine advertisements of the sponsoring and competing stores to compare their projected images.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> mechanical observation</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> personal observation</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> content analysis</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> trace analysis</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) content analysis</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q80</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Which of the following marketing applications is not an example of trace analysis?</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> A sample of 100 magazines were examined to determine how the portrayal of women in U.S. magazine advertisements has changed over the past 10 years.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> The selective erosion of tiles in a museum indexed by the replacement rate was used to determine the relative popularity of exhibits.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> The age and condition of cars in a parking lot were used to assess the affluence of customers.</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> The magazines people donated to charity were used to determine people&#x27;s favorite magazines.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) A sample of 100 magazines were examined to determine how the portrayal of women in U.S. magazine advertisements has changed over the past 10 years.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q81</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">Which of the following advantages is the greatest advantage of observation methods?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> If the observed phenomenon occurs frequently or is of short duration, observational methods may be cheaper and faster than survey methods.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> The data obtained are reliable because the responses are limited to the alternatives stated.</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> Observational methods permit measurement of actual behavior rather than reports of intended or preferred behavior.</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Coding, analysis, and interpretation of data are relatively simple.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) Observational methods permit measurement of actual behavior rather than reports of intended or preferred behavior.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q82</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-q">________ involves trained observers posing as consumers and shopping at company or competitor-owned stores to collect data about customer-employee interaction and other marketing variables.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Personal observation</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Structured observation</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> Mystery shopping</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Contrived observation</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) Mystery shopping</div>
+</div>
+</section>
+</div><!-- /view-bank -->
+
 <script>
 // Wrap every table in a horizontal-scroll container so wide tables never
 // stretch the page on a phone. Tables with 5+ columns get the .wide hint.
@@ -2121,7 +2961,8 @@ function applyChartTheme(){
   var tabs = {
     study:  { btn: document.getElementById('tab-study'),  view: document.getElementById('view-study')  },
     course: { btn: document.getElementById('tab-course'), view: document.getElementById('view-course') },
-    quiz:   { btn: document.getElementById('tab-quiz'),   view: document.getElementById('view-quiz')   }
+    quiz:   { btn: document.getElementById('tab-quiz'),   view: document.getElementById('view-quiz')   },
+    bank:   { btn: document.getElementById('tab-bank'),   view: document.getElementById('view-bank')   }
   };
   function show(which){
     Object.keys(tabs).forEach(function(k){
@@ -2134,6 +2975,51 @@ function applyChartTheme(){
   }
   Object.keys(tabs).forEach(function(k){
     tabs[k].btn.addEventListener('click', function(){ show(k); });
+  });
+})();
+
+// ============ Exam Bank: reveal answers + chapter filter ============
+(function(){
+  var bank = document.getElementById('view-bank');
+  if (!bank) return;
+  // per-question reveal toggle
+  bank.addEventListener('click', function(e){
+    var btn = e.target.closest('.bq-reveal');
+    if (!btn) return;
+    var card = btn.closest('.bq');
+    var ans = card.querySelector('.bq-ans');
+    var nowHidden = ans.hidden;
+    ans.hidden = !nowHidden;
+    card.classList.toggle('revealed', nowHidden);
+    btn.textContent = nowHidden ? 'Hide answer' : 'Show answer';
+  });
+  // reveal all / hide all
+  function setAll(reveal){
+    bank.querySelectorAll('.bq').forEach(function(card){
+      if (card.closest('section').style.display === 'none') return;
+      var ans = card.querySelector('.bq-ans');
+      var btn = card.querySelector('.bq-reveal');
+      ans.hidden = !reveal;
+      card.classList.toggle('revealed', reveal);
+      if (btn) btn.textContent = reveal ? 'Hide answer' : 'Show answer';
+    });
+  }
+  var ra = document.getElementById('bankRevealAll');
+  var ha = document.getElementById('bankHideAll');
+  if (ra) ra.addEventListener('click', function(){ setAll(true); });
+  if (ha) ha.addEventListener('click', function(){ setAll(false); });
+  // chapter filter
+  var filters = document.getElementById('bankFilters');
+  if (filters) filters.addEventListener('click', function(e){
+    var b = e.target.closest('.bfil');
+    if (!b) return;
+    filters.querySelectorAll('.bfil').forEach(function(x){ x.classList.remove('active'); });
+    b.classList.add('active');
+    var ch = b.getAttribute('data-ch');
+    bank.querySelectorAll('.bank-ch').forEach(function(sec){
+      sec.style.display = (ch === 'all' || sec.getAttribute('data-ch') === ch) ? '' : 'none';
+    });
+    window.scrollTo(0, 0);
   });
 })();
 
