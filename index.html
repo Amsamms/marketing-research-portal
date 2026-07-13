@@ -284,6 +284,30 @@
   .b-tf { background: rgba(31,111,139,.15); color: var(--accent2); }
   .b-mcq { background: rgba(184,67,15,.13); color: var(--accent); }
   .b-brm { background: rgba(46,125,50,.14); color: #2e7d32; font-weight: 700; }
+  /* ---- Exam Practice mode ---- */
+  .pr-panel { background: var(--card, rgba(0,0,0,.03)); border: 1px solid var(--border, #ddd); border-radius: 12px; padding: 1.1rem 1.3rem; margin: 1rem 0; }
+  .pr-title { font-size: 1.05rem; font-weight: bold; margin: 0 0 .6rem; }
+  .pr-sub { font-family: system-ui, sans-serif; font-size: .85rem; color: var(--muted, #777); }
+  .pr-row { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .7rem 0; font-family: system-ui, sans-serif; }
+  .pr-scope { padding: .35rem .9rem; border-radius: 999px; border: 1.5px solid var(--accent); background: transparent; color: var(--accent); cursor: pointer; font-size: .85rem; }
+  .pr-scope.active { background: var(--accent); color: #fff; }
+  .pr-big { font-family: system-ui, sans-serif; font-size: .95rem; font-weight: 600; padding: .55rem 1.4rem; border-radius: 9px; border: none; background: var(--accent); color: #fff; cursor: pointer; }
+  .pr-big:hover { filter: brightness(1.1); }
+  .pr-big.ghost { background: transparent; border: 1.5px solid var(--accent); color: var(--accent); }
+  .pr-progress { font-family: system-ui, sans-serif; font-size: .82rem; color: var(--muted, #777); display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; margin-bottom: .6rem; }
+  .pr-bar { height: 7px; border-radius: 999px; background: rgba(128,128,128,.18); overflow: hidden; margin: .3rem 0 1rem; }
+  .pr-bar > div { height: 100%; background: var(--accent); width: 0; transition: width .25s; }
+  .pr-opt { display: block; width: 100%; text-align: left; margin: .4rem 0; padding: .55rem .9rem; border-radius: 9px; border: 1px solid var(--border, #ccc); background: transparent; color: inherit; font: inherit; cursor: pointer; }
+  .pr-opt:hover:not(:disabled) { border-color: var(--accent); }
+  .pr-opt:disabled { cursor: default; opacity: .92; }
+  .pr-opt.correct { background: var(--ok-bg, rgba(46,125,50,.12)); border-color: #2e7d32; font-weight: bold; }
+  .pr-opt.wrong { background: rgba(198,40,40,.12); border-color: #c62828; }
+  .pr-verdict { font-family: system-ui, sans-serif; font-weight: 700; margin: .6rem 0 .2rem; }
+  .pr-verdict.ok { color: #2e7d32; } .pr-verdict.bad { color: #c62828; }
+  .pr-score-big { font-size: 2rem; font-weight: bold; margin: .4rem 0; }
+  .pr-fill-ans { margin: .6rem 0; padding: .6rem .9rem; border-radius: 9px; background: var(--ok-bg, rgba(46,125,50,.12)); }
+  #view-practice .bq-q { font-size: 1.02rem; }
+  @media (max-width: 640px){ .pr-big { width: 100%; } }
   .b-fill { background: var(--code-bg); color: var(--muted); }
   .bq-q { font-weight: 600; line-height: 1.5; }
   .bq-opts { list-style: none; padding: 0; margin: .55rem 0 .3rem; }
@@ -330,6 +354,7 @@
   <button class="tab-btn" id="tab-course" role="tab" aria-selected="false" type="button">🧠 Whole Course in Plain English</button>
   <button class="tab-btn" id="tab-quiz" role="tab" aria-selected="false" type="button">📝 Quiz (Ch. 1-5)</button>
   <button class="tab-btn" id="tab-bank" role="tab" aria-selected="false" type="button">📋 Exam Bank (Quizlet)</button>
+  <button class="tab-btn" id="tab-practice" role="tab" aria-selected="false" type="button">🎯 Exam Practice</button>
 </div>
 
 <div id="view-study">
@@ -4511,6 +4536,34 @@ future EX: Market potential, market share, market characteristic, sales analysis
 </section>
 </div><!-- /view-bank -->
 
+<div id="view-practice" hidden>
+<section class="bank-intro">
+  <h2>🎯 Exam Practice</h2>
+  <p class="pr-sub" style="margin-top:-.3rem"><strong>Exam-Quizlet-Memorizing-Answers-Mode-Practice</strong> — Round 1: answer every question in your chosen scope. Then each next round re-asks <em>only the ones you got wrong</em>, until you have answered all of them correctly. Progress is saved in this browser.</p>
+  <div id="prStart" class="pr-panel">
+    <div class="pr-title">Choose your scope</div>
+    <div class="pr-row" id="prScopes"></div>
+    <label class="pr-row" style="gap:.4rem"><input type="checkbox" id="prShuffle" checked> Shuffle question order (options keep their original letters)</label>
+    <div class="pr-row">
+      <button class="pr-big" id="prStartBtn" type="button">Start Round 1</button>
+      <button class="pr-big ghost" id="prResumeBtn" type="button" hidden>Resume</button>
+      <button class="pr-big ghost" id="prResetBtn" type="button" hidden>Start over (clear saved progress)</button>
+    </div>
+    <div class="pr-sub" id="prSavedInfo"></div>
+  </div>
+  <div id="prQuiz" class="pr-panel" hidden>
+    <div class="pr-progress" id="prMeta"></div>
+    <div class="pr-bar"><div id="prBarFill"></div></div>
+    <div id="prCard"></div>
+    <div class="pr-row">
+      <button class="pr-big" id="prNextBtn" type="button" hidden>Next ▸</button>
+      <button class="pr-big ghost" id="prQuitBtn" type="button">Pause &amp; save</button>
+    </div>
+  </div>
+  <div id="prSummary" class="pr-panel" hidden></div>
+</section>
+</div><!-- /view-practice -->
+
 <script>
 // Wrap every table in a horizontal-scroll container so wide tables never
 // stretch the page on a phone. Tables with 5+ columns get the .wide hint.
@@ -4630,7 +4683,8 @@ function applyChartTheme(){
     study:  { btn: document.getElementById('tab-study'),  view: document.getElementById('view-study')  },
     course: { btn: document.getElementById('tab-course'), view: document.getElementById('view-course') },
     quiz:   { btn: document.getElementById('tab-quiz'),   view: document.getElementById('view-quiz')   },
-    bank:   { btn: document.getElementById('tab-bank'),   view: document.getElementById('view-bank')   }
+    bank:   { btn: document.getElementById('tab-bank'),   view: document.getElementById('view-bank')   },
+    practice: { btn: document.getElementById('tab-practice'), view: document.getElementById('view-practice') }
   };
   function show(which){
     Object.keys(tabs).forEach(function(k){
@@ -4691,6 +4745,223 @@ function applyChartTheme(){
     });
     window.scrollTo(0, 0);
   });
+})();
+
+// ============ Exam Practice: wrong-answers-loop over the Exam Bank ============
+(function(){
+  var view = document.getElementById('view-practice');
+  if (!view) return;
+  var LS_KEY = 'examPractice_v1';
+
+  // ---- dataset: read every question card from the Exam Bank DOM ----
+  function hash(str){ var h=5381,i=str.length; while(i) h=(h*33)^str.charCodeAt(--i); return (h>>>0).toString(36); }
+  var QS = [];            // [{id,ch,type,q,opts:[{letter,text,correct}],ans,brm}]
+  var byId = {};
+  document.querySelectorAll('#view-bank .bank-ch').forEach(function(sec){
+    var ch = sec.getAttribute('data-ch');
+    sec.querySelectorAll('.bq').forEach(function(card){
+      if (card.classList.contains('bt')) return;               // skip key terms
+      var type = card.getAttribute('data-type');
+      var q = card.querySelector('.bq-q').textContent;
+      var ansEl = card.querySelector('.bq-ans');
+      var ans = ansEl ? ansEl.textContent.replace(/^\s*Answer:\s*/,'').trim() : '';
+      var opts = [];
+      card.querySelectorAll('.bq-opts li').forEach(function(li){
+        opts.push({ letter: li.getAttribute('data-letter'),
+                    text: li.textContent.replace(/^\s*[A-E]\)\s*/,'').trim(),
+                    correct: li.getAttribute('data-correct') === '1' });
+      });
+      var item = { id: hash(q), ch: ch, type: type, q: q, opts: opts, ans: ans,
+                   brm: !!card.querySelector('.b-brm') };
+      QS.push(item); byId[item.id] = item;
+    });
+  });
+
+  // ---- state ----
+  var S = null;   // {scope, shuffle, round, queue:[], idx, rightIds:[], wrongIds:[], startedTotal}
+  function save(){ try { localStorage.setItem(LS_KEY, JSON.stringify(S)); } catch(e){} }
+  function load(){ try { return JSON.parse(localStorage.getItem(LS_KEY)); } catch(e){ return null; } }
+  function clear(){ try { localStorage.removeItem(LS_KEY); } catch(e){} }
+  function inScope(item, scope){ return scope === 'all' || item.ch === scope; }
+  function scopeIds(scope){ return QS.filter(function(x){ return inScope(x, scope); }).map(function(x){ return x.id; }); }
+  function shuffleArr(a){ for (var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+  function scopeName(sc){ return sc==='all' ? 'All chapters' : 'Chapter '+sc; }
+
+  // ---- start panel ----
+  var scopesRow = document.getElementById('prScopes');
+  var chNums = []; QS.forEach(function(x){ if (chNums.indexOf(x.ch)===-1) chNums.push(x.ch); });
+  var curScope = 'all';
+  function drawScopes(){
+    var html = '<button class="pr-scope'+(curScope==='all'?' active':'')+'" data-sc="all" type="button">All ('+QS.length+')</button>';
+    chNums.forEach(function(c){
+      var n = QS.filter(function(x){ return x.ch===c; }).length;
+      html += '<button class="pr-scope'+(curScope===c?' active':'')+'" data-sc="'+c+'" type="button">Ch '+c+' ('+n+')</button>';
+    });
+    scopesRow.innerHTML = html;
+  }
+  drawScopes();
+  scopesRow.addEventListener('click', function(e){
+    var b = e.target.closest('.pr-scope'); if (!b) return;
+    curScope = b.getAttribute('data-sc'); drawScopes();
+  });
+
+  var startBtn = document.getElementById('prStartBtn'),
+      resumeBtn = document.getElementById('prResumeBtn'),
+      resetBtn = document.getElementById('prResetBtn'),
+      savedInfo = document.getElementById('prSavedInfo'),
+      startPanel = document.getElementById('prStart'),
+      quizPanel = document.getElementById('prQuiz'),
+      sumPanel = document.getElementById('prSummary'),
+      meta = document.getElementById('prMeta'),
+      barFill = document.getElementById('prBarFill'),
+      cardBox = document.getElementById('prCard'),
+      nextBtn = document.getElementById('prNextBtn'),
+      quitBtn = document.getElementById('prQuitBtn');
+
+  function refreshStartPanel(){
+    var st = load();
+    var valid = st && st.queue && st.queue.concat(st.rightIds, st.wrongIds).every(function(id){ return byId[id]; });
+    resumeBtn.hidden = !valid; resetBtn.hidden = !valid;
+    savedInfo.textContent = valid
+      ? 'Saved session: '+scopeName(st.scope)+' · Round '+st.round+' · '+(st.idx)+' answered of '+(st.queue.length)+' in this round.'
+      : '';
+    if (valid) curScope = st.scope, drawScopes();
+  }
+  refreshStartPanel();
+
+  function beginRound(scope, shuffle, round, ids){
+    if (shuffle) shuffleArr(ids);
+    S = { scope: scope, shuffle: shuffle, round: round, queue: ids, idx: 0, rightIds: [], wrongIds: [] };
+    save();
+    startPanel.hidden = true; sumPanel.hidden = true; quizPanel.hidden = false;
+    askCurrent();
+  }
+  startBtn.addEventListener('click', function(){
+    var st = load();
+    if (st && !confirm('Start fresh? This clears the saved practice session.')) return;
+    clear();
+    beginRound(curScope, document.getElementById('prShuffle').checked, 1, scopeIds(curScope));
+  });
+  resumeBtn.addEventListener('click', function(){
+    S = load(); if (!S) return refreshStartPanel();
+    startPanel.hidden = true; sumPanel.hidden = true; quizPanel.hidden = false;
+    askCurrent();
+  });
+  resetBtn.addEventListener('click', function(){
+    if (!confirm('Clear the saved practice session?')) return;
+    clear(); refreshStartPanel();
+  });
+  quitBtn.addEventListener('click', function(){
+    save(); quizPanel.hidden = true; startPanel.hidden = false; refreshStartPanel();
+    window.scrollTo(0,0);
+  });
+
+  function esc(t){ var d=document.createElement('div'); d.textContent=t; return d.innerHTML; }
+
+  function askCurrent(){
+    if (S.idx >= S.queue.length) return endRound();
+    var item = byId[S.queue[S.idx]];
+    var answered = S.rightIds.length + S.wrongIds.length;
+    meta.innerHTML = '<span><strong>'+scopeName(S.scope)+'</strong></span>'
+      + '<span>Round '+S.round+'</span>'
+      + '<span>Question '+(S.idx+1)+' / '+S.queue.length+'</span>'
+      + '<span style="color:#2e7d32">✓ '+S.rightIds.length+'</span>'
+      + '<span style="color:#c62828">✗ '+S.wrongIds.length+'</span>';
+    barFill.style.width = (100*S.idx/S.queue.length)+'%';
+    nextBtn.hidden = true;
+
+    var badge = item.type==='tf' ? 'True / False' : item.type==='fill' ? 'Fill in the blank' : 'Multiple choice';
+    var html = '<div class="bq-head"><span class="bq-badge b-'+(item.type==='tf'?'tf':item.type==='fill'?'fill':'mcq')+'">'+badge+'</span>'
+             + (item.brm ? '<span class="bq-badge b-brm">BRM</span>' : '') + '</div>'
+             + '<div class="bq-q">'+esc(item.q)+'</div>';
+    if (item.type === 'mcq'){
+      item.opts.forEach(function(o, i){
+        html += '<button class="pr-opt" data-i="'+i+'" type="button"><strong>'+o.letter+')</strong> '+esc(o.text)+'</button>';
+      });
+    } else if (item.type === 'tf'){
+      ['True','False'].forEach(function(v){
+        html += '<button class="pr-opt" data-tf="'+v+'" type="button"><strong>'+v+'</strong></button>';
+      });
+    } else { // fill: reveal + self-grade
+      html += '<button class="pr-big ghost" id="prShowFill" type="button" style="margin-top:.5rem">Show answer</button>'
+            + '<div id="prFillBlock" hidden><div class="pr-fill-ans"><strong>Answer:</strong> '+esc(item.ans)+'</div>'
+            + '<div class="pr-row"><button class="pr-big" data-self="right" type="button">✓ I said it right</button>'
+            + '<button class="pr-big ghost" data-self="wrong" type="button">✗ I got it wrong</button></div></div>';
+    }
+    html += '<div id="prVerdict"></div>';
+    cardBox.innerHTML = html;
+  }
+
+  function grade(isRight, correctLabel){
+    var item = byId[S.queue[S.idx]];
+    (isRight ? S.rightIds : S.wrongIds).push(item.id);
+    var v = document.getElementById('prVerdict');
+    v.innerHTML = '<div class="pr-verdict '+(isRight?'ok':'bad')+'">'
+      + (isRight ? '✓ Correct!' : '✗ Wrong — correct answer: '+esc(correctLabel))
+      + '</div>';
+    save();
+    nextBtn.hidden = false; nextBtn.focus();
+  }
+
+  cardBox.addEventListener('click', function(e){
+    var item = byId[S.queue[S.idx]];
+    var sf = e.target.closest('[data-self]');
+    if (sf){ if (sf.disabled) return;
+      cardBox.querySelectorAll('[data-self]').forEach(function(b){ b.disabled = true; });
+      grade(sf.getAttribute('data-self')==='right', item.ans); return; }
+    var show = e.target.closest('#prShowFill');
+    if (show){ show.hidden = true; document.getElementById('prFillBlock').hidden = false; return; }
+    var btn = e.target.closest('.pr-opt');
+    if (!btn || btn.disabled) return;
+    cardBox.querySelectorAll('.pr-opt').forEach(function(b){ b.disabled = true; });
+    if (item.type === 'mcq'){
+      var i = +btn.getAttribute('data-i');
+      var chosen = item.opts[i];
+      var correctIdx = item.opts.findIndex(function(o){ return o.correct; });
+      cardBox.querySelectorAll('.pr-opt').forEach(function(b, bi){
+        if (bi === correctIdx) b.classList.add('correct');
+        else if (bi === i && !chosen.correct) b.classList.add('wrong');
+      });
+      var co = item.opts[correctIdx];
+      grade(!!chosen.correct, co ? (co.letter+') '+co.text) : item.ans);
+    } else if (item.type === 'tf'){
+      var val = btn.getAttribute('data-tf');
+      var correct = /^true/i.test(item.ans) ? 'True' : 'False';
+      cardBox.querySelectorAll('.pr-opt').forEach(function(b){
+        if (b.getAttribute('data-tf') === correct) b.classList.add('correct');
+        else if (b === btn && val !== correct) b.classList.add('wrong');
+      });
+      grade(val === correct, correct);
+    }
+  });
+
+  nextBtn.addEventListener('click', function(){ S.idx++; save(); window.scrollTo(0,0); askCurrent(); });
+
+  function endRound(){
+    quizPanel.hidden = true; sumPanel.hidden = false;
+    var total = S.queue.length, right = S.rightIds.length, wrong = S.wrongIds.length;
+    var pct = total ? Math.round(100*right/total) : 0;
+    var html = '<div class="pr-title">Round '+S.round+' finished — '+scopeName(S.scope)+'</div>'
+      + '<div class="pr-score-big">'+right+' / '+total+' <span style="font-size:1rem;color:var(--muted,#777)">('+pct+'%)</span></div>';
+    if (wrong > 0){
+      html += '<p class="pr-sub">'+wrong+' question'+(wrong>1?'s':'')+' to master. Round '+(S.round+1)+' will re-ask only those.</p>'
+        + '<div class="pr-row"><button class="pr-big" id="prNextRound" type="button">Start Round '+(S.round+1)+' ('+wrong+' questions)</button>'
+        + '<button class="pr-big ghost" id="prBackHome" type="button">Back to start</button></div>';
+    } else {
+      html += '<p class="pr-sub">🏆 <strong>Mastered!</strong> Every question in '+scopeName(S.scope)+' answered correctly after '+S.round+' round'+(S.round>1?'s':'')+'.</p>'
+        + '<div class="pr-row"><button class="pr-big" id="prBackHome" type="button">Practice again</button></div>';
+      clear(); S = null;
+    }
+    sumPanel.innerHTML = html;
+    var nr = document.getElementById('prNextRound');
+    if (nr) nr.addEventListener('click', function(){
+      beginRound(S.scope, S.shuffle, S.round+1, S.wrongIds.slice());
+    });
+    document.getElementById('prBackHome').addEventListener('click', function(){
+      sumPanel.hidden = true; startPanel.hidden = false; refreshStartPanel(); window.scrollTo(0,0);
+    });
+    window.scrollTo(0,0);
+  }
 })();
 
 // ===================== Quiz bank + engine =====================
