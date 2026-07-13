@@ -283,6 +283,7 @@
   .bq-badge { font-size: .68rem; padding: .08rem .5rem; border-radius: 999px; font-family: system-ui, sans-serif; }
   .b-tf { background: rgba(31,111,139,.15); color: var(--accent2); }
   .b-mcq { background: rgba(184,67,15,.13); color: var(--accent); }
+  .b-brm { background: rgba(46,125,50,.14); color: #2e7d32; font-weight: 700; }
   .b-fill { background: var(--code-bg); color: var(--muted); }
   .bq-q { font-weight: 600; line-height: 1.5; }
   .bq-opts { list-style: none; padding: 0; margin: .55rem 0 .3rem; }
@@ -2039,8 +2040,8 @@
 <div id="view-bank" hidden>
 <section class="bank-intro">
   <h2>📋 Exam Question Bank</h2>
-  <p>Real exam-style questions (True/False, multiple choice, fill-in-the-blank) taken from the shared Quizlet test-bank sets that match the professor's exam, organised under the five course chapters. Each chapter also has a <strong>Key Terms / Matching</strong> block for the exam's matching section. <strong>82 questions</strong> + <strong>37 key terms</strong>. Click a button to reveal the answer/definition.</p>
-  <div class="bank-note">⚠️ These 6 Quizlet sets are a <strong>partial</strong> copy of the full Malhotra test bank: they cover many exam questions but not all. Some multiple-choice/true-false items on the real exam are not in these sets. Use this as strong practice, not a guaranteed complete match.</div>
+  <p>Real exam-style questions (True/False, multiple choice, fill-in-the-blank) taken from the shared Quizlet test-bank sets that match the professor's exam, organised under the five course chapters. Each chapter also has a <strong>Key Terms / Matching</strong> block for the exam's matching section. <strong>204 questions</strong> + <strong>37 key terms</strong>. Click a button to reveal the answer/definition.</p>
+  <div class="bank-note">✅ Now merged with the fuller <strong>BRM</strong> Quizlet copy of the same Malhotra test bank (shared in the EMBA group, 2026-07-11): +122 course-scope questions (badge <strong>BRM</strong>). 55 questions from that set were excluded because their concepts are not in our 5 course chapters. Still treat this as strong practice, not a guaranteed complete match.</div>
   <div class="bank-filters" id="bankFilters">
     <button class="bfil active" data-ch="all" type="button">All</button>
     <button class="bfil" data-ch="1" type="button">Ch 1</button>
@@ -2053,7 +2054,7 @@
   </div>
 </section>
 <section class="bank-ch" data-ch="1">
-  <h3 class="bank-ch-h">Chapter 1 — Introduction to Marketing Research <span class="chip">10 questions</span> <span class="chip">7 key terms</span></h3>
+  <h3 class="bank-ch-h">Chapter 1 — Introduction to Marketing Research <span class="chip">12 questions</span> <span class="chip">7 key terms</span></h3>
 <div class="bq" data-type="tf">
   <div class="bq-head"><span class="bq-num">Q1</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Marketing research is classified into two areas - problem identification and problem solving research. T/F?</div>
@@ -2144,6 +2145,30 @@
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> D) all of the above</div>
 </div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q11</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Which of the following is not an example of a full- service supplier (Figure 1.4 in the text)?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> syndicated services</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> customized services</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Internet services</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> analytical services</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) analytical services</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q12</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Customized services ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> specialize in one or a few phases of the marketing research project</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> are research studies conducted for different client firms but in a different way</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> collect and sell common pools of data designed to serve information needs shared by a number of clients</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> offer a wide variety of marketing research services tailored to suit a client&#x27;s specific needs</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) offer a wide variety of marketing research services tailored to suit a client&#x27;s specific needs</div>
+</div>
   <h4 class="bank-terms-h">🔑 Key Terms / Matching (Ch 1)</h4>
 <div class="bq bt" data-type="def">
   <div class="bq-q">Marketing research</div>
@@ -2188,21 +2213,21 @@ future EX: Market potential, market share, market characteristic, sales analysis
 </div>
 </section>
 <section class="bank-ch" data-ch="2">
-  <h3 class="bank-ch-h">Chapter 2 — Defining the Problem &amp; Developing an Approach <span class="chip">6 questions</span> <span class="chip">0 key terms</span></h3>
+  <h3 class="bank-ch-h">Chapter 2 — Defining the Problem &amp; Developing an Approach <span class="chip">34 questions</span> <span class="chip">0 key terms</span></h3>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q11</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q13</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Problem definition is the most important step in the marketing research project</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q12</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q14</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">To understand the background of a marketing research problem, the researcher must understand the client&#x27;s firm and industry.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q13</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q15</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">The need for the researcher to understand the nature of what decision managers face and what they hope to learn from research is one of the reasons to conduct ________.</div>
   <ul class="bq-opts">
     <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> discussions with decision makers</li>
@@ -2214,7 +2239,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> A) discussions with decision makers</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q14</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q16</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">If the management decision problem is: &quot;Should a new product be introduced?&quot; what is the most appropriate marketing research problem?</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> determining the price elasticity of demand and the impact on sales and profits of various levels of price changes</li>
@@ -2226,7 +2251,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> B) determining consumer preferences and purchase intentions for the proposed new product</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q15</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q17</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Which statement is true concerning defining the marketing research problem?</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> The definition should allow the researcher to obtain all the information needed to address the management decision problem.</li>
@@ -2238,7 +2263,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> D) All of the above are correct.</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q16</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q18</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Which statement about hypotheses is not true?</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> A hypothesis is an unproven statement or proposition about a factor or phenomenon that is of interest to the researcher.</li>
@@ -2249,29 +2274,365 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> C) It is possible to formulate hypotheses in all situations.</div>
 </div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q19</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">In the example given in your text, the Harley Davidson management decision problem and the marketing research problem were defined with the help of all of the following except________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> discussions with industry experts</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> discussions with a committee of top management</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> secondary data on motorcycle owners</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> focus groups with motorcycle owners</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) discussions with a committee of top management</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q20</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">According to the Chain Restaurant Study in your text, the researcher had collected data but did not know ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> the marketing research problem</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> the management decision problem</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> the data collection process</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> the approach to the problem</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) the marketing research problem</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q21</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The ________ is a broad statement of the general problem and identification of the specific components of the marketing research problem.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> problem audit</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> management problem</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> problem definition</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) problem definition</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q22</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">According to the problem definition and approach development process as shown in Figure 2.1 in the text, the tasks involved in problem definition consist of all of the following except________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> discussions with the decision makers</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> interviews with industry experts</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> analysis of project costs</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> analysis of secondary data</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) analysis of project costs</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q23</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">According to Figure 2.1 in the text, the components of the ________ consist of: objective/theoretical foundations, analytical models, research questions, hypotheses, and specification of the information needed.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> approach to the problem</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> management decision problem</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> marketing research problem</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> environmental context of the problem</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) approach to the problem</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q24</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">To identify the management problem, the researcher must possess considerable skill in interacting with the DM. Which of the following is a factor that might complicate this interaction?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Access to the DM may be difficult and some organizations have complicated protocols for access to top executives.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> The organizational status of the researcher or the research department may make it difficult to reach the key DM in the early stages of the project.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> There may be more than one key DM and meeting with them collectively or individually may be difficult.</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> All of the above are correct.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) All of the above are correct.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q25</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The ________ provides a useful framework for interacting with the DM and identifying the underlying causes of the problem.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> problem audit</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> management problem</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> problem definition</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) problem audit</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q26</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The ________ is a comprehensive examination of a marketing problem with the purpose of understanding its origin and nature.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> problem audit</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> management problem</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> problem definition</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) problem audit</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q27</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">It is important to perform a problem audit because ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> the DM knows the cause of the problem</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> DMs tend to focus on symptoms rather than on causes</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> the DM, in most cases, has only a vague idea of what the problem is</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> both B and C are correct</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) both B and C are correct</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q28</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The interaction between the DM and the researcher should be characterized by the seven Cs. Which of the following is not one of the seven Cs?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> continuity</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> communication</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> causality</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> candor</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) causality</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q29</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">As one of the seven Cs that characterize the interaction between the DM and the researcher, confidence is best defined as: ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> there should not be any hidden agendas, and an attitude of openness should prevail</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> the interaction between the DM and the researcher should be guided by mutual trust</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> marketing research is a team project in which both parties (DM and researcher) must cooperate</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> the interaction between the DM and the researcher should be creative rather than formulaic</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) the interaction between the DM and the researcher should be guided by mutual trust</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q30</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Interviews with industry experts-individuals knowledgeable about the firm and the industry-may help formulate the marketing research problem. Which of the following statements is true about interviews with industry experts?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> These experts may be found both inside and outside the firm.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Typically, expert information is obtained by unstructured personal interviews without administering a formal questionnaire.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> It is helpful to prepare a list of topics to be covered during the interview.</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> All of the above are true.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) All of the above are true.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q31</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Because of potential difficulties when seeking advice from experts, it is best to use interviews with experts when conducting marketing research ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> for industrial firms</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> for products of a technical nature</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> in situations where little information is available from other sources</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> all of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) all of the above</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q32</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Which of the following statements about secondary data is true?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Secondary data are originated by the researcher for the specific purpose of addressing the research problem at hand.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Secondary data are an economical and quick source of background information.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Primary data should not be collected until the available secondary data have been fully analyzed.</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> Both B and C are true.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) Both B and C are true.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q33</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">________ is not a qualitative research technique.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Depth interview</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Word association</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Focus group</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> Conclusive research</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) Conclusive research</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q34</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">________ consists of the factors that have an impact on the definition of the marketing research problem, including past information and forecasts, resources and constraints of the firm, objectives of the decision maker, buyer behavior, legal environment, economic environment, and marketing and technological skills of the firm.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> The approach to the problem</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Research design</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> The environmental context of the problem</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Problem definition</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) The environmental context of the problem</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q35</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Many factors have an impact on the definition of the marketing research problem. These factors encompass the environmental context of the problem. Which of the following is not one of the factors?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> marketing and technological skills of the firm</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> objectives</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> past information and forecasts pertaining to the industry and the firm</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> political environment</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) political environment</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q36</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">To formulate a marketing research problem of appropriate scope, it is necessary to take into account both the resources available, such as money and research skills, and the constraints on the organization, such as cost and time. These considerations refer to which of the factors related to the environmental context of the problem?</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> resources and constraints</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> buyer behavior</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> legal environment</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> economic environment</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) resources and constraints</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q37</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Media consumption behavior and response to promotions, price sensitivity, and retail outlets patronized are factors that should be considered in the ________ component of the environmental context of the problem.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> objectives</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> legal environment</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> economic environment</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> buyer behavior</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) buyer behavior</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q38</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The &quot;Got Milk?&quot; campaign sponsored by the California Milk Processor Board and mentioned in your text, used an understanding of ________ to identify the real causes that led to the decline in milk consumption.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> objectives</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> the legal environment</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> the economic environment</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> buyer behavior</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) buyer behavior</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q39</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Regulatory policies and norms within which organizations must operate, refer to the________ factor of the environmental context of the problem.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> legal environment</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> economic environment</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> objectives</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> buyer behavior</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) legal environment</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q40</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">________ is the problem confronting the decision maker. It asks what the decision maker needs to do.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> The environmental context of the problem</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> The management decision problem</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> The marketing research problem</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Problem definition</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) The management decision problem</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q41</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">________ is a problem that entails determining what information is needed and how it can be obtained in the most feasible way.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> The environmental context of the problem</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> The management decision problem</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> The marketing research problem</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Problem definition</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) The marketing research problem</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q42</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The management decision problem focuses on ________, while the marketing research problem focuses on ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> symptoms; solutions</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> symptoms; underlying causes</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> solutions; underlying causes</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) symptoms; underlying causes</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q43</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Based on Table 2.1 in the text, which statement is true about the management decision problem?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> It asks what information is needed and how it should be obtained.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> It is information oriented.</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> It asks what the decision maker needs to do.</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> It focuses on the underlying causes.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) It asks what the decision maker needs to do.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q44</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Based on Table 2.1 in the text, which statement is true about the marketing research problem?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> It focuses on underlying causes.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> It focuses on symptoms.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> It is information oriented.</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> Both A and C are correct.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) Both A and C are correct.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q45</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The outputs of the approach development process should include all of the following components except ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> objective/theoretical framework</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> analytical models</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> hypotheses</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> all of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) all of the above</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q46</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">________ are refined statements of the specific components of the problem.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Hypotheses</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> Research questions</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Marketing research problems</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Analytical models</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) Research questions</div>
+</div>
 </section>
 <section class="bank-ch" data-ch="3">
-  <h3 class="bank-ch-h">Chapter 3 — Research Design, Secondary &amp; Syndicated Data <span class="chip">30 questions</span> <span class="chip">17 key terms</span></h3>
+  <h3 class="bank-ch-h">Chapter 3 — Research Design, Secondary &amp; Syndicated Data <span class="chip">75 questions</span> <span class="chip">17 key terms</span></h3>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q17</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q47</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">The objective of conclusive research is to test specific results and examine specific relationships.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q18</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q48</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Shorter Labs is conducting experiments to see if shoppers will buy unknown products if they are sent coupons. Shorter Labs is conducting causal research.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q19</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q49</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">A longitudinal design differs from a cross-sectional design in that the sample or samples remain the same over time.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q20</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q50</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Which statement is not true about research design?</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Research design is a framework for conducting the marketing research project.</li>
@@ -2283,7 +2644,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> C) Research design is undertaken before developing the approach to the problem.</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q21</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q51</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Typically, a ________ involves the tasks of designing the information needed, specifying the measurement and scaling procedures, and developing a plan of data analysis.</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> research classification</li>
@@ -2295,7 +2656,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> B) research design</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q22</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q52</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Cross-sectional and longitudinal designs are types of ________ .</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> causal research</li>
@@ -2307,7 +2668,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> C) descriptive research</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q23</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q53</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Which of the objectives below would best represent exploratory research?</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Describe market characteristics or functions.</li>
@@ -2319,7 +2680,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> C) Provide insights and understanding.</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q24</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q54</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Which data collection method is used in causal research?</div>
   <ul class="bq-opts">
     <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> experiments</li>
@@ -2331,7 +2692,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> A) experiments</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q25</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q55</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Jerry and the team working on the Roger Tire Company marketing research project are developing ways to test their hypothesis that drivers of larger trucks prefer dual belted radial tires. What type of research are they conducting?</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> simple research</li>
@@ -2343,7 +2704,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> C) descriptive research</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q26</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q56</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">You work for Innovative Focus, an internationally recognized consulting firm. You are working on the Waterpik account to help them with finding their next successful product. You are meeting with the Waterpik marketing professionals tomorrow to conduct a trends meeting to list and prioritize key consumer wants and needs. You have also scheduled a meeting with the Waterpik engineers to uncover applicable technologies and the company&#x27;s internal competencies. What type of research are you conducting in your meetings with Waterpik?</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> simple research</li>
@@ -2355,7 +2716,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> B) exploratory research</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q27</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q57</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Descriptive research is conducted for all of the following reasons except ________.</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> to describe the characteristics of relevant groups, such as consumers, salespeople, organizations, or market areas</li>
@@ -2367,7 +2728,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> C) to understand which variables are the cause and which variables are the effect of a phenomenon</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q28</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q58</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">The question, &quot;How did the American people rate the performance of George W. Bush immediately after the war in Afghanistan?&quot; would be addressed using a ________. However, a ________ would be used to address the question, &quot;How did the American people change their view of Bush&#x27;s performance during the war in Afghanistan?&quot;</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> longitudinal design; multiple cross-sectional</li>
@@ -2379,7 +2740,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> B) cross-sectional design; longitudinal design</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q29</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q59</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Which of the following tasks is not a component of research design?</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Design the exploratory, descriptive, and/or causal phases of the research.</li>
@@ -2391,49 +2752,49 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> D) Develop hypotheses.</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q30</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q60</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Secondary data are originated by a researcher for the specific purpose of addressing the problem at hand.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q31</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q61</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Primary data are data that have already been collected for purposes other than the problem at hand.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q32</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q62</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Secondary data can help you develop an approach to the problem, answer certain research questions and test some hypotheses, and interpret primary data more insightfully.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q33</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q63</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Before collecting external secondary data, it is useful to analyze internal secondary data.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q34</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q64</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Chrysler&#x27;s Personal Information Centers collect data from car owners on all aspects of buying a car. These PICs give the company the ability to engage in customized marketing. Chrysler is using internal secondary data in its database marketing efforts.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q35</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q65</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">An advantage of scanner data is that in-store variables like pricing, promotions, and displays are part of the data set.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q36</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q66</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Audits can help consumer product firms determine the size of the total market and distribution of sales by type of outlet and by different regions.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q37</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q67</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">As compared to primary data, secondary data are collected ________.</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> rapidly and easily</li>
@@ -2445,7 +2806,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> D) all of the above</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q38</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q68</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Which of the following classifications of secondary data is not a classification for external secondary data?</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> published materials</li>
@@ -2457,7 +2818,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> C) ready-to-use</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q39</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q69</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Caterpillar needed to know what truck fleets should test their two new engines; how they could get a marketing strategy that could be measured; and how to adjust for the coming downturn in sales. To answer these questions, they gave their salesforce laptops and paid them to enter customer information related to each sale they made. Caterpillar analyzed the newly acquired customer data and developed strategies to address their marketing questions. Caterpillar utilized ________.</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> secondary marketing</li>
@@ -2469,7 +2830,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> C) database marketing</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q40</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q70</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">InfoUSA (www.infousa.com) is a leading provider of sales and marketing support data. InfoUSA provides data via a ________.</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> offline database</li>
@@ -2481,7 +2842,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> D) internet database</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q41</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q71</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Which of the following is a characteristic of purchase panels?</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> household purchases recorded through electronic scanners in supermarkets</li>
@@ -2493,7 +2854,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> B) households provide specific information regularly over an extended period of time; respondents asked to record specific behaviors as they occur</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q42</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q72</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Which of the following is a characteristic of audit services?</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> household purchases recorded through electronic scanners in supermarkets</li>
@@ -2505,7 +2866,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> C) verification of product movement by examining physical records or performing inventory analysis</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q43</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q73</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">A data gathering technique that is comprised of samples of respondents whose television viewing behavior is automatically recorded by electronic devices, supplementing the purchase information recorded online or in a diary is referred to as ________.</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> scanner diary panels/cable TV</li>
@@ -2517,7 +2878,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> D) media panels</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q44</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q74</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Scanner data where panel members are identified by an ID card allowing each panel member&#x27;s purchases to be stored with respect to the individual shopper are referred to as _______.</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> scanner panels with cable TV</li>
@@ -2529,7 +2890,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> C) scanner panels</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q45</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q75</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">The uses of retail and wholesale audit data include all of the following except ________.</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> identifying shelf space allocation and inventory problems</li>
@@ -2541,7 +2902,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> B) establishing profiles of specific user groups</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q46</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q76</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Sales &amp; Marketing Management&#x27;s annual Survey of Buying Power provides data to help you analyze each of your U.S. markets, whether they are cities, counties, metro areas, or states. What of the following information is also true of the Survey of Buying Power?</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> It features statistics, rankings, and projections for every county and media market in the United States with demographic broken out by age, race, city, county, and state.</li>
@@ -2551,6 +2912,546 @@ future EX: Market potential, market share, market characteristic, sales analysis
   </ul>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> B) It features information on retail spending; and projections for future growth in these areas.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q77</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Research designs may be broadly classified as ________ or ________ (Figure 3.1 in the text).</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> exploratory; causal</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> conclusive; causal</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> exploratory; conclusive</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> conclusive; descriptive</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) exploratory; conclusive</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q78</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Exploratory research is used in all of the following cases except ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> selecting the course of action to take in a given situation</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> when you must define the problem more precisely</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> when you must identify relevant courses of action</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> when you must gain additional insights before an approach can be developed</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) selecting the course of action to take in a given situation</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q79</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The primary objective of ________ is to provide insights into, and an understanding of, the problem confronting the researcher.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> exploratory research</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> conclusive research</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> causal research</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> descriptive research</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) exploratory research</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q80</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">________ is research designed to assist the decision maker in determining, evaluating, and selecting the best course of action to take in a given situation.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Exploratory research</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> Conclusive research</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Complex research</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Problem-identification research</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) Conclusive research</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q81</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Joan needs to determine which variables and relationships she should examine further as part of the research she is conducting for the Flager Truck Company. Joan is about to embark on what type of research?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> simple research</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> exploratory research</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> descriptive research</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> causal research</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) exploratory research</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q82</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">If there were a need to isolate key variables and relationships for further examination, it would be best to perform ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> descriptive research</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> causal research</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> exploratory research</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> conclusive research</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) exploratory research</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q83</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">________ is a type of conclusive research that has as its major objective the description of something-usually market characteristics or functions.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Exploratory research</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Conclusive research</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Causal research</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> Descriptive research</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) Descriptive research</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q84</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Descriptive research, in contrast to exploratory research, is marked by all of the following except ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> a clear statement of the problem</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> specific hypotheses</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> detailed information needs</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> flexibility</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) flexibility</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q85</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">________ is the most used descriptive design in marketing research.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Longitudinal design</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Exploratory design</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> Cross-sectional design</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> None of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) Cross-sectional design</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q86</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">________ is a type of research design involving a fixed sample of population elements that is measured repeatedly. The sample remains the same over time thus providing a series of pictures which, when viewed together, portray a vivid illustration of the situation and the changes that are taking place over time.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Exploratory research design</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Causal research design</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Cross-sectional research design</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> Longitudinal research design</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) Longitudinal research design</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q87</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Sometimes the term ________ is used interchangeably with the term longitudinal design.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> experiment</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> panel</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> survey</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) panel</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q88</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">A major advantage of ________ over the cross-sectional design is the ability to detect change as a result of repeated measurement of the same variables on the same sample.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> longitudinal design</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> descriptive research design</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> causal research design</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> conclusive research design</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) longitudinal design</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q89</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">All of the following are advantages of longitudinal designs over cross-sectional designs (Table 3.4 in the text) except ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> detecting change</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> accuracy</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> large amount of data collection</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> representative sampling</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) representative sampling</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q90</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Which of these statements is true about panels?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Relatively large amounts of data can be collected.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Panel data can be more accurate than cross- sectional data.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Panels may not be representative.</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> All of the above statements are correct.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) All of the above statements are correct.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q91</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">According to your text, non-representativeness in panels may arise because of all of the following except ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> respondent intelligence</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> mortality</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> refusal to cooperate</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> payment</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) respondent intelligence</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q92</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">When trying to determine which research design is best to choose, it is best to begin with exploratory research if the objective of the research is to ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> test hypotheses</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> conduct an annual customer satisfaction survey</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> define the problem more precisely</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> quantify the relative salience of social causes that businesses should be concerned about</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) define the problem more precisely</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q93</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The ________ for primary data is very involved and the ________ is high.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> collection purpose; collection time</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> collection process; collection cost</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> collection process; collection purpose</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> collection cost; collection time</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) collection process; collection cost</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q94</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Which of the following is not a disadvantage of secondary data?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> The objectives, nature, and methods used to collect the secondary data may not be appropriate to the present situation.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Secondary data may be lacking in accuracy.</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> Secondary data may be expensive and time consuming.</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Secondary data may not be completely current or dependable.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) Secondary data may be expensive and time consuming.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q95</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Which of the following statements refer to the currency criteria when evaluating secondary data?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Data should be reliable and generalizable to the problem at hand.</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> Syndicated firms periodically update census data.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> The objective will determine the relevance of the data. Reconfigure the data to increase their usefulness, if possible.</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Assess accuracy by comparing data from different sources.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) Syndicated firms periodically update census data.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q96</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Which of the following statements refer to the objective criteria when evaluating secondary data?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Data should be reliable and generalizable to the problem at hand.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Syndicated firms periodically update census data.</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> The objective will determine the relevance of the data. Reconfigure the data to increase their usefulness, if possible.</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Assess accuracy by comparing data from different sources.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) The objective will determine the relevance of the data. Reconfigure the data to increase their usefulness, if possible.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q97</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Based on the criteria for evaluating secondary data shown in Table 4.2 in the text, the data collected by Nielsen Media Research may be suspect because of all of the following criteria except ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> specification/methodology</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> error/accuracy</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> objective</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> dependability</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) objective</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q98</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Errors in the approach, research design, sampling, data collection, analysis, and reporting stages of the project refer to the ________ criteria for evaluating secondary data.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> nature</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> objective</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> error/accuracy</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> currency</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) error/accuracy</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q99</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">When evaluating secondary data, the ________ criteria asks the question of &quot;why the data were collected in the first place.&quot;</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> nature</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> objective</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> error/accuracy</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> currency</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) objective</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q100</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">If the key variables have not been defined or are defined in a manner inconsistent with the researcher&#x27;s definition, then the usefulness of the data is limited. This statement refers to the________ criteria for evaluating secondary data.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> nature</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> objective</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> error/accuracy</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> currency</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) nature</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q101</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">You are reviewing secondary data to help with a project concerning consumer preferences for television programs based on viewer income. Which of the following statements would not be of concern when considering the nature criteria for evaluating secondary data?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> The relationships examined should be taken into account.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Secondary data may be measured in units that may not be appropriate for the current problem.</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> The researcher must determine if the data are accurate enough for the purpose of the present study.</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> It is possible to reconfigure the available data so that the resulting data are more useful to the problem at hand.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) The researcher must determine if the data are accurate enough for the purpose of the present study.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q102</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">An overall indication of the dependability of data may be obtained by examining the________, credibility, reputation, and ________ of the source.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> accuracy; trustworthiness</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> trustworthiness; expertise</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> expertise; accuracy</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> None of the above is correct.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) trustworthiness; expertise</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q103</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Creating a marketing database involves all of the following steps except ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> transferring raw sales information to a microcomputer</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> enhancing consumer purchase information by overlaying it with demographic and psychographic information</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> analyzing information in terms of a customer&#x27;s activity over the life of the business relationship</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) none of the above</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q104</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The CRM system used by Chrysler is an example of ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> directory databases</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> database marketing</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> audits</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) database marketing</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q105</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">________ are an excellent source of standard or recurring information.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Directories</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Indexes</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> Guides</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Statistical published data</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) Guides</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q106</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Published external secondary data sources may be broadly classified as ________ or________ sources (Figure 4.2 in the text).</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> public business; government</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> general business; government</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> general business; federal</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> public business; federal</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) general business; government</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q107</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">________ are helpful for identifying individuals or organizations that collect specific data.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> Directories</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Indexes</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Guides</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Statistical published data</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) Directories</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q108</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">It is possible to locate information on a particular topic in several different publications by using ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> directories</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> indexes</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> guides</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> statistical published data</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) indexes</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q109</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Examples of other government publications published by the federal government include all of the following except ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> Periodical Abstract</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Business Conditions Digest</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Statistical Abstract of the United States</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Survey of Current Business</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) Periodical Abstract</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q110</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">________ are databases stored in computers that require a telecommunications network to access.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Offline databases</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Bibliographic databases</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> Online databases</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Special purpose databases</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) Online databases</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q111</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">You are researching secondary data on the shopping habits of households for your project. A marketing research firm that had done research in the area has agreed to allow you to dial into their mainframe computer to access the data. You will be accessing a(n) ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> online database</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> special purpose database</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> offline database</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> customer database</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) online database</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q112</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">You are researching secondary data on the shopping habits of households for your project. You found a data source available via CD-ROM at the library. You are about to check out a(n)_______.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> online database</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> internet database</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> offline database</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> customer database</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) offline database</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q113</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">________ are databases composed of citations to articles in journals, magazines, newspapers, marketing research studies, technical reports, government documents, and the like.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Offline databases</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> Bibliographic databases</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Online databases</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Internet databases</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) Bibliographic databases</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q114</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">________ databases provide information on individuals, organizations and services.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Special purpose</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Bibliographic</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> Directory</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Numeric</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) Directory</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q115</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Which of the following is a disadvantage of audit services (Table 4.3 in the text)?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> interviewer errors; respondent errors</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> data is lacking in terms of content, quantity, and quality</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> data may not be representative; quality of data limited</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> coverage may be incomplete; matching of data on the competitive activity may be difficult</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) coverage may be incomplete; matching of data on the competitive activity may be difficult</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q116</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Which of the following is a disadvantage of surveys (Table 4.3 in the text)?</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> interviewer errors; respondent errors</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> data is lacking in terms of content, quantity, and quality</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> data may not be representative; quality of data limited</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> coverage may be incomplete; matching of data on the competitive activity may be difficult</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) interviewer errors; respondent errors</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q117</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Surveys can be used for which of the following purposes?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> to evaluate advertising</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> to examine purchase and consumption behavior</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> for market segmentation</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> all of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) all of the above</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q118</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Gallup and Robinson Magazine Impact Research Service (MIRS) test ads using an at-home in-magazine context among widely dispersed samples. Test ads may naturally appear in the magazine or are inserted as tip- ins. It provides strong, validated measures of recall, persuasion, and ad reaction with responsive scheduling. The MIRS is an example of surveys being used________.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> to evaluate advertising</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> to examine purchase and consumption behavior</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> for market segmentation</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> all of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) to evaluate advertising</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q119</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">According to your text, volume tracking data and scanner panels with cable TV are sources of scanner data. Which of the following is also a type of scanner data?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> grocery panels</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> scanner panels</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Both A and B are correct.</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) scanner panels</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q120</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The different types of scanner data are useful for a variety of purposes. Which of the following purposes applies to scanner data?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> data used for consumer beliefs</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> data used for establishing consumer attitudes</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> data used to determine customer motives</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> making advertising decisions, including budget, copy and media, pricing</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) making advertising decisions, including budget, copy and media, pricing</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q121</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Information provided by industry services is useful for which of the following?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> sales management decisions such as defining territories and setting quotas</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> advertising decisions such as allocating advertising budgets</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> segmenting the market and designing custom products and services for important segments</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> all of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) all of the above</div>
 </div>
   <h4 class="bank-terms-h">🔑 Key Terms / Matching (Ch 3)</h4>
 <div class="bq bt" data-type="def">
@@ -2642,57 +3543,57 @@ future EX: Market potential, market share, market characteristic, sales analysis
 </div>
 </section>
 <section class="bank-ch" data-ch="4">
-  <h3 class="bank-ch-h">Chapter 4 — Qualitative Research <span class="chip">18 questions</span> <span class="chip">11 key terms</span></h3>
+  <h3 class="bank-ch-h">Chapter 4 — Qualitative Research <span class="chip">40 questions</span> <span class="chip">11 key terms</span></h3>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q47</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q122</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Qualitative research is an unstructured, exploratory research methodology based on small samples that provides insights and understanding of the problem setting.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q48</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q123</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">The findings of qualitative research should be regarded as conclusive and used to make generalizations to the population of interest.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q49</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q124</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">The main purpose of focus groups is to gain insights by listening to a group of people from the appropriate target market talk about issues of interest to the researcher.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q50</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q125</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">A focus group generally includes 10 to 16 members.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q51</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q126</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">The quality of focus group results depends heavily on the skills of the moderator.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q52</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q127</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Depth interviews uncover less depth of insights than focus groups.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q53</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q128</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Projective techniques generally require personal interviews with highly trained interviewers. This is an advantage of projective techniques.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q54</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q129</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Focus groups, depth interviews, and projective techniques can be implemented over the Internet.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q55</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q130</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Whenever a new marketing research problem is being addressed, ________ research must be preceded by appropriate ________ research.</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> qualitative; quantitative</li>
@@ -2704,7 +3605,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> C) quantitative; qualitative</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q56</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q131</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">There are several reasons to use qualitative research. Which of the following is not a reason to use qualitative research?</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> It is not always possible, or desirable, to use fully structured or formal methods to obtain information from respondents.</li>
@@ -2716,7 +3617,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> D) none of the above</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q57</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q132</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">It is recommended that at least ________ focus groups be conducted.</div>
   <ul class="bq-opts">
     <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> two</li>
@@ -2728,7 +3629,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> A) two</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q58</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q133</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Focus groups can be used to address substantive issues such as ________.</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> defining a problem more precisely</li>
@@ -2740,7 +3641,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> B) generating new ideas about older products</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q59</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q134</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Which of the following statements is not an advantage of online focus groups?</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> The researcher can reach segments that are usually hard to survey.</li>
@@ -2752,7 +3653,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> D) Only people that have and know how to use a computer can participate.</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q60</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q135</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Depth interviews are like focus groups in all of the following ways except ________.</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> both are unstructured interviews</li>
@@ -2764,7 +3665,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> D) both are one-on-one interviews</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q61</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q136</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">In a study the researcher was investigating attitudes toward airlines among male middle managers. Each airline attribute, such as wide-body aircrafts, was probed (why do you like to travel in wide-body aircrafts?) to determine why it was important (I can get more work done) and then that reason was probed (I accomplish more), and so on (I feel good about myself). The depth interview techniques used in the study is called ________.</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> hidden issue questioning</li>
@@ -2776,7 +3677,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> C) laddering</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q62</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q137</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">The 2000, 2004 and 2008 presidential elections were cited in your text for negative attacks by both the Republican and Democratic parties. The negative attacks were based on qualitative marketing research used to help design the messages. Which ethical concern is this use of marketing research related to?</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> disguising the purpose of the research and the use of deceptive procedures</li>
@@ -2788,7 +3689,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> B) using qualitative research for questionable purposes</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q63</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q138</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Baby boomers are a large consumer target for many products and &quot;show and tell&quot; focus groups are being used by consumer researchers. Which of the following statements is not true about &quot;show and tell&quot; focus groups?</div>
   <ul class="bq-opts">
     <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> Respondents&#x27; attitudes are uncovered by analyzing their responses to scenarios that are deliberately unstructured, vague, and ambiguous.</li>
@@ -2800,7 +3701,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> A) Respondents&#x27; attitudes are uncovered by analyzing their responses to scenarios that are deliberately unstructured, vague, and ambiguous.</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q64</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q139</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">In a study the researcher was investigating attitudes toward airlines among male middle managers. Questions asked included, &quot;What would it be like if you could no longer use airplanes?&quot; Responses like, &quot;Without planes, I would have to rely on e-mail, letters, and telephone calls&quot; were received. This suggests that what airlines sell to the managers is face-to-face communication. The depth interview techniques used in the study is called ________.</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> hidden issue questioning</li>
@@ -2810,6 +3711,270 @@ future EX: Market potential, market share, market characteristic, sales analysis
   </ul>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> B) symbolic analysis</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q140</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">According to Table 5.1 in the text, which of the following does not apply to qualitative research?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> a small number of nonrepresentative cases</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> non-statistical data analysis</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> unstructured form of data collection</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> outcome is used to recommend a final course of action</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) outcome is used to recommend a final course of action</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q141</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The ________ is one type of qualitative research in which the purposes of the project are disclosed to the respondent or are obvious, given the nature of the interview.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> indirect approach</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> direct approach</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> focus group approach</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> descriptive approach</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) direct approach</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q142</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Focus groups are a(n) ________ research procedure and projective techniques are a(n)________ research procedure.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> experimental; direct</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> indirect; direct</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> direct; experimental</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> direct; indirect</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) direct; indirect</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q143</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">________ are the most important qualitative research procedure.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> Focus groups</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Depth interviews</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Projective techniques</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Association techniques</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) Focus groups</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q144</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Which of the following is not one of the key qualifications of focus group moderators?</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> joviality</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> kindness with firmness</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> flexibility</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> sensitivity</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) joviality</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q145</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The procedure for planning and conducting focus groups is described in Figure 5.3 in the text. Planning begins with ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> specifying the objectives of qualitative research</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> writing a screening questionnaire</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> developing a moderator&#x27;s guide</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> determining objectives of the marketing research project and defining the problem</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) determining objectives of the marketing research project and defining the problem</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q146</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The Real Research Mall of Atlanta focus group example in the text used focus groups to uncover ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> information on the mall visit experience</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> information on mall brand identity versus other malls</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> information on the brand value of the mall</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> all of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) all of the above</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q147</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">One of the findings of the Mall of Atlanta focus group research mentioned in the text was that respondents who go to the mall for entertainment try to hold costs to under $30, except for special occasions. The client reviewed this information and decided to design a mall experience package that would cost $29.95 The client has fallen victim to which disadvantage of focus groups?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> misuse</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> misrepresentation</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> messy</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> Both A and B are correct.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) Both A and B are correct.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q148</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Which statement is not true about online focus groups?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> The group interaction lasts for about an hour.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> The general practice is for moderators to pose their questions in all capital letters and the respondents to respond using upper and lower case.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> The whole process is much faster than the traditional method.</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> To enter the online focus group, participants must supply the room name, user name, and password to the moderator via email.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) To enter the online focus group, participants must supply the room name, user name, and password to the moderator via email.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q149</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Which of the situations mentioned below is not suitable for online focus groups?</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> highly emotional issues</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> companies that use the Internet to sell products or services and want to either gain market share or gather intelligence</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> corporations that want to gather feedback on workplace issues like downsizing, job changes, and diversity</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) highly emotional issues</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q150</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Depth interviews are like focus group in all of the following ways except________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> both are unstructured interviews</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> both are direct ways of obtaining information</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> both are qualitative research methods</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> both are one-on-one interviews</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) both are one-on-one interviews</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q151</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">&quot;Why do you say that?&quot;, &quot;That&#x27;s interesting, can you tell me more?&quot; or, &quot;Would you like to add anything else?&quot; are examples of ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> focusing</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> projecting</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> probing</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) probing</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q152</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">In a depth interview, the interviewer should ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> avoid appearing superior and put the respondent at ease</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> be detached and objective, yet personable</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> probe the respondent</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> all of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) all of the above</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q153</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">In a depth interview, the interviewer should ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> not accept brief &quot;yes&quot; or &quot;no&quot; answers</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> not probe the respondent</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> ask questions in an informative manner</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> A and C are both correct</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) A and C are both correct</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q154</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Depth interviews suffer from many of the disadvantages of focus groups and often to a greater extent. Which of the following disadvantages is not shared with focus groups?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Skilled interviewers capable of conducting depth interviews are expensive and difficult to find.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> The lack of structure makes the results susceptible to the interviewer&#x27;s influence.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> The data obtained are difficult to analyze and interpret.</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> All of the above are shared with focus groups.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) All of the above are shared with focus groups.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q155</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">In ________, an individual is presented with a stimulus and asked to respond with the first thing that comes to mind.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> completion techniques</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> focus groups</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> association techniques</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> depth interviews</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) association techniques</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q156</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Word association is the best known of the ________ techniques.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> expressive</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> association</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> completion</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> construction</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) association</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q157</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">In word association, responses are analyzed by calculating ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> the frequency with which any word is given as a response</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> the amount of time that elapses before a response is given</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> the number of respondents who do not respond at all to a test word within a reasonable period of time</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> all of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) all of the above</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q158</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The two main expressive techniques are ________ and ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> role playing; word association</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> role playing; third-person technique</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> word association; sentence completion</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> third-person technique; word association</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) role playing; third-person technique</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q159</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">________ is a projective technique in which the respondent is presented with a verbal or visual situation and asked to relate the beliefs and attitudes of a third person to the situation.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Role playing</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Sentence completion</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Cartoon test</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> Third-person technique</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) Third-person technique</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q160</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Projective techniques are used less frequently than unstructured direct methods (focus groups and depth interviews). A possible exception may be ________, which is used commonly to test brand names and occasionally to measure attitudes about particular products, brands, packages, or advertisements.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> story completion</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> word association</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> sentence completion</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> cartoon tests</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) word association</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q161</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Which of the following guidelines does not enhance the usefulness of projective techniques?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Projective techniques should be used because the required information cannot be accurately obtained by direct methods.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Projective techniques should be used for exploratory research to gain initial insights and understanding.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Given their complexity, projective techniques should not be used naively.</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) none of the above</div>
 </div>
   <h4 class="bank-terms-h">🔑 Key Terms / Matching (Ch 4)</h4>
 <div class="bq bt" data-type="def">
@@ -2869,63 +4034,63 @@ future EX: Market potential, market share, market characteristic, sales analysis
 </div>
 </section>
 <section class="bank-ch" data-ch="5">
-  <h3 class="bank-ch-h">Chapter 5 — Survey and Observation <span class="chip">18 questions</span> <span class="chip">2 key terms</span></h3>
+  <h3 class="bank-ch-h">Chapter 5 — Survey and Observation <span class="chip">43 questions</span> <span class="chip">2 key terms</span></h3>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q65</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q162</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">The most popular data-collection method is the structured direct survey.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q66</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q163</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Survey questionnaires may be administered in four major modes: (1) telephone interview, (2) personal interviews, (3) mall interviews, and (4) electronic interview.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q67</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q164</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">A mail panel consists of a large, nationally representative sample of businesses that have agreed to participate in periodic mail questionnaires and product tests.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q68</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q165</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">The potential for non-response bias increases as the response rate decreases.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q69</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q166</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Observing children playing with new toys is an example of unstructured observation.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q70</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q167</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Voice pitch analysis measures emotional reactions through changes in the respondent&#x27;s voice and is a type of mechanical observation.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q71</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q168</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Response latency is used as a measure of the relative preference for various alternatives.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q72</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q169</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">The pantry audit is a type of audit where the researcher inventories the brands, quantities, and package sizes of products in a consumer&#x27;s home.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> True</div>
 </div>
 <div class="bq" data-type="tf">
-  <div class="bq-head"><span class="bq-num">Q73</span><span class="bq-badge b-tf">True / False</span></div>
+  <div class="bq-head"><span class="bq-num">Q170</span><span class="bq-badge b-tf">True / False</span></div>
   <div class="bq-q">Content analysis could be profitably employed in the analysis of structured questions.</div>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> False</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q74</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q171</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Which of the following statements is not correct about computer-assisted telephone interviewing (CATI)?</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> The computer checks the responses for appropriateness and consistency.</li>
@@ -2937,7 +4102,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> C) Multiple questions appear on the screen at one time.</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q75</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q172</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Which of the following is not a personal interview method?</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> in-home</li>
@@ -2949,7 +4114,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> D) e-mail</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q76</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q173</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Observational methods may be ________ or ________.</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> structured; unstructured</li>
@@ -2961,7 +4126,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> D) all of the above</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q77</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q174</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">When Canon Cameras was losing market share in the United States to Minolta, Canon decided that its distributor, Bell &amp; Howell, was not giving adequate support. Canon sent Tatehiro Tsuruta to the United States to look into the problem. On entering a camera store, he would act just like a customer. He would note how the cameras were displayed and how the clerks served customers. Canon utilized ________, ________ observation in a ________ setting.</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> unstructured; disguised; contrived</li>
@@ -2973,7 +4138,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> B) unstructured; disguised; natural</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q78</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q175</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Nielsen uses audiometers attached to television sets to continually record what channel the set is tuned to. This is an example of ________.</div>
   <ul class="bq-opts">
     <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> mechanical observation</li>
@@ -2985,7 +4150,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> A) mechanical observation</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q79</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q176</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">In the department store patronage project, ________ may be used to analyze magazine advertisements of the sponsoring and competing stores to compare their projected images.</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> mechanical observation</li>
@@ -2997,7 +4162,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> C) content analysis</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q80</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q177</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Which of the following marketing applications is not an example of trace analysis?</div>
   <ul class="bq-opts">
     <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> A sample of 100 magazines were examined to determine how the portrayal of women in U.S. magazine advertisements has changed over the past 10 years.</li>
@@ -3009,7 +4174,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> A) A sample of 100 magazines were examined to determine how the portrayal of women in U.S. magazine advertisements has changed over the past 10 years.</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q81</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q178</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">Which of the following advantages is the greatest advantage of observation methods?</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> If the observed phenomenon occurs frequently or is of short duration, observational methods may be cheaper and faster than survey methods.</li>
@@ -3021,7 +4186,7 @@ future EX: Market potential, market share, market characteristic, sales analysis
   <div class="bq-ans" hidden><strong>Answer:</strong> C) Observational methods permit measurement of actual behavior rather than reports of intended or preferred behavior.</div>
 </div>
 <div class="bq" data-type="mcq">
-  <div class="bq-head"><span class="bq-num">Q82</span><span class="bq-badge b-mcq">Multiple choice</span></div>
+  <div class="bq-head"><span class="bq-num">Q179</span><span class="bq-badge b-mcq">Multiple choice</span></div>
   <div class="bq-q">________ involves trained observers posing as consumers and shopping at company or competitor-owned stores to collect data about customer-employee interaction and other marketing variables.</div>
   <ul class="bq-opts">
     <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Personal observation</li>
@@ -3031,6 +4196,306 @@ future EX: Market potential, market share, market characteristic, sales analysis
   </ul>
   <button class="bq-reveal" type="button">Show answer</button>
   <div class="bq-ans" hidden><strong>Answer:</strong> C) Mystery shopping</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q180</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Questions that require respondents to choose from a set of predetermined answers are ________ questions.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> dual response</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> fixed alternative</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> open-ended</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) fixed alternative</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q181</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Which of the following is a disadvantage of the survey method of data collection?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> The questionnaire is simple to administer.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> The data obtained are reliable because the responses are limited to the alternatives stated.</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> Wording questions properly is not easy.</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Coding, analysis, and interpretation of data are relatively simple.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) Wording questions properly is not easy.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q182</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Telephone interviews may be further classified as traditional telephone interviews or________ (Figure 6.1 in the text).</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> in-home</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> computer-assisted telephone interviews (CATI)</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> both A and B are correct</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> none of the above</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) computer-assisted telephone interviews (CATI)</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q183</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Which telephone interview method involves phoning a sample of respondents and asking them a series of questions with the interviewer using a paper questionnaire to record the responses with a pencil?</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> traditional telephone</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> in-home</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> computer-assisted telephone interviewing (CATI)</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Internet</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) traditional telephone</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q184</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">________ interviewing uses a computerized questionnaire administered to respondents over the telephone.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Traditional telephone</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> In-home</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> Computer-assisted telephone interviews (CATI)</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Internet</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) Computer-assisted telephone interviews (CATI)</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q185</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Which personal interviewing method utilizes help screens and courteous error messages?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> in-home</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> mall intercept</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> computer-assisted personal interview (CAPI)</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> e-mail</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) computer-assisted personal interview (CAPI)</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q186</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Decisions related to the ________ portion of the mail interview package involve sponsorship, personalization, and type of appeal (Table 6.1 in the text).</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> outgoing envelope</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> cover letter</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> questionnaire</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> incentive</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) cover letter</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q187</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Decisions related to &quot;monetary versus non-monetary&quot; and &quot;prepaid versus promised amount&quot; relate to which portion of the mail interview package?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> outgoing envelope</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> cover letter</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> questionnaire</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> incentive</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) incentive</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q188</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Limitations of e-mail surveys include all of the following except ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Questionnaires cannot utilize programmed skip patterns, logic checks, or randomization</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Skipping instructions (e.g., &quot;If the answer to question 5 is yes, go to question 9&quot;) must appear explicitly, just as on paper</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> There is inherent self-selection bias</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> Some e-mail software products limit the length of the body of an e-mail message</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) There is inherent self-selection bias</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q189</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Advantages of Web surveys over e-mail surveys include which of the following?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Graphs, images, animations, and links to other Web pages may be integrated into or around the survey.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> It is possible to validate responses as they are entered.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Skip patterns can be programmed and performed automatically.</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> All of the above are correct.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) All of the above are correct.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q190</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The degree of interaction the respondent has with the interviewer and the questionnaire, as well as the ability to actually see the questions, refers to the ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> respondent control</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> sample control</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> diversity of questions that can be asked in a survey</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> control of data collection environment</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) diversity of questions that can be asked in a survey</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q191</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Table 6.2 in the text provides a comparative evaluation of survey methods. Mall intercept surveys allow for diversity of questions. Which two additional methods are also shown as high on the diversity of question criteria?</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> in-home interviews; computer assisted personal interviews (CAPI)</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> in-home interviews; computer assisted telephone interviews (CATI)</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Internet; computer assisted telephone interviews (CATI)</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> computer assisted telephone interviews (CATI); mall- intercept interviews</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) in-home interviews; computer assisted personal interviews (CAPI)</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q192</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The use of physical stimuli is not limited in ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> traditional telephone interviews</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> CATI</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> e-mail surveys</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> mall-intercept interviews</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) mall-intercept interviews</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q193</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The ability of the survey mode to reach the units specified in the sample effectively and efficiently refers to the ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> flexibility of data collection</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> sample control</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> diversity of questions that can be asked in a survey</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> control of data collection environment</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) sample control</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q194</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Which of the following statements about sample control is true?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Mailing lists for mail surveys are sometimes unavailable, outdated, or incomplete.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> It is possible to identify specific user groups within a mail panel and to direct the survey to households with specific characteristics.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> It can be difficult to prevent respondents from completing an Internet survey multiple times.</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> All of the above statements are true.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) All of the above statements are true.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q195</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">According to Table 6.2 in the text, the comparative evaluation of survey methods, interviewers and supervisors involved in data collection refers to the ________ criteria.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> response rate</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> control of field force</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> social desirability/sensitive information</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> perceived anonymity</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) control of field force</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q196</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Table 6.2 in the text provides a comparative evaluation of survey methods. Which two methods are shown as low on the quantity of data criteria?</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> traditional telephone interviews; computer assisted telephone interviews (CATI)</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> in-home interviews; mall intercept interviews</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Internet; mall intercept interviews</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> computer assisted telephone interviews (CATI); mall intercept interviews</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) traditional telephone interviews; computer assisted telephone interviews (CATI)</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q197</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">According to Table 6.2 in the text, the comparative evaluation of survey methods, the percentage of the total attempted interviews that are completed refers to the ________ criteria.</div>
+  <ul class="bq-opts">
+    <li data-correct="1" data-letter="A"><span class="opt-letter">A)</span> response rate</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> control of field force</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> social desirability/sensitive information</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> perceived anonymity</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> A) response rate</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q198</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">According to Table 6.2 in the text, the comparative evaluation of survey methods, the tendency of the respondents to give answers that are socially acceptable whether or not they are true refers to the ________ criteria.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> response rate</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> control of field force</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> social desirability/sensitive information</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> perceived anonymity</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) social desirability/sensitive information</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q199</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The Internet is the fastest method of obtaining data from a large number of respondents. There are many reasons for this speed. Which of the following is not one of those reasons?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> the speed with which the questionnaire can be created</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> the speed with which the incentive is sent</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> the speed with which the questionnaire is distributed to respondents</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> the speed with which the data are returned</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) the speed with which the incentive is sent</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q200</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">________ is observation that involves a researcher monitoring all relevant phenomenon, without specifying the details in advance.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Natural observation</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> Contrived observation</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> Structured observation</li>
+    <li data-correct="1" data-letter="D"><span class="opt-letter">D)</span> Unstructured observation</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> D) Unstructured observation</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q201</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Which statement is not true about natural observation?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> The observed phenomenon will more accurately reflect the true phenomenon.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> A disadvantage of natural observation is the cost of waiting for the phenomenon to occur.</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> A test kitchen set up in a shopping mall would be used in a natural observation.</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> A disadvantage is the difficulty of measuring the phenomenon in a natural setting.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) A test kitchen set up in a shopping mall would be used in a natural observation.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q202</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">In the department store project, license plate observations could be used to establish the primary trading area of a shopping mall. Observers record the license plate numbers of the automobiles in a parking lot. This is an example of ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> mechanical observation</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> personal observation</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> content analysis</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> trace analysis</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) personal observation</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q203</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">Which statement is false concerning the different observation methods?</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> Mechanical observation can vary widely from low to high structure depending upon on the methods used.</li>
+    <li data-correct="0" data-letter="B"><span class="opt-letter">B)</span> The degree of disguise is low in the case of audits, as it is difficult to conceal the identity of auditors.</li>
+    <li data-correct="1" data-letter="C"><span class="opt-letter">C)</span> Observation bias is high in the case of mechanical observation because a human observer is involved.</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> The ability to observe in a natural setting is low in trace analysis because the observation takes place after the behavior has occurred.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> C) Observation bias is high in the case of mechanical observation because a human observer is involved.</div>
+</div>
+<div class="bq" data-type="mcq">
+  <div class="bq-head"><span class="bq-num">Q204</span><span class="bq-badge b-mcq">Multiple choice</span><span class="bq-badge b-brm" title="From the fuller BRM Quizlet copy of the same test bank">BRM</span></div>
+  <div class="bq-q">The most serious disadvantage of observation is ________.</div>
+  <ul class="bq-opts">
+    <li data-correct="0" data-letter="A"><span class="opt-letter">A)</span> if the observed phenomenon occurs frequently or is of short duration, observational methods may be cheaper and faster than survey methods.</li>
+    <li data-correct="1" data-letter="B"><span class="opt-letter">B)</span> the reasons for the observed behavior may not be determined because little is known about the underlying motives, beliefs, attitudes, and preferences.</li>
+    <li data-correct="0" data-letter="C"><span class="opt-letter">C)</span> observational methods permit measurement of actual behavior rather than reports of intended or preferred behavior.</li>
+    <li data-correct="0" data-letter="D"><span class="opt-letter">D)</span> observational data is often time consuming and expensive and it is difficult to observe certain forms of behavior, such as personal activities.</li>
+  </ul>
+  <button class="bq-reveal" type="button">Show answer</button>
+  <div class="bq-ans" hidden><strong>Answer:</strong> B) the reasons for the observed behavior may not be determined because little is known about the underlying motives, beliefs, attitudes, and preferences.</div>
 </div>
   <h4 class="bank-terms-h">🔑 Key Terms / Matching (Ch 5)</h4>
 <div class="bq bt" data-type="def">
