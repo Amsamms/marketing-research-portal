@@ -4771,7 +4771,8 @@ function applyChartTheme(){
                     text: li.textContent.replace(/^\s*[A-E]\)\s*/,'').trim(),
                     correct: li.getAttribute('data-correct') === '1' });
       });
-      var item = { id: hash(q), ch: ch, type: type, q: q, opts: opts, ans: ans,
+      var sig = q + '||' + opts.map(function(o){ return o.letter + ')' + o.text; }).join('|') + '||' + ans;
+      var item = { id: hash(sig), ch: ch, type: type, q: q, opts: opts, ans: ans,
                    brm: !!card.querySelector('.b-brm') };
       QS.push(item); byId[item.id] = item;
     });
