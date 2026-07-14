@@ -323,6 +323,19 @@
   .bq.bt .bq-q { font-weight: 700; }
   .bq.bt .bq-ans { background: var(--callout-bg); border-color: var(--accent2); }
   @media print { .bank-filters, .bq-reveal { display: none !important; } .bq-ans { display: block !important; } .bq.revealed .bq-opts li[data-correct="1"] { background: var(--ok-bg) !important; } }
+  /* Final Exam 2026 tab */
+  .fx-photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin: .8rem 0 1.2rem; }
+  .fx-photos figure { margin: 0; }
+  .fx-photos img { width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 10px; display: block; }
+  .fx-photos figcaption { font-size: .82rem; color: var(--muted); margin-top: .35rem; text-align: center; font-family: system-ui, sans-serif; }
+  .fx-src { display: inline-block; font-family: system-ui, sans-serif; font-size: .72rem; font-weight: 700; padding: .1rem .5rem; border-radius: 999px; background: var(--code-bg); color: var(--muted); margin-left: .4rem; vertical-align: middle; }
+  .fx-trap { display: inline-block; font-family: system-ui, sans-serif; font-size: .78rem; font-weight: 600; color: #b3261e; margin-left: .4rem; }
+  html[data-theme="dark"] .fx-trap { color: #ff8a80; }
+  .fx-qa { border: 1px solid var(--rule); border-radius: 10px; padding: .9rem 1.1rem; margin: .8rem 0; }
+  .fx-qa h4 { margin: 0 0 .5rem; font-family: system-ui, sans-serif; font-size: .98rem; color: var(--accent2); }
+  .fx-qa p { margin: .4rem 0; }
+  .fx-why { font-size: .88rem; color: var(--muted); border-top: 1px dashed var(--rule); padding-top: .45rem; margin-top: .6rem !important; }
+  @media print { .fx-qa, .fx-photos figure { break-inside: avoid; } }
 </style>
 <script>
 // Set theme before first paint to avoid a flash. Order: saved choice > OS preference > light.
@@ -355,6 +368,7 @@
   <button class="tab-btn" id="tab-quiz" role="tab" aria-selected="false" type="button">📝 Quiz (Ch. 1-5)</button>
   <button class="tab-btn" id="tab-bank" role="tab" aria-selected="false" type="button">📋 Exam Bank (Quizlet)</button>
   <button class="tab-btn" id="tab-practice" role="tab" aria-selected="false" type="button">🎯 Exam Practice</button>
+  <button class="tab-btn" id="tab-final" role="tab" aria-selected="false" type="button">📄 Final Exam 2026</button>
 </div>
 
 <div id="view-study">
@@ -4564,6 +4578,162 @@ future EX: Market potential, market share, market characteristic, sales analysis
 </section>
 </div><!-- /view-practice -->
 
+<div id="view-final" hidden>
+<section class="bank-intro">
+  <h2>📄 Final Exam 2026 (solved example)</h2>
+  <p style="max-width:70ch">The <strong>actual final exam paper</strong> (Alexandria University, Faculty of Business, EMBA, Marketing Research Course, Final Exam 2026, time: 2 hours), photographed on exam day, followed by the <strong>full solution</strong>: every MCQ with the correct choice highlighted and the reason explained, plus complete model answers for the two case-study questions.</p>
+  <div class="bank-note"><strong>How it was solved:</strong> 17 of the 20 MCQs are word-for-word questions from the Malhotra publisher test bank (the same bank behind the 📋 Exam Bank tab): 11 as identical MCQs, 1 as a True/False item, and 5 as definition cards that the exam turned into MCQs. For those, the answers below follow the bank's answer key. The remaining 3 (Q1, Q15, Q20) are not in our copy of the bank and were answered from the textbook definitions; all three are unambiguous.</div>
+</section>
+
+<section>
+  <h3 class="bank-terms-h">The actual exam paper (3 photos)</h3>
+  <div class="fx-photos">
+    <figure><img src="exam2026/final2026_page1.jpg" alt="Final Exam 2026 page 1: Question One, MCQ 1 to 11" loading="lazy"><figcaption>Page 1: Question One (MCQ 1-11)</figcaption></figure>
+    <figure><img src="exam2026/final2026_page2.jpg" alt="Final Exam 2026 page 2: MCQ 12 to 20 and the start of the Maverick case study" loading="lazy"><figcaption>Page 2: MCQ 12-20 + Question Two (case study, first part)</figcaption></figure>
+    <figure><img src="exam2026/final2026_page3.jpg" alt="Final Exam 2026 page 3: rest of the Maverick case, its 7 questions, and Question 3" loading="lazy"><figcaption>Page 3: rest of the case + its 7 questions + Question 3 (EMPA case)</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h3 class="bank-terms-h">Question One: the 20 MCQs, solved</h3>
+
+  <div class="bq revealed"><div class="bq-q">1. The Internet can be useful to marketing researchers. Which of the following represents a way in which the Internet is useful to marketing researchers?</div>
+  <ul class="bq-opts"><li><span class="opt-letter">a.</span> a source of marketing research providers</li><li><span class="opt-letter">b.</span> a source of secondary data</li><li><span class="opt-letter">c.</span> a source for data gathering</li><li data-correct="1"><span class="opt-letter">d.</span> all of the above</li></ul>
+  <div class="bq-ans"><strong>Answer: d.</strong> All three uses are genuinely true in Chapter 1: the Internet helps locate research providers and suppliers, serves as a source of secondary data, and is a data-gathering tool (online surveys). Since a, b and c are each correct, only "all of the above" can be the answer. <span class="fx-src">Textbook (Ch. 1)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">2. Interviews with industry experts, individuals knowledgeable about the firm and the industry, may help formulate the marketing research problem. Which of the following statements is true about interviews with industry experts?</div>
+  <ul class="bq-opts"><li><span class="opt-letter">a.</span> These experts may be found both inside and outside the firm.</li><li><span class="opt-letter">b.</span> Typically, expert information is obtained by unstructured personal interviews without administering a formal questionnaire.</li><li><span class="opt-letter">c.</span> It is helpful to prepare a list of topics to be covered during the interview.</li><li data-correct="1"><span class="opt-letter">d.</span> All of the above are true.</li></ul>
+  <div class="bq-ans"><strong>Answer: d.</strong> All three statements about industry-expert interviews are true in Chapter 2: experts exist both inside AND outside the firm, their information is typically obtained through unstructured personal interviews with no formal questionnaire, and preparing a topic list in advance helps. <span class="fx-src">Test bank (keyed D)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">3. ______ is an unstructured, exploratory research methodology based on small samples intended to provide insight and understanding of the problem setting.</div>
+  <ul class="bq-opts"><li><span class="opt-letter">a.</span> Primary research</li><li data-correct="1"><span class="opt-letter">b.</span> Qualitative research</li><li><span class="opt-letter">c.</span> Secondary research</li><li><span class="opt-letter">d.</span> Quantitative research</li></ul>
+  <div class="bq-ans"><strong>Answer: b.</strong> This is the exact textbook definition of qualitative research (Ch. 4): unstructured, exploratory, small samples, insight and understanding of the problem setting. The same sentence appears in the bank as a True/False item. <span class="fx-src">Test bank (T/F form)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">4. ______ is not a qualitative research technique.</div>
+  <ul class="bq-opts"><li><span class="opt-letter">a.</span> Depth interview</li><li><span class="opt-letter">b.</span> Word association</li><li><span class="opt-letter">c.</span> Focus group</li><li data-correct="1"><span class="opt-letter">d.</span> Conclusive research</li></ul>
+  <div class="bq-ans"><strong>Answer: d.</strong> Depth interviews, word association and focus groups are all qualitative techniques (Ch. 4). Conclusive research is a research-design classification (Ch. 3), not a qualitative technique. <span class="fx-src">Test bank (keyed D)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">5. The management decision problem focuses on ______, while the marketing research problem focuses on ______. <span class="fx-trap">⚠️ the trap of this exam</span></div>
+  <ul class="bq-opts"><li><span class="opt-letter">a.</span> symptoms; solutions</li><li data-correct="1"><span class="opt-letter">b.</span> symptoms; underlying causes</li><li><span class="opt-letter">c.</span> solutions; underlying causes</li><li><span class="opt-letter">d.</span> none of the above</li></ul>
+  <div class="bq-ans"><strong>Answer: b.</strong> The management decision problem grows out of the visible SYMPTOMS (falling sales, lost market share): what should management do about them. The marketing research problem digs for the UNDERLYING CAUSES: what information explains the symptom. Many people are tempted by c (solutions; underlying causes), but the bank keys this B: symptoms; underlying causes. <span class="fx-src">Test bank (keyed B)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">6. ______ is research designed to assist the decision maker in determining, evaluating, and selecting the best course of action to take in a given situation.</div>
+  <ul class="bq-opts"><li><span class="opt-letter">a.</span> Exploratory research</li><li data-correct="1"><span class="opt-letter">b.</span> Conclusive research</li><li><span class="opt-letter">c.</span> Causal research</li><li><span class="opt-letter">d.</span> Descriptive research</li></ul>
+  <div class="bq-ans"><strong>Answer: b.</strong> This is the definition of conclusive research (Ch. 3). Causal and descriptive are subtypes of conclusive research, but the definition as worded ("determining, evaluating, and selecting the best course of action") is the conclusive-research definition itself. <span class="fx-src">Test bank (keyed B)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">7. ______ designs involve the collection of information from any given sample of population elements only once.</div>
+  <ul class="bq-opts"><li><span class="opt-letter">a.</span> Exploratory</li><li><span class="opt-letter">b.</span> Causal</li><li data-correct="1"><span class="opt-letter">c.</span> Cross-sectional</li><li><span class="opt-letter">d.</span> None of the above</li></ul>
+  <div class="bq-ans"><strong>Answer: c.</strong> Cross-sectional design = information collected from any given sample of population elements ONLY ONCE (Ch. 3). "Only once" is the signature phrase; repeated measurement would make it longitudinal. <span class="fx-src">Test bank (definition card)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">8. An interview conducted by a trained moderator among a small group of respondents in an unstructured and natural manner is a(n) ______.</div>
+  <ul class="bq-opts"><li><span class="opt-letter">a.</span> depth interview</li><li><span class="opt-letter">b.</span> projective technique</li><li><span class="opt-letter">c.</span> association technique</li><li data-correct="1"><span class="opt-letter">d.</span> focus group</li></ul>
+  <div class="bq-ans"><strong>Answer: d.</strong> Trained moderator + small group + unstructured and natural manner = the definition of a focus group (Ch. 4). A depth interview has ONE respondent, not a group. <span class="fx-src">Test bank (definition card)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">9. A ______ is an unstructured, direct, personal interview in which a single respondent is probed by a highly skilled interviewer to uncover underlying motivations, beliefs, attitudes, and feelings on a topic.</div>
+  <ul class="bq-opts"><li><span class="opt-letter">a.</span> focus group</li><li><span class="opt-letter">b.</span> qualitative interview</li><li><span class="opt-letter">c.</span> projective interview</li><li data-correct="1"><span class="opt-letter">d.</span> depth interview</li></ul>
+  <div class="bq-ans"><strong>Answer: d.</strong> Single respondent + highly skilled interviewer + uncovering underlying motivations = depth interview (Ch. 4). "Direct" also rules out projective (which is indirect). <span class="fx-src">Test bank (definition card)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">10. A(n) ______ is an unstructured, indirect form of questioning that encourages respondents to project their underlying motivations, beliefs, attitudes, or feelings regarding the issues of concern.</div>
+  <ul class="bq-opts"><li data-correct="1"><span class="opt-letter">a.</span> projective technique</li><li><span class="opt-letter">b.</span> focus group</li><li><span class="opt-letter">c.</span> association technique</li><li><span class="opt-letter">d.</span> depth interview</li></ul>
+  <div class="bq-ans"><strong>Answer: a.</strong> Unstructured + INDIRECT questioning + respondents "project" their motivations = projective technique (Ch. 4). The verb "project" in the stem gives it away; focus groups and depth interviews are direct. <span class="fx-src">Test bank (definition card)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">11. In ______, an individual is presented with a stimulus and asked to respond with the first thing that comes to mind.</div>
+  <ul class="bq-opts"><li><span class="opt-letter">a.</span> completion techniques</li><li><span class="opt-letter">b.</span> focus groups</li><li data-correct="1"><span class="opt-letter">c.</span> association techniques</li><li><span class="opt-letter">d.</span> depth interviews</li></ul>
+  <div class="bq-ans"><strong>Answer: c.</strong> Stimulus + "first thing that comes to mind" = association technique; word association is the classic example (Ch. 4). Completion techniques complete an incomplete stimulus instead. <span class="fx-src">Test bank (keyed C)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">12. Focus groups are a(n) ______ research procedure and projective techniques are a(n) ______ research procedure.</div>
+  <ul class="bq-opts"><li><span class="opt-letter">a.</span> experimental; direct</li><li><span class="opt-letter">b.</span> indirect; direct</li><li><span class="opt-letter">c.</span> direct; experimental</li><li data-correct="1"><span class="opt-letter">d.</span> direct; indirect</li></ul>
+  <div class="bq-ans"><strong>Answer: d.</strong> Focus groups and depth interviews are DIRECT approaches (respondents know the purpose); projective techniques are INDIRECT (the purpose is disguised). <span class="fx-src">Test bank (keyed D)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">13. ______ is a projective technique that requires the respondent to complete an incomplete stimulus situation.</div>
+  <ul class="bq-opts"><li><span class="opt-letter">a.</span> Association technique</li><li><span class="opt-letter">b.</span> Expressive technique</li><li><span class="opt-letter">c.</span> Construction technique</li><li data-correct="1"><span class="opt-letter">d.</span> Completion</li></ul>
+  <div class="bq-ans"><strong>Answer: d.</strong> Completing an incomplete stimulus situation = completion technique; sentence, paragraph and story completion all belong to it (Ch. 4). <span class="fx-src">Test bank (definition card)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">14. ______ is a projective technique in which the respondent is presented with a verbal or visual situation and asked to relate the beliefs and attitudes of a third person to the situation.</div>
+  <ul class="bq-opts"><li><span class="opt-letter">a.</span> Role playing</li><li><span class="opt-letter">b.</span> Sentence completion</li><li><span class="opt-letter">c.</span> Cartoon test</li><li data-correct="1"><span class="opt-letter">d.</span> Third-party technique</li></ul>
+  <div class="bq-ans"><strong>Answer: d.</strong> Relating a THIRD PERSON's beliefs and attitudes to the situation = third-party (third-person) technique; respondents project their own attitudes onto that third person (Ch. 4). <span class="fx-src">Test bank (keyed D)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">15. One-way mirrors, hidden cameras, or inconspicuous mechanical devices may be used when performing ______.</div>
+  <ul class="bq-opts"><li><span class="opt-letter">a.</span> undisguised observation</li><li data-correct="1"><span class="opt-letter">b.</span> disguised observation</li><li><span class="opt-letter">c.</span> structured observation</li><li><span class="opt-letter">d.</span> natural observation</li></ul>
+  <div class="bq-ans"><strong>Answer: b.</strong> One-way mirrors, hidden cameras and inconspicuous devices mean respondents do NOT know they are being observed = disguised observation (Ch. 5). <span class="fx-src">Textbook (Ch. 5)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">16. The primary objective of ______ is to provide insights into, and an understanding of, the problem confronting the researcher. <span class="fx-trap">note: the paper misprints two "b." options; the first option is the correct one</span></div>
+  <ul class="bq-opts"><li data-correct="1"><span class="opt-letter">a.</span> exploratory research</li><li><span class="opt-letter">b.</span> conclusive research</li><li><span class="opt-letter">c.</span> causal research</li><li><span class="opt-letter">d.</span> descriptive research</li><li><span class="opt-letter">e.</span> none of the above</li></ul>
+  <div class="bq-ans"><strong>Answer: a (exploratory research).</strong> "To provide insights into and an understanding of the problem" is the stated PRIMARY OBJECTIVE of exploratory research (Ch. 3). On the actual sheet the option letters are misprinted (two "b."); mark the first option, exploratory research. <span class="fx-src">Test bank (keyed A)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">17. Sometimes the term ______ is used interchangeably with the term longitudinal design.</div>
+  <ul class="bq-opts"><li><span class="opt-letter">a.</span> Experiment</li><li data-correct="1"><span class="opt-letter">b.</span> panel</li><li><span class="opt-letter">c.</span> survey</li><li><span class="opt-letter">d.</span> none of the above</li></ul>
+  <div class="bq-ans"><strong>Answer: b.</strong> "Panel" is used interchangeably with longitudinal design because a longitudinal study measures a FIXED SAMPLE (a panel) repeatedly over time (Ch. 3). <span class="fx-src">Test bank (keyed B)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">18. A major advantage of ______ over the cross-sectional design is the ability to detect change as a result of repeated measurement of the same variables on the same sample.</div>
+  <ul class="bq-opts"><li data-correct="1"><span class="opt-letter">a.</span> longitudinal design</li><li><span class="opt-letter">b.</span> descriptive research design</li><li><span class="opt-letter">c.</span> causal research design</li><li><span class="opt-letter">d.</span> conclusive research</li></ul>
+  <div class="bq-ans"><strong>Answer: a.</strong> Detecting CHANGE via repeated measurement of the same variables on the same sample is exactly the longitudinal design's advantage over cross-sectional (Ch. 3). <span class="fx-src">Test bank (keyed A)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">19. Monetary versus non-monetary and prepaid versus promised amount decisions related to the mail interview package relate to the ______.</div>
+  <ul class="bq-opts"><li><span class="opt-letter">a.</span> outgoing envelope</li><li><span class="opt-letter">b.</span> cover letter</li><li><span class="opt-letter">c.</span> questionnaire</li><li data-correct="1"><span class="opt-letter">d.</span> incentive</li></ul>
+  <div class="bq-ans"><strong>Answer: d.</strong> Monetary vs non-monetary and prepaid vs promised are decisions about the INCENTIVE element of the mail interview package (Ch. 5), not the envelope, cover letter or questionnaire. <span class="fx-src">Test bank (keyed D)</span></div></div>
+
+  <div class="bq revealed"><div class="bq-q">20. ______ is the objective, systematic, and quantitative description of the manifest content of a communication.</div>
+  <ul class="bq-opts"><li><span class="opt-letter">a.</span> Mechanical observation</li><li><span class="opt-letter">b.</span> Personal observation</li><li data-correct="1"><span class="opt-letter">c.</span> Content analysis</li><li><span class="opt-letter">d.</span> Trace analysis</li><li><span class="opt-letter">e.</span> none of the above</li></ul>
+  <div class="bq-ans"><strong>Answer: c.</strong> "Objective, systematic and quantitative description of the MANIFEST CONTENT of a communication" is the classic definition of content analysis. Trace analysis studies physical traces left by behavior, not the content of messages. This was one of the "beyond the deck" concepts: it is in the test bank but not in the lecture slides. <span class="fx-src">Textbook definition</span></div></div>
+</section>
+
+<section>
+  <h3 class="bank-terms-h">Question Two: case study (Maverick Outsource Services), model answers</h3>
+  <div class="bank-note"><strong>Case recap:</strong> a leading scholarly publisher in the social sciences wanted a market assessment: perceived value and positioning of its offering among its client base, deeper understanding of customer loyalty to the corporate and product brands, current satisfaction levels, and whether a potential pricing increase and content structure review could be undertaken without hurting the brand or revenues. Maverick ran a two-phase program: Phase I = an online survey (with quotas matching each region's contribution to revenue) covering brand perceptions, competing resources, content coverage and value for money, budgets allocated to electronic resources, satisfaction with business and access models, product development needs, and pricing sensitivities; Phase II = in-depth telephone interviews to deepen the key issues from Phase I, followed by a full report and a strategy paper.</div>
+
+  <div class="fx-qa"><h4>1) What is the main problem facing the publisher? What are the sub-problems also?</h4>
+  <p><strong>Main problem:</strong> the publisher does not know how its product offering is perceived (value and positioning) by its client base, so it cannot safely decide on a price increase and a content structure review without risking its brand and revenues.</p>
+  <p><strong>Sub-problems:</strong> (a) unknown customer loyalty to the corporate and product brands; (b) unknown satisfaction with the current business and access models; (c) unknown standing versus immediate competing resources (content coverage, value for money); (d) unknown share of customers' budgets allocated to electronic resources; (e) unknown pricing sensitivities and how new developments might be funded.</p>
+  <p class="fx-why">Why answered this way: the case itself lists the "particular areas of concern" as bullets; the umbrella issue is the main problem and each bullet maps to one sub-problem.</p></div>
+
+  <div class="fx-qa"><h4>2) Define the problem from the manager (decision maker) viewpoint and from the researcher viewpoint.</h4>
+  <p><strong>Manager viewpoint = Management Decision Problem (action oriented):</strong> "Should we increase prices and undertake a content structure review, and if so how, without negatively impacting our brand or revenues?"</p>
+  <p><strong>Researcher viewpoint = Marketing Research Problem (information oriented):</strong> "To determine the perceived value and positioning of the publisher's offering among its client base, measure customer loyalty and satisfaction, compare the offering with competing resources, and assess customers' budget allocation and price sensitivity."</p>
+  <p class="fx-why">Why: straight application of Ch. 2: the MDP asks what the decision maker needs to DO; the MRP asks what INFORMATION is needed to decide.</p></div>
+
+  <div class="fx-qa"><h4>3) Which type of research is this (problem identification or problem solving)? Why?</h4>
+  <p>It is mainly <strong>problem-solving research</strong>: it was conducted to support specific marketing decisions, a pricing decision (can a price increase be undertaken = pricing research) and a product decision (content structure review and product development = product research). It also carries a problem-identification component (measuring image/positioning and satisfaction), which feeds the problem-solving part; the two types go hand in hand.</p>
+  <p class="fx-why">Why: pricing research and product research sit in the problem-SOLVING column of Malhotra's Ch. 1 classification; image and market-characteristics measurement belong to problem identification.</p></div>
+
+  <div class="fx-qa"><h4>4) Define and discuss problem identification and problem solving research in general. How are the two types related?</h4>
+  <p><strong>Problem-identification research</strong> = research undertaken to help identify problems that are not necessarily apparent on the surface, yet exist or are likely to arise in the future. Examples: market potential, market share, image, market characteristics, sales analysis, forecasting, and business trends research.</p>
+  <p><strong>Problem-solving research</strong> = research undertaken to help solve specific marketing problems. Examples: segmentation, product, pricing, promotion, and distribution research.</p>
+  <p><strong>Relation:</strong> they go hand in hand, often within one project: problem-identification research comes first and reveals the problem or opportunity; its findings define the problem that problem-solving research then addresses, and the problem-solving findings are used to take the marketing decision. This very case combines both: positioning and satisfaction assessment (identification) feeding pricing and content decisions (solving).</p></div>
+
+  <div class="fx-qa"><h4>5) Write four hypotheses for this problem, and four research questions.</h4>
+  <p><strong>Research questions:</strong><br>RQ1: How do customers perceive the publisher's content coverage and value for money relative to competing resources?<br>RQ2: How loyal are customers to the publisher's corporate and product brands?<br>RQ3: How satisfied are customers with the current business and access models?<br>RQ4: How would a price increase affect renewal decisions, given the budgets customers allocate to electronic resources?</p>
+  <p><strong>Hypotheses:</strong><br>H1: Customers perceive the publisher's value for money as at least equal to competing resources.<br>H2: The majority of customers are loyal to the publisher's brands and intend to renew.<br>H3: Customers are satisfied overall with the current business and access models.<br>H4: A moderate price increase would not significantly reduce renewal intentions.</p>
+  <p class="fx-why">Why: one research question per stated research objective in the case; each hypothesis is a testable declarative answer to its research question (the Ch. 2 chain: problem, then research questions, then hypotheses).</p></div>
+
+  <div class="fx-qa"><h4>6) What type of research was conducted for the publisher company? Why?</h4>
+  <p>A two-phase combination design. <strong>Phase I = descriptive research:</strong> a quantitative online survey, cross-sectional, with regional quotas matching each region's contribution to revenue, measuring perceptions, loyalty, satisfaction and price sensitivity across a representative customer base. <strong>Phase II = exploratory qualitative research:</strong> in-depth telephone interviews to gain deeper understanding of the key issues highlighted in Phase I. Why: the survey quantifies the situation representatively, while the depth interviews explain the reasons behind the numbers; together they let the client take the pricing and content decisions safely. Note the reversed order (quantitative first, qualitative second) is legitimate: exploratory research may FOLLOW conclusive research to help interpret and deepen its findings, which is exactly what Phase II did.</p></div>
+
+  <div class="fx-qa"><h4>7) Suggest some examples of secondary data required for this research.</h4>
+  <p>Internal records (sales and renewal rates by region and institution, subscription and usage statistics, the customer database, complaint records, previous studies); competitor information (competing publishers' catalogs, price lists, websites); industry and trade reports on scholarly publishing and library budgets; government and education statistics on research spending; published articles on pricing and access models in academic publishing.</p>
+  <p class="fx-why">Why this order: Ch. 3's rule is to start with INTERNAL secondary data (cheapest and fastest) and then move to EXTERNAL published data.</p></div>
+</section>
+
+<section>
+  <h3 class="bank-terms-h">Question Three: Alexandria University EMPA case, model answers</h3>
+  <div class="bank-note"><strong>Case recap:</strong> Alexandria University wants research into the reasons for the decreasing number of students enrolled in EMPA (Executive Master of Professional Accounting).</div>
+
+  <div class="fx-qa"><h4>1) What is the research problem from the researcher viewpoint? What is the main type of the research?</h4>
+  <p><strong>Research problem (researcher viewpoint):</strong> "To identify the factors behind the decrease in the number of students enrolling in the EMPA program" (program awareness, program image, fees, competition, content and scheduling, economic conditions, admission process).</p>
+  <p><strong>Main type:</strong> problem-identification research (finding out WHY enrollment is declining), designed as exploratory research first, then descriptive.</p>
+  <p class="fx-why">Why: falling enrollment is the university's "falling sales" symptom; the researcher restates it as identifying the underlying factors, which is the definition of problem-identification research.</p></div>
+
+  <div class="fx-qa"><h4>2) What are the secondary data required for this research? From where could they get them?</h4>
+  <p><strong>Secondary data:</strong> university internal records (enrollment numbers by year and cohort, applications versus acceptances, fees history, promotion records, student demographics, withdrawal data); Ministry of Higher Education and CAPMAS statistics on postgraduate enrollment; competing universities' programs, fees and intake numbers; economic indicators; any previous student surveys.</p>
+  <p><strong>From where:</strong> internal university databases and files, plus external published sources (government statistics, competitor websites and brochures, industry reports).</p></div>
+
+  <div class="fx-qa"><h4>3) What are the primary data required also? Which tools can help in collecting this data?</h4>
+  <p><strong>Primary data:</strong> reasons for not enrolling and program perceptions from prospective students who inquired but did not register; satisfaction, motives and word-of-mouth from current students and alumni; views of admissions staff and employers.</p>
+  <p><strong>Tools:</strong> self-administered online questionnaires (survey method, Ch. 5); focus groups with current students and depth interviews with students who withdrew or chose competitor programs and with admissions staff (qualitative research, Ch. 4); plus observation of the inquiry and registration process (Ch. 5).</p></div>
+</section>
+</div><!-- /view-final -->
+
+
 <script>
 // Wrap every table in a horizontal-scroll container so wide tables never
 // stretch the page on a phone. Tables with 5+ columns get the .wide hint.
@@ -4684,7 +4854,8 @@ function applyChartTheme(){
     course: { btn: document.getElementById('tab-course'), view: document.getElementById('view-course') },
     quiz:   { btn: document.getElementById('tab-quiz'),   view: document.getElementById('view-quiz')   },
     bank:   { btn: document.getElementById('tab-bank'),   view: document.getElementById('view-bank')   },
-    practice: { btn: document.getElementById('tab-practice'), view: document.getElementById('view-practice') }
+    practice: { btn: document.getElementById('tab-practice'), view: document.getElementById('view-practice') },
+    final:  { btn: document.getElementById('tab-final'),  view: document.getElementById('view-final')  }
   };
   function show(which){
     Object.keys(tabs).forEach(function(k){
